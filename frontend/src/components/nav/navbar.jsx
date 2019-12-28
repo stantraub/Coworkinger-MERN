@@ -26,17 +26,32 @@ class Navbar extends React.Component {
             );
         } else {
             return (
-            <div>
-                <Link to={"/signup"}>Signup</Link>
-                <Link to={"/login"}>Login</Link>
-            </div>
+                <div className="action-buttons-wrapper">
+                    <div className='action-item'>
+                        <span>List a workspace</span>
+                    </div>
+                    <div className='action-item'>
+                        <span>Find a workspace</span>
+                    </div>
+                    <div className='action-item'>
+                        <span>Write a Review</span>
+                    </div>
+                    <div className='action-item'>
+                        <Link style={{textDecoration: 'none', color: 'black'}} to={"/login"}>Sign In</Link>
+                    </div>
+                    <div className='action-item'>
+                        <button className='signup-button'>
+                            <Link className='signup-link' to={"/signup"}>Signup</Link>
+                        </button>
+                    </div>
+                </div>
             );
         }
     }
     render() {
         return (
-            <div>
-                <h1>Coworking Reviews</h1>
+            <div className='main-nav'>
+                <Link to="/" className='main-logo'>Coworking Reviews</Link>
                 { this.getLinks() }
             </div>
         );

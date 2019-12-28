@@ -1,0 +1,44 @@
+.main-nav {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    font-family: Avenir;
+    padding: 0 20px;
+    /* max-height: 10%; */
+}
+
+.main-logo {
+    width: 200px;
+    padding: 12px;
+    font-size: 20px;
+    text-decoration: none;
+    color: black;
+}
+
+.signup-button {
+    border-color: #4abde9;
+    font-size: 16px;
+    border-radius: 4px;
+}
+
+.signup-button:hover {
+    border-color: #009ACD;
+    color: #009ACD;
+}
+
+.signup-link {
+    text-decoration: none;
+    color: #4abde9;
+    font-family: Avenir;
+}
+
+.action-item {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+.action-buttons-wrapper {
+    padding: 12px;
+    display: flex;
+    flex-direction: row;
+}
