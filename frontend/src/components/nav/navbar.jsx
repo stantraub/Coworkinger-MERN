@@ -17,10 +17,16 @@ class Navbar extends React.Component {
     getLinks() {
         if (this.props.loggedIn) {
             return (
-            <div>
-                <Link to={"/reviews"}>All Reviews</Link>
-                <Link to={"/profile"}>Profile</Link>
-                <Link to={"/new_review"}>Write a Review</Link>
+            <div className='action-buttons-wrapper'>
+                <div className='action-item'>
+                        <span><Link style={{ textDecoration: 'none', color: 'black' }} to={"/reviews"}>All Reviews</Link></span>
+                </div>
+                <div className='action-item'>
+                    <span><Link to={"/profile"}>Profile</Link></span>
+                </div>
+                <div className='action-item'>
+                    <span><Link to={"/new_review"}>Write a Review</Link></span>
+                </div>
                 <button onClick={this.logoutUser}>Logout</button>
             </div>
             );
@@ -37,11 +43,11 @@ class Navbar extends React.Component {
                         <span>Write a Review</span>
                     </div>
                     <div className='action-item'>
-                        <Link style={{textDecoration: 'none', color: 'black'}} to={"/login"}>Sign In</Link>
+                        <span onClick={() => this.props.openModal('login')}>Sign In</span>
                     </div>
                     <div className='action-item'>
-                        <button className='signup-button'>
-                            <Link className='signup-link' to={"/signup"}>Signup</Link>
+                        <button onClick={() => this.props.openModal('signup')} className='signup-button'>
+                            Signup
                         </button>
                     </div>
                 </div>
@@ -51,7 +57,7 @@ class Navbar extends React.Component {
     render() {
         return (
             <div className='main-nav'>
-                <Link to="/" className='main-logo'>Coworking Reviews</Link>
+                <span><Link to="/" className='main-logo'>Coworking</Link></span>
                 { this.getLinks() }
             </div>
         );
