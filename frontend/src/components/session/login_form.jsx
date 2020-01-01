@@ -1,5 +1,6 @@
 import React from 'react';
 import { withRouter } from 'react-router-dom';
+import './session_modal.css'
 
 class LoginForm extends React.Component {
     constructor(props) {
@@ -52,30 +53,36 @@ class LoginForm extends React.Component {
 
     render() {
         return (
-          <div>
-            <form onSubmit={this.handleSubmit}>
-              <div>
-                <input
-                  type="text"
-                  value={this.state.email}
-                  onChange={this.update("email")}
-                  placeholder="Email"
-                />
-                <br />
-                <input
-                  type="password"
-                  value={this.state.password}
-                  onChange={this.update("password")}
-                  placeholder="Password"
-                />
-                <br />
-                <input 
-                    type="submit"
-                    value="Submit"
-                />
-                {this.renderErrors()}
-              </div>
+          <div className="session-container">
+            <h1 className="session-header">Sign in to your account</h1>
+            <form onSubmit={this.handleSubmit} className="session-form">
+              <input
+                type="text"
+                value={this.state.email}
+                onChange={this.update("email")}
+                placeholder="Email Address"
+                className="session-input"
+              />
+              <br />
+              <input
+                type="password"
+                value={this.state.password}
+                onChange={this.update("password")}
+                placeholder="Password"
+                className="session-input"
+              />
+              <br />
+              <input 
+                  type="submit"
+                  value="Sign In"
+                  className="session-submit"
+              />
+              {this.renderErrors()}
+              <span>Forgot your password?</span>
+              <br />
+              <span>Create an account</span>
             </form>
+       
           </div>
         );
     }
