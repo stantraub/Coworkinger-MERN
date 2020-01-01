@@ -27,7 +27,7 @@ class Navbar extends React.Component {
                 <div className='action-item'>
                         <span><Link style={{ textDecoration: 'none', color: 'black' }} to={"/new_review"}>Write a Review</Link></span>
                 </div>
-                <button onClick={this.logoutUser}>Logout</button>
+                <button className='signup-button' onClick={this.logoutUser}>Logout</button>
             </div>
             );
         } else {

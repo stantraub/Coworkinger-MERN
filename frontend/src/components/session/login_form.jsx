@@ -77,11 +77,11 @@ class LoginForm extends React.Component {
                   value="Sign In"
                   className="session-submit"
               />
-              <span>Forgot your password?</span>
-              <br />
-              <span>Create an account</span>
             </form>
-       
+            <br />
+            <span>Forgot your password?</span>
+            <br />
+            <span>Create an account</span>
           </div>
         );
     }
