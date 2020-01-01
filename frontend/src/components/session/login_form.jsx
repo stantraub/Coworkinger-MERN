@@ -13,7 +13,7 @@ class LoginForm extends React.Component {
         }
 
         this.handleSubmit = this.handleSubmit.bind(this);
-        this.renderErrors = this.renderErrors.bind(this);
+        // this.renderErrors = this.renderErrors.bind(this);
     }
 
     componentWillReceiveProps(nextProps) {
@@ -41,15 +41,15 @@ class LoginForm extends React.Component {
         this.props.login(user).then(this.props.closeModal);
     }
 
-    renderErrors() {
-        return (
-          <ul>
-            {Object.keys(this.state.errors).map((error, i) => (
-              <li key={`error-${i}`}>{this.state.errors[error]}</li>
-            ))}
-          </ul>
-        );
-    }
+    // renderErrors() {
+    //     return (
+    //       <ul>
+    //         {Object.keys(this.state.errors).map((error, i) => (
+    //           <li key={`error-${i}`}>{this.state.errors[error]}</li>
+    //         ))}
+    //       </ul>
+    //     );
+    // }
 
     render() {
         return (
@@ -77,7 +77,6 @@ class LoginForm extends React.Component {
                   value="Sign In"
                   className="session-submit"
               />
-              {this.renderErrors()}
               <span>Forgot your password?</span>
               <br />
               <span>Create an account</span>

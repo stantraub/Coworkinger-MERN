@@ -22,10 +22,10 @@ class Navbar extends React.Component {
                         <span><Link style={{ textDecoration: 'none', color: 'black' }} to={"/reviews"}>All Reviews</Link></span>
                 </div>
                 <div className='action-item'>
-                    <span><Link to={"/profile"}>Profile</Link></span>
+                        <span><Link style={{ textDecoration: 'none', color: 'black' }} to={"/profile"}>Profile</Link></span>
                 </div>
                 <div className='action-item'>
-                    <span><Link to={"/new_review"}>Write a Review</Link></span>
+                        <span><Link style={{ textDecoration: 'none', color: 'black' }} to={"/new_review"}>Write a Review</Link></span>
                 </div>
                 <button onClick={this.logoutUser}>Logout</button>
             </div>
