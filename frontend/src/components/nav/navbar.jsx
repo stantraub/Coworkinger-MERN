@@ -37,7 +37,7 @@ class Navbar extends React.Component {
                         <span>List a workspace</span>
                     </div>
                     <div className='action-item'>
-                        <span>Find a workspace</span>
+                        <Link style={{ textDecoration: 'none', color: 'black' }} to={'/spaces'}><span>Find a workspace</span></Link>
                     </div>
                     <div className='action-item'>
                         <span>Write a Review</span>

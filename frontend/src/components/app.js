@@ -5,6 +5,7 @@ import NavBarContainer from "./nav/navbar_container";
 
 import Modal from './modals/session_modal';
 import MainPage from './main/main_page';
+import SpaceIndex from './spaces/space_index';
 import LoginFormContainer from "./session/login_form_container";
 import SignupFormContainer from "./session/signup_form_container";
 
@@ -13,7 +14,8 @@ const App = () => (
     <NavBarContainer/>
     <Modal />
     <Switch>
-      <Route path="/" component={MainPage} />
+      <AuthRoute path="/spaces" component={SpaceIndex} />
+      <AuthRoute path="/" component={MainPage} />
     </Switch>
   </div>
 );
