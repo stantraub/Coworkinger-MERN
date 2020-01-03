@@ -29,14 +29,20 @@ class Spaces extends React.Component {
             )
         }
         return (
-            <div>
-                <h1>All Spaces</h1>
-                {this.state.spaces.map(space => (
-                    <SpaceItem 
-                        key={space._id}
-                        name={space.name}
-                    />
-                ))}
+            <div className="space-index-main">
+                <h1>All Coworking Spaces in San Francisco</h1>
+                <div className="spaces-index-wrapper">
+                    {this.state.spaces.map(space => (
+                        <SpaceItem 
+                            key={space._id}
+                            name={space.name}
+                            address={space.address}
+                            cost={space.cost}
+                            phone={space.phone}
+                            email={space.email}
+                        />
+                    ))}
+                </div>
             </div>
         )
     }
