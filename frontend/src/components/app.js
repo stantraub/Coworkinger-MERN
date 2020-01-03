@@ -5,16 +5,15 @@ import NavBarContainer from "./nav/navbar_container";
 
 import Modal from './modals/session_modal';
 import MainPage from './main/main_page';
-import SpaceIndex from './spaces/space_index';
-import LoginFormContainer from "./session/login_form_container";
-import SignupFormContainer from "./session/signup_form_container";
+import SpaceIndexContainer from './spaces/space_index_container';
+
 
 const App = () => (
   <div>
     <NavBarContainer/>
     <Modal />
     <Switch>
-      <AuthRoute path="/spaces" component={SpaceIndex} />
+      <AuthRoute path="/spaces" component={SpaceIndexContainer} />
       <AuthRoute path="/" component={MainPage} />
     </Switch>
   </div>

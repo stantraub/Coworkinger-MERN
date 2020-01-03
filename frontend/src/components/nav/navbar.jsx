@@ -4,14 +4,15 @@ import './navbar.css'
 
 class Navbar extends React.Component {
     constructor(props) {
-    super(props);
-    this.logoutUser = this.logoutUser.bind(this);
-    this.getLinks = this.getLinks.bind(this);
+        super(props);
+        this.logoutUser = this.logoutUser.bind(this);
+        this.getLinks = this.getLinks.bind(this);
+ 
     }
 
     logoutUser(e) {
-    e.preventDefault();
-    this.props.logout();
+        e.preventDefault();
+        this.props.logout();
     }
 
     getLinks() {
