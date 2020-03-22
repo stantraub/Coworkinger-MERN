@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import { createNewSpace } from '../../actions/space_actions';
+import { createSpace } from '../../actions/space_actions';
 import ListSpace from './list_space';
 
 const mapStateToProps = (state) => {
@@ -10,7 +10,7 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = dispatch => {
     return {
-        createNewSpace: data => dispatch(createNewSpace(data))
+        createSpace: data => dispatch(createSpace(data))
     };
 };
 

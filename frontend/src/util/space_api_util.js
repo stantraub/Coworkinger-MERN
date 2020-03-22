@@ -12,6 +12,6 @@ export const getOwnerSpaces = (id) => {
     return axios.get(`/api/spaces/user/${id}`)
 }
 
-export const createSpace = (data) => {
+export const createNewSpace = (data) => {
     return axios.post('/api/spaces', data)
 }

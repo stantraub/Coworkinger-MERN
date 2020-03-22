@@ -12,19 +12,19 @@ const SpaceSchema = new Schema({
     },
     city: {
         type: String,
-        required: true
+        required: false
     },
     state: {
         type: String,
-        required: true
+        required: false
     },
     zipcode: {
         type: String,
-        required: true
+        required: false
     },
     description: {
         type: String,
-        required: true
+        required: false
     },
     email: {
         type: String,
@@ -44,11 +44,11 @@ const SpaceSchema = new Schema({
     },
     openHour: {
         type: String,
-        required: true
+        required: false
     },
     closingHour: {
         type: String,
-        required: true
+        required: false
     },
     neighborhood: {
         type: String,

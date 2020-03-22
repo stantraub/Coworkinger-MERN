@@ -5,8 +5,16 @@ class ListSpace extends React.Component {
         super(props);
 
         this.state = {
-            text: "",
-            newTweet: ""
+            name: "",
+            address: "",
+            // city: "",
+            // state: "",
+            // zipcode: "",
+            // description: "",
+            email: "",
+            cost: "",
+            phone: ""
+            
         }
 
         this.handleSubmit = this.handleSubmit.bind(this);
@@ -15,17 +23,26 @@ class ListSpace extends React.Component {
 
     handleSubmit(e) {
         e.preventDefault();
-        let tweet = {
-            text: this.state.text
+        let space = {
+            name: this.state.name,
+            address: this.state.address,
+            // city: this.state.city,
+            // state: this.state.state,
+            // zipcode: this.state.zipcode,
+            // description: this.state.description,
+            email: this.state.email,
+            cost: this.state.cost,
+            phone: this.state.phone
         };
 
-        this.props.composeTweet(tweet);
-        this.setState({ text: '' })
+        console.log(this.props)
+
+        this.props.createSpace(space);
     }
 
-    update() {
+    update(field) {
         return e => this.setState({
-            text: e.currentTarget.value
+            [field]: e.currentTarget.value
         });
     }
 
@@ -35,9 +52,29 @@ class ListSpace extends React.Component {
                 <form onSubmit={this.handleSubmit}>
                     <div>
                         <input type="textarea"
-                            value={this.state.text}
-                            onChange={this.update()}
-                            placeholder="Write your tweet..."
+                            value={this.state.name}
+                            onChange={this.update('name')}
+                            placeholder="Name"
+                        />
+                        <input type="textarea"
+                            value={this.state.address}
+                            onChange={this.update('address')}
+                            placeholder="Address"
+                        />
+                        <input type="textarea"
+                            value={this.state.email}
+                            onChange={this.update('email')}
+                            placeholder="Email"
+                        />
+                        <input type="textarea"
+                            value={this.state.cost}
+                            onChange={this.update('cost')}
+                            placeholder="Cost"
+                        />
+                        <input type="textarea"
+                            value={this.state.phone}
+                            onChange={this.update('phone')}
+                            placeholder="Phone"
                         />
                         <input type="submit" value="Submit" />
                     </div>

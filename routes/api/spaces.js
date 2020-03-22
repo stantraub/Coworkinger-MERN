@@ -47,6 +47,8 @@ router.post('/',
             mainPhoto: req.body.mainPho
         });
 
+        console.log('hit post route')
+
         newSpace.save().then(space => res.json(space));
     }
 );

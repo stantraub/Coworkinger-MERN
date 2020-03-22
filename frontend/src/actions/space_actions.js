@@ -1,4 +1,4 @@
-import { getSpaces, getOwnerSpaces, getSpace, createSpace } from '../util/space_api_util';
+import { getSpaces, getOwnerSpaces, getSpace, createNewSpace } from '../util/space_api_util';
 
 export const RECEIVE_ALL_SPACES = "RECEIVE_SPACES";
 export const RECEIVE_SPACE = "RECEIVE_SPACE"
@@ -43,8 +43,8 @@ export const fetchOwnerSpaces = (id) => dispatch => (
         .catch(err => console.log(err))
 )
 
-export const createNewSpace = (data) => dispatch => (
-    createSpace(data)
+export const createSpace = (data) => dispatch => (
+    createNewSpace(data)
         .then(space => dispatch(receiveNewSpace(space)))
         .catch(err => console.log(err))
 )
