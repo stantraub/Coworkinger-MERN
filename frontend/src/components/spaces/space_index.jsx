@@ -1,50 +1,62 @@
-import React from 'react'
-import "./space_index.css"
-// import { withRouter } from 'react-router-dom';
+import React, { useEffect } from 'react'
 import SpaceItem from './space_item';
+import './space_index.css'
+// import SpaceMap from '../space_map/space_map';
 
-class Spaces extends React.Component {
-    constructor(props) {
-        super(props);
 
-        this.state = {
-            spaces: []
-        }
-    }
+import {
+    BrowserView,
+    MobileView,
+    isBrowser,
+    isMobile
+} from "react-device-detect";
 
-    componentDidMount() {
-        this.props.fetchSpaces();
-    }   
+const Spaces = props => {
 
-    componentWillReceiveProps(newState) {
-        this.setState({ spaces: newState.spaces})
-    }
+    useEffect(() => {
+        props.fetchSpaces()
+    }, [])
 
-    render() {
-        if (this.state.spaces.length === 0) {
+    if (isBrowser) {
+        if (props.spaces.length === 0) {
+            return <div>There are no spaces in this location</div>;
+        } else {
+            const { spaces } = props
             return (
-                <div>
-                    There are no spaces in this location
-                </div>
-            )
-        }
-        return (
-            <div className="space-index-main">
-                <h1>All Coworking Spaces in San Francisco</h1>
-                <div className="spaces-index-wrapper">
-                    {this.state.spaces.map(space => (
-                        <SpaceItem 
-                            key={space._id}
-                            name={space.name}
-                            address={space.address}
-                            cost={space.cost}
-                            phone={space.phone}
-                            email={space.email}
-                        />
-                    ))}
-                </div>
+                <div className="space-index-main">
+                    <div className="spaces-index-spaces-wrapper">
+                        <div className="space-index-header">
+                            All spaces in San Francisco
             </div>
-        )
+                        {spaces.map(({ _id, ...otherSpaceProps }) => {
+                            return <SpaceItem key={_id} spaceId={_id} {...otherSpaceProps} />;
+                        })}
+                    </div>
+                    <div className="space-index-map">
+                      
+                    </div>
+                </div>
+            );
+        }
+    } else {
+        if (props.spaces.length === 0) {
+            return <div>There are no spaces in this location</div>;
+        } else {
+            const { spaces } = props
+
+            return (
+                <div className="space-index-main-mobile">
+                    <h1 className="space-index-header-mobile">
+                        All San Francisco workspaces
+              </h1>
+                    <div className="spaces-index-wrapper">
+                        {spaces.map(({ id, ...otherSpaceProps }) => {
+                            return <SpaceItem key={id} spaceId={id} {...otherSpaceProps} />;
+                        })}
+                    </div>
+                </div>
+            );
+        }
     }
 }
 

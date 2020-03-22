@@ -4,7 +4,7 @@ import { fetchSpaces } from '../../actions/space_actions';
 
 const msp = (state) => {
     return {
-        spaces: Object.values(state.spaces)
+        spaces: Object.values(state.entities.spaces)
     }
 }
 const mdp = dispatch => ({

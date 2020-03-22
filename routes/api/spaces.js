@@ -44,7 +44,7 @@ router.post('/',
             cost: req.body.cost,
             phone:req.body.phone,
             email: req.body.email,
-            owner: req.user.id
+            mainPhoto: req.body.mainPho
         });
 
         newSpace.save().then(space => res.json(space));

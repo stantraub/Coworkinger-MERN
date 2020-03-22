@@ -12,7 +12,7 @@ export const receiveSpace = space => ({
 
 export const receiveSpaces = spaces => ({
     type: RECEIVE_ALL_SPACES,
-    spaces
+    spaces: spaces.data
 })
 
 export const receiveOwnerSpaces = spaces => ({

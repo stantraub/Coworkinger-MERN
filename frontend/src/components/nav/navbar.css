@@ -1,22 +1,44 @@
 .main-nav {
     display: flex;
     flex-direction: row;
+    position: sticky;
+    top: 0;
+    background-color: white;
+    z-index: 2;
     justify-content: space-between;
-    font-family: Avenir;
     padding: 0 20px;
-    /* position: fixed; */
-    /* z-index: 2; */
-    /* max-height: 10%; */
+    height: 10vh;
+    line-height: 10vh;
+    border-bottom: 1px solid #e6e6e6;
 }
 
+.main-nav-mobile {
+    font-size: 2em;
+    font-weight: 500;
+    padding: 0 50px;
+    height: 150px;
+    line-height: 150px;
+}
+
+
 .main-logo {
-    width: 200px;
-    padding-top: 10px;
-    /* padding: 12px; */
     font-size: 30px;
     font-weight: 400;
     text-decoration: none;
     color: #4abde9;
+}
+
+
+
+
+.main-logo-mobile {
+    /* padding-top: 10px; */
+    /* padding: 12px; */
+    font-size: 2em;
+    font-weight: 400;
+    text-decoration: none;
+    color: #4abde9;
+    cursor: pointer;
 }
 
 .signup-button {
@@ -47,7 +69,25 @@
 }
 
 .action-buttons-wrapper {
-    padding: 12px;
     display: flex;
     flex-direction: row;
 }
+
+
+.action-buttons-wrapper-mobile {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+
+@media only screen and (max-width: 625px) {
+    .action-item {
+        display: none;
+    }
+
+    .main-logo {
+        margin: 10px;
+    }
+}
+
