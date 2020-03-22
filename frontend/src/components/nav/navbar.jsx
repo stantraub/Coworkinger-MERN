@@ -2,21 +2,15 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import './navbar.css'
 
-class Navbar extends React.Component {
-    constructor(props) {
-        super(props);
-        this.logoutUser = this.logoutUser.bind(this);
-        this.getLinks = this.getLinks.bind(this);
- 
-    }
+const Navbar = (props) => {
 
-    logoutUser(e) {
+    function logoutUser(e) {
         e.preventDefault();
-        this.props.logout();
+        props.logout();
     }
 
-    getLinks() {
-        if (this.props.loggedIn) {
+    function getLinks() {
+        if (props.loggedIn) {
             return (
             <div className='action-buttons-wrapper'>
                 <div className='action-item'>
@@ -28,7 +22,7 @@ class Navbar extends React.Component {
                 <div className='action-item'>
                         <span><Link style={{ textDecoration: 'none', color: 'black' }} to={"/new_review"}>Write a Review</Link></span>
                 </div>
-                <button className='signup-button' onClick={this.logoutUser}>Logout</button>
+                <button className='signup-button' onClick={logoutUser}>Logout</button>
             </div>
             );
         } else {
@@ -44,10 +38,10 @@ class Navbar extends React.Component {
                         <span>Write a Review</span>
                     </div>
                     <div className='action-item'>
-                        <span onClick={() => this.props.openModal('login')}>Sign In</span>
+                        <span onClick={() => props.openModal('login')}>Sign In</span>
                     </div>
                     <div className='action-item'>
-                        <button onClick={() => this.props.openModal('signup')} className='signup-button'>
+                        <button onClick={() => props.openModal('signup')} className='signup-button'>
                             Signup
                         </button>
                     </div>
@@ -55,14 +49,12 @@ class Navbar extends React.Component {
             );
         }
     }
-    render() {
-        return (
+    return (
             <div className='main-nav'>
                 <span><Link to="/" className='main-logo'>Coworking</Link></span>
-                { this.getLinks() }
+                { getLinks() }
             </div>
         );
-    }
 }
 
 export default Navbar;

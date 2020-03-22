@@ -13,8 +13,8 @@ const App = () => (
     <NavBarContainer/>
     <Modal />
     <Switch>
-      <AuthRoute path="/spaces" component={SpaceIndexContainer} />
-      <AuthRoute path="/" component={MainPage} />
+      <Route exact path="/" component={MainPage} />
+      <AuthRoute exact path="/spaces" component={SpaceIndexContainer} />
     </Switch>
   </div>
 );
