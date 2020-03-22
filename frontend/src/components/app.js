@@ -7,6 +7,7 @@ import Modal from './modals/session_modal';
 import MainPage from './main/main_page';
 import SpaceIndexContainer from './spaces/space_index_container';
 import SpaceShowContainer from './spaces/space_show_container'
+import ListSpaceContainer from './spaces/list_space_container'
 
 
 const App = () => (
@@ -17,6 +18,7 @@ const App = () => (
       <Route exact path="/" component={MainPage} />
       <Route exact path="/spaces" component={SpaceIndexContainer} />
       <Route exact path="/spaces/:id" component={SpaceShowContainer}/>
+      <ProtectedRoute exact path="/create_space" component={ListSpaceContainer} />
     </Switch>
   </div>
 );

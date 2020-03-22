@@ -14,6 +14,9 @@ const Navbar = (props) => {
             return (
             <div className='action-buttons-wrapper'>
                 <div className='action-item'>
+                    <span><Link style={{ textDecoration: 'none', color: 'black' }} to={"/create_space"}>List a workspace</Link></span>
+                </div>
+                <div className='action-item'>
                         <span><Link style={{ textDecoration: 'none', color: 'black' }} to={"/reviews"}>All Reviews</Link></span>
                 </div>
                 <div className='action-item'>
