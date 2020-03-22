@@ -50,8 +50,8 @@ const Spaces = props => {
                         All San Francisco workspaces
               </h1>
                     <div className="spaces-index-wrapper">
-                        {spaces.map(({ id, ...otherSpaceProps }) => {
-                            return <SpaceItem key={id} spaceId={id} {...otherSpaceProps} />;
+                        {spaces.map(({ _id, ...otherSpaceProps }) => {
+                            return <SpaceItem key={_id} spaceId={_id} {...otherSpaceProps} />;
                         })}
                     </div>
                 </div>

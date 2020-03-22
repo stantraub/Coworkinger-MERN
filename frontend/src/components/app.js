@@ -6,6 +6,7 @@ import NavBarContainer from "./nav/navbar_container";
 import Modal from './modals/session_modal';
 import MainPage from './main/main_page';
 import SpaceIndexContainer from './spaces/space_index_container';
+import SpaceShowContainer from './spaces/space_show_container'
 
 
 const App = () => (
@@ -14,7 +15,8 @@ const App = () => (
     <Modal />
     <Switch>
       <Route exact path="/" component={MainPage} />
-      <AuthRoute exact path="/spaces" component={SpaceIndexContainer} />
+      <Route exact path="/spaces" component={SpaceIndexContainer} />
+      <Route exact path="/spaces/:id" component={SpaceShowContainer}/>
     </Switch>
   </div>
 );

@@ -17,14 +17,14 @@ const SpaceItem = props => {
       included += "Space available · ";
     }
 
-    if (props.desk_day) {
+    if (props.deskDay) {
       included += "Day Passes Available · ";
     }
 
-    included += `${props.people_capacity} total capacity`;
+    included += `${props.peopleCapacity} total capacity`;
 
     if (props.officeCapacity > 0) {
-      included += ` · ${props.office_capacity} offices`;
+      included += ` · ${props.officeCapacity} offices`;
     }
     return included;
   }

@@ -20,7 +20,7 @@ const Navbar = (props) => {
                         <span><Link style={{ textDecoration: 'none', color: 'black' }} to={"/profile"}>Profile</Link></span>
                 </div>
                 <div className='action-item'>
-                        <span><Link style={{ textDecoration: 'none', color: 'black' }} to={"/new_review"}>Write a Review</Link></span>
+                        <span><Link style={{ textDecoration: 'none', color: 'black' }} to={"/spaces"}>Find a Workspace</Link></span>
                 </div>
                 <button className='signup-button' onClick={logoutUser}>Logout</button>
             </div>

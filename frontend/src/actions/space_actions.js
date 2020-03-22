@@ -7,7 +7,7 @@ export const RECEIVE_NEW_SPACE = "RECEIVE_NEW_SPACE";
 
 export const receiveSpace = space => ({
     type: RECEIVE_SPACE,
-    space
+    space: space
 })
 
 export const receiveSpaces = spaces => ({
