@@ -149,7 +149,8 @@ const SpaceSchema = new Schema({
     mainPhoto: {
         type: String,
         required: false
-    }
+    },
+    spacePhotos: [ImageSchema]
 });
 
 const Space = mongoose.model('spaces', SpaceSchema);

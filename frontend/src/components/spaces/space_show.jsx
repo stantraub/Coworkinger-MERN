@@ -199,26 +199,29 @@ const SpaceShow = props =>  {
               {showPicsCarousel(space)}
               {showAmenitiesModal(space)}
               <div className="space-pics">
-                <img className="space-show-main-pic" src={space.mainPhoto}></img>
+                <img
+                  className="space-show-main-pic"
+                  src={space.spacePhotos[0]}
+                ></img>
                 <div className="space-show-space-pics">
                   <div className="space-show-pic-column">
                     <img
                       className="space-show-pic-image"
-                      // src={space.space_pics[0]}
+                      src={space.spacePhotos[1]}
                     ></img>
                     <img
                       className="space-show-pic-image"
-                      // src={space.space_pics[1]}
+                      src={space.spacePhotos[2]}
                     ></img>
                   </div>
                   <div className="space-show-pic-column">
                     <img
                       className="space-show-pic-image"
-                      // src={space.space_pics[2]}
+                      src={space.spacePhotos[3]}
                     ></img>
                     <img
                       className="space-show-pic-image"
-                      // src={space.space_pics[3]}
+                      src={space.spacePhotos[4]}
                     ></img>
                     <button
                       onClick={() => togglePicsCarousel()}
