@@ -30,15 +30,20 @@
 } */
 
 .search-box {
-    width: 50%;
+    width: 40%;
     height: 4em;
     font-family: inherit;
-    font-size: 15px;
+    font-size: 25px;
     padding: 12px 25px;
+    cursor: pointer;
     outline: none;
     border: solid 1px lightgray;
     border-radius: 3px;
     box-shadow: 0 1px 3px 0 rgba(0,0,0,0.2);
+    background-color: #4abde9;
+    color: white;
+    font-weight: 500;
+
 
 }
 
