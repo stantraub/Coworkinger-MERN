@@ -2,6 +2,16 @@ const express = require('express');
 const router = express.Router();
 const mongoose = require('mongoose');
 const passport = require('passport');
+const multer = require("multer");
+const AWS = require("aws-sdk");
+const AWS_ACCESS_KEY_ID = require("../../config/keys").accessKeyId
+const AWS_SECRET_ACCESS_KEY = require("../../config/keys").secretAccessKey
+const AWS_REGION = require("../../config/keys").region
+const AWS_BUCKET = require("../../config/keys").bucket
+
+
+var storage = multer.memoryStorage();
+var upload = multer({ storage: storage });
 
 const Space = require('../../models/Space');
 const validateSpaceInput = require('../../validation/spaces');
@@ -30,13 +40,16 @@ router.get('/:id', (req, res) => {
 });
 
 router.post('/',
-    passport.authenticate('jwt', { session: false }),
-    (req, res) => {
+    passport.authenticate('jwt', { session: false }), upload.single("file"), (req, res) => {
         const { errors, isValid } = validateSpaceInput(req.body);
 
         if (!isValid) {
             return res.status(400).json(errors);
         }
+        const file = req.file;
+        
+
+
 
         const newSpace = new Space({
             name: req.body.name,

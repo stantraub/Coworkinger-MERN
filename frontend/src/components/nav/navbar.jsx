@@ -12,18 +12,43 @@ const Navbar = (props) => {
     function getLinks() {
         if (props.loggedIn) {
             return (
-            <div className='action-buttons-wrapper'>
-                <div className='action-item'>
-                    <span><Link style={{ textDecoration: 'none', color: 'black' }} to={"/create_space"}>List a workspace</Link></span>
+              <div className="action-buttons-wrapper">
+                <div className="action-item">
+                  <span>
+                    <Link
+                      style={{ textDecoration: "none", color: "black" }}
+                      to={"/create_space"}
+                    >
+                      List a workspace
+                    </Link>
+                  </span>
                 </div>
-                <div className='action-item'>
-                        <span><Link style={{ textDecoration: 'none', color: 'black' }} to={"/profile"}>Profile</Link></span>
+                <div className="action-item">
+                  <span>
+                    <Link
+                      style={{ textDecoration: "none", color: "black" }}
+                      to={"/profile"}
+                    >
+                      Profile
+                    </Link>
+                  </span>
                 </div>
-                <div className='action-item'>
-                        <span><Link style={{ textDecoration: 'none', color: 'black' }} to={"/spaces"}>Find a Workspace</Link></span>
+                <div className="action-item">
+                  <span>
+                    <Link
+                      style={{ textDecoration: "none", color: "black" }}
+                      to={"/spaces"}
+                    >
+                      Find a Workspace
+                    </Link>
+                  </span>
                 </div>
-                <button className='signup-button' onClick={logoutUser}>Logout</button>
-            </div>
+                <div className="action-item">
+                  <button className="signup-button" onClick={logoutUser}>
+                    Logout
+                  </button>
+                </div>
+              </div>
             );
         } else {
             return (

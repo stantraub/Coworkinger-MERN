@@ -4,11 +4,11 @@ const Schema = mongoose.Schema;
 const SpaceSchema = new Schema({
     name: {
         type: String,
-        required: true
+        required: false
     },
     address: {
         type: String,
-        required: true
+        required: false
     },
     city: {
         type: String,
@@ -28,15 +28,15 @@ const SpaceSchema = new Schema({
     },
     email: {
         type: String,
-        required: true
+        required: false
     },
     cost: {
         type: Number,
-        required: true
+        required: false
     },
     phone: {
         type: String,
-        required: true
+        required: false
     },
     website: {
         type: String,
