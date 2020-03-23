@@ -29,13 +29,7 @@ const Navbar = (props) => {
             return (
                 <div className="action-buttons-wrapper">
                     <div className='action-item'>
-                        <span>List a workspace</span>
-                    </div>
-                    <div className='action-item'>
                         <Link style={{ textDecoration: 'none', color: 'black' }} to={'/spaces'}><span>Find a workspace</span></Link>
-                    </div>
-                    <div className='action-item'>
-                        <span>Write a Review</span>
                     </div>
                     <div className='action-item'>
                         <span onClick={() => props.openModal('login')}>Sign In</span>
