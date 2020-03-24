@@ -17,7 +17,6 @@ const SpacesReducer = (oldState = {}, action) => {
         case RECEIVE_ALL_SPACES:
             return merge({}, action.spaces)
         case RECEIVE_NEW_SPACE:
-            console.log(action)
             return {
                 ...oldState,
                 [action.space.data._id]: action.space.data

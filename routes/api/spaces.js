@@ -3,6 +3,7 @@ const router = express.Router();
 const mongoose = require('mongoose');
 const passport = require('passport');
 const multer = require("multer");
+const uuid = require('uuid')
 const AWS = require("aws-sdk");
 const AWS_ACCESS_KEY_ID = require("../../config/keys").accessKeyId
 const AWS_SECRET_ACCESS_KEY = require("../../config/keys").secretAccessKey
@@ -40,15 +41,14 @@ router.get('/:id', (req, res) => {
 });
 
 router.post('/',
-    passport.authenticate('jwt', { session: false }), upload.single("file"), (req, res) => {
-        const { errors, isValid } = validateSpaceInput(req.body);
+    passport.authenticate('jwt', { session: false }), (req, res) => {
+        // const { errors, isValid } = validateSpaceInput(req.body);
 
-        if (!isValid) {
-            return res.status(400).json(errors);
-        }
-        const file = req.file;
+        // if (!isValid) {
+        //     return res.status(400).json(errors);
+        // }
         
-
+        console.log(req.body)
 
 
         const newSpace = new Space({

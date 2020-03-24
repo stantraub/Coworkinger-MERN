@@ -33,7 +33,7 @@ class ListSpace extends React.Component {
     formData.append("email", this.state.email);
     formData.append("cost", this.state.cost);
     formData.append("phone", this.state.phone);
-
+    formData.append("file", this.state.file);
     // let space = {
     //   name: this.state.name,
     //   address: this.state.address,
@@ -45,6 +45,8 @@ class ListSpace extends React.Component {
     //   cost: this.state.cost,
     //   phone: this.state.phone
     // };
+
+    // console.log(formData)
 
     this.props.createSpace(formData)
     .then(res => console.log(res))

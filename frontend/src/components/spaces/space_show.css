@@ -82,7 +82,8 @@
 .photos-btn {
     box-shadow: rgba(0, 0, 0, 0.14) 0px 1px 1px 1px !important;
     background-color: #FFFFFF;
-    padding: 6px 15px;
+    padding: 0.5rem 1.5rem;
+    font-size: 16px;
     font-family: inherit;
     font-weight: 500;
     color: rgb(72, 72, 72);

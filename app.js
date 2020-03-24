@@ -11,7 +11,7 @@ const reviews = require("./routes/api/reviews");
 const spaces = require("./routes/api/spaces");
 
 mongoose
-  .connect(db, { useNewUrlParser: true })
+  .connect(db, { useNewUrlParser: true, useUnifiedTopology: true })
   .then(() => console.log("Connected to MongoDB sucessfully"))
   .catch(err => console.log(err));
 

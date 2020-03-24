@@ -43,8 +43,9 @@ export const fetchOwnerSpaces = (id) => dispatch => (
         .catch(err => console.log(err))
 )
 
-export const createSpace = (data) => dispatch => (
-    createNewSpace(data)
-        .then(space => dispatch(receiveNewSpace(space)))
-        .catch(err => console.log(err))
-)
+export const createSpace = (data) => dispatch => {
+    console.log(data)
+    return createNewSpace(data)
+      .then(space => dispatch(receiveNewSpace(space)))
+      .catch(err => console.log(err));
+}
