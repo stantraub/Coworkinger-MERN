@@ -48,7 +48,6 @@ const Amenities = props => {
                 })
             } else {
                 return amenities.map((amenity, i) => {
-                    console.log(amenity)
                     if (amenity[0] === "deskDay") {
                       return (
                         <Fragment key={i}>
@@ -70,13 +69,18 @@ const Amenities = props => {
                             {amenity[1]} offices{" "}
                             </div>
                         );
-
-                    }
+                    } else if (amenity[0] === 'transitStationMiles') {
+                        if (amenity[1] < 1) {
+                            return <div className="amenity-modal-item" key={i}>&lt;1 mile to nearest transit station </div>
+                        } else {
+                            return <div className="amenity-modal-item" key={i}>{amenity[1]} miles to nearest transit station </div>
+                        }
+                    } 
                     if (amenity[0] === 'hours_24_access') {
                         return <div className="amenity-modal-item" key={i}>24/7 Access</div>
                     } else if (amenity[0] === "phone_booths") {
                         return <div className="amenity-modal-item" key={i}>{amenity[1]} phone booths</div>
-                    } else if (amenity[0] === 'transit_station_miles') {
+                    } else if (amenity[0] === 'transitStationMiles') {
                         if (amenity[1] < 1) {
                             return <div className="amenity-modal-item" key={i}>&lt;1 mile to nearest transit station </div>
                         } else {
@@ -122,9 +126,9 @@ const Amenities = props => {
                         if (category === "seatingAndSpace") {
                             return (
                               <div className="amenity-category-wrapper" key={i}>
-                                <h2 className="amenity-category-item">
+                                <div className="amenity-category-item">
                                   Seating and space
-                                </h2>
+                                </div>
                                 <div>
                                   {amenitiesList(amenityCategories[category])}
                                 </div>
@@ -134,7 +138,7 @@ const Amenities = props => {
                        
                         return (
                             <div className="amenity-category-wrapper" key={i}>
-                                <h2 className="amenity-category-item">{category}</h2>
+                                <div className="amenity-category-item">{category[0].toUpperCase() + category.slice(1)}</div>
                                 <div>{amenitiesList(amenityCategories[category])}</div>
                             </div>
                         )

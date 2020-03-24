@@ -71,6 +71,7 @@
 
 .amenities-modal-header {
   padding-top: 24px;
+  padding-bottom: 24px;
   color: rgb(72, 72, 72) !important;
   font-size: 24px;
   font-weight: 800;
@@ -95,6 +96,7 @@
 
 .amenity-category-item {
   font-size: 18px;
+  font-weight: 800
 }
 
 .amenity-category-item-mobile {
