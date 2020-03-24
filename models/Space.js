@@ -149,6 +149,47 @@ const SpaceSchema = new Schema({
     type: String,
     required: false
   },
+  amenityCategories: {
+    seatingAndSpace: {
+      availability: Boolean,
+      deskDay: Boolean,
+      sharedDesk: Number,
+      eventSpace: Boolean,
+      peopleCapacity: Number,
+      officeCapacity: Number
+    },
+    transportation: {
+      bikeParking: Boolean,
+      transitStationMiles: Number
+    },
+    facilities: {
+      phoneBooths: Number,
+      meetingRooms: Number
+    },
+    equipment: {
+      printersIncluded: Boolean
+    },
+    accessibility: {
+      hours24Access: Boolean
+    },
+    lifeEnhancements: {
+      wellnessRoom: Boolean,
+      napRoom: Boolean,
+      petFriendly: Boolean, 
+      showers: Boolean,
+      onsiteGym: Boolean
+    },
+    recreationalGames: {
+      pingPong: Boolean,
+      bocceBall: Boolean,
+      billiards: Boolean,
+      foosball: Boolean
+    },
+    foodAndDrinks: {
+      snacksDrinksIncluded: Boolean,
+      teaCoffeeIncluded: Boolean
+    }
+  },
   spacePhotos: [
     {
       type: String

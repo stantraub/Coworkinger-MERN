@@ -56,8 +56,7 @@ router.post('/',
             address: req.body.address,
             cost: req.body.cost,
             phone:req.body.phone,
-            email: req.body.email,
-            mainPhoto: req.body.mainPho
+            email: req.body.email
         });
 
         console.log('hit post route')

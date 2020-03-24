@@ -62,6 +62,7 @@ const SpaceShow = props =>  {
     }, [])
   
     function includedAmenities(spaceAmenities) {
+      console.log(spaceAmenities)
       if (isBrowser) {
         let amenities = Object.entries(spaceAmenities).slice(0, 6)
         return amenities.map((amenity, i) => {
@@ -298,9 +299,9 @@ const SpaceShow = props =>  {
                   <div className="amenities-wrapper-mobile">
                     <div className="amenities-header-mobile">Amenities</div>
                     <div className="amenities-div-mobile">
-                      {includedAmenities(space.amenities)}
+                      {includedAmenities(space)}
                     </div>
-                    {otherAmenities(space.amenities)}
+                    {otherAmenities(space)}
                   </div>
                   <div className="contact-info-wrapper-mobile">
                     <div className="contact-header-mobile">Contact Information</div>

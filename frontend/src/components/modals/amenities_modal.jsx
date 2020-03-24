@@ -1,10 +1,12 @@
-import React from 'react';
+import React, { Fragment } from 'react';
 import {
     BrowserView,
     MobileView,
     isBrowser,
     isMobile
 } from "react-device-detect";
+
+import './amenities_modal.css'
 
 const Amenities = props => {
 
@@ -46,6 +48,30 @@ const Amenities = props => {
                 })
             } else {
                 return amenities.map((amenity, i) => {
+                    console.log(amenity)
+                    if (amenity[0] === "deskDay") {
+                      return (
+                        <Fragment key={i}>
+                          <div className="amenity-modal-item">
+                            Day pass available
+                          </div>
+                          <div className="amenity-modal-item">
+                            Individual desk option
+                          </div>
+                        </Fragment>
+                      );
+                    } else if (amenity[0] === 'officeCapacity') {
+                        return (
+                            <div
+                            className="amenity-modal-item"
+                            key={i}
+                            >
+                            {" "}
+                            {amenity[1]} offices{" "}
+                            </div>
+                        );
+
+                    }
                     if (amenity[0] === 'hours_24_access') {
                         return <div className="amenity-modal-item" key={i}>24/7 Access</div>
                     } else if (amenity[0] === "phone_booths") {
@@ -90,12 +116,25 @@ const Amenities = props => {
                 <div className="x-button" onClick={() => props.toggleAmenitiesModal()}>
                     <img className="x-img" src="http://cdn.onlinewebfonts.com/svg/img_170267.png"></img>
                 </div>
-                <h1 className="amenities-modal-header">Amenities</h1>
+                <div className="amenities-modal-header">Amenities</div>
                 <div className="amenities-content">
                     {Object.keys(amenityCategories).map((category, i) => {
+                        if (category === "seatingAndSpace") {
+                            return (
+                              <div className="amenity-category-wrapper" key={i}>
+                                <h2 className="amenity-category-item">
+                                  Seating and space
+                                </h2>
+                                <div>
+                                  {amenitiesList(amenityCategories[category])}
+                                </div>
+                              </div>
+                            );
+                        }
+                       
                         return (
                             <div className="amenity-category-wrapper" key={i}>
-                                <h2 className="amenity-category-item">{category[0].toUpperCase() + category.slice(1).split("_").join(" ")}</h2>
+                                <h2 className="amenity-category-item">{category}</h2>
                                 <div>{amenitiesList(amenityCategories[category])}</div>
                             </div>
                         )

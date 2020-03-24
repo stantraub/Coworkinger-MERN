@@ -13,42 +13,30 @@ class ListSpace extends React.Component {
       // description: "",
       email: "",
       cost: "",
-      phone: "",
-      file: null
+      phone: ""
     };
 
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
-  handleFileUpload = event => {
-    this.setState({ file: event.target.files[0] });
-  };
-
   handleSubmit(e) {
     e.preventDefault();
-    const formData = new FormData();
-    formData.append("name", this.state.name);
-    formData.append("file", this.state.file);
-    formData.append("address", this.state.address);
-    formData.append("email", this.state.email);
-    formData.append("cost", this.state.cost);
-    formData.append("phone", this.state.phone);
-    formData.append("file", this.state.file);
-    // let space = {
-    //   name: this.state.name,
-    //   address: this.state.address,
-    //   // city: this.state.city,
-    //   // state: this.state.state,
-    //   // zipcode: this.state.zipcode,
-    //   // description: this.state.description,
-    //   email: this.state.email,
-    //   cost: this.state.cost,
-    //   phone: this.state.phone
-    // };
+
+    let space = {
+      name: this.state.name,
+      address: this.state.address,
+      // city: this.state.city,
+      // state: this.state.state,
+      // zipcode: this.state.zipcode,
+      // description: this.state.description,
+      email: this.state.email,
+      cost: this.state.cost,
+      phone: this.state.phone
+    };
 
     // console.log(formData)
 
-    this.props.createSpace(formData)
+    this.props.createSpace(space)
     .then(res => console.log(res))
     .catch(err => console.log(err));
   }
@@ -94,11 +82,6 @@ class ListSpace extends React.Component {
               value={this.state.phone}
               onChange={this.update("phone")}
               placeholder="Phone"
-            />
-            <input
-              label="upload file"
-              type="file"
-              onChange={this.handleFileUpload}
             />
             <input type="submit" value="Submit" />
           </div>
