@@ -6,6 +6,8 @@ import {
     isMobile
 } from "react-device-detect";
 
+import './pics_carousel.css'
+
 const PicsCarousel = props =>{
     const [currentIdx, setCurrentIdx] = useState(0)
 

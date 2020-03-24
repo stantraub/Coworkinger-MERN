@@ -1,0 +1,180 @@
+.carousel-background {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  background:#262626;
+  color: #FFFFFF;
+  z-index: 10;
+}
+
+.carousel-child {
+  position: absolute; 
+  top: 50%;
+  left: 50%;
+  width: 100%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  flex-direction: row;
+}
+
+.carousel-child-mobile {
+  position: absolute; 
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.carousel-main-pic-wrapper {
+    padding: 45px;
+    justify-content: center;
+    width: 75%;
+    display: flex;
+    flex-direction: row;
+}
+
+.carousel-main-pic-wrapper-mobile {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    position: relative;
+}
+
+.arrow-column-left {
+    width: 10%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.arrow-column-left-mobile {
+    display: flex;
+    position: absolute;
+    left: -10px;
+    align-self: center;
+
+}
+
+.arrow-column-right {
+    width: 10%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+.arrow-column-right-mobile {
+
+    position: absolute;
+    z-index: 2;
+    right: -10px;
+    align-self: center;
+
+}
+
+.carousel-arrows {
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+}
+
+.carousel-arrows-mobile {
+    width: 9em;
+    height: 9em;
+    cursor: pointer;
+}
+
+.carousel-pic-div {
+    width: 80%;
+}
+
+.carousel-pic-div-mobile {
+    width: 100%;
+}
+
+.carousel-main-pic {
+    height: 40em;
+    max-height: 75vh;
+    object-fit: cover;
+    cursor: pointer;
+    border-radius: 16px;
+    width: 100%;
+    /* transform: translateY(-50%) */
+    
+}
+
+.carousel-main-pic-mobile {
+    height: 46em;
+    object-fit: cover;
+    cursor: pointer;
+    width: 100%;
+}
+
+.carousel-sidebar {
+    vertical-align: top !important;
+    /* width: 264px !important;
+    min-width: 264px !important; */
+    width: 25%;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+}
+
+.carousel-x-mobile {
+    height: 14em;
+    position: relative;
+}
+
+.carousel-x-button {
+    margin-right: 30px;
+    cursor: pointer;
+    top: 0;
+    right: 35px;
+    position: absolute;
+}
+
+.carousel-x-button-mobile {
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 30px 56px 16px !important;
+}
+
+.carousel-x-img {
+    width: 32px;
+}
+
+.carousel-x-img-mobile {
+    width: 100px;
+
+}
+.carousel-pic-count {
+    font-weight: 500;
+    padding-top: 104px !important;
+    display: table-cell !important;
+    vertical-align: top !important;
+    width: 264px !important;
+    min-width: 264px !important;
+}
+
+.carousel-pic-count-mobile {
+    font-weight: 500;
+    font-size: 2.5em;
+    padding-top: 20px;
+    margin-left: 5%;
+}
+/* .carousel-upcoming-pics {
+    position: relative !important;
+    padding-top: 8px !important;
+    padding-bottom: 8px !important;
+    height: 64px !important;
+    overflow: hidden !important;
+}
+
+.carousel-upcoming-item {
+    width: auto !important;
+    height: 48px;
+    overflow: hidden;
+    position: absolute;
+    border-radius: 4px;
+} */

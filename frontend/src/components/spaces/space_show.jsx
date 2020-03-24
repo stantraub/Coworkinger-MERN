@@ -27,7 +27,7 @@ const SpaceShow = props =>  {
       return (
         picsCarousel ? 
           <div className="carousel-background">
-            <PicsCarousel spacePics={space.space_pics} togglePicsCarousel={togglePicsCarousel} />
+            <PicsCarousel spacePics={space.spacePhotos} togglePicsCarousel={togglePicsCarousel} />
           </div> 
           : 
           null
