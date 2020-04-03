@@ -64,29 +64,40 @@ const SpaceShow = props =>  {
     function includedAmenities(spaceAmenities) {
       console.log(spaceAmenities)
       if (isBrowser) {
-        let amenities = Object.entries(spaceAmenities).slice(0, 6)
+        
+        let { seatingAndSpace, transportation, facilities, accessibility, lifeEnhancements } = spaceAmenities
+        let combinedArr = {...seatingAndSpace, ...transportation, ...facilities, ...accessibility, ...lifeEnhancements}
+        let amenities = Object.entries(combinedArr).slice(0, 6)
+
         return amenities.map((amenity, i) => {
           if (amenity[0] === 'hours24Access') {
             return <div className="amenities-item" key={i}>24/7 Access</div>
           } else if (amenity[0] === "phoneBooths") {
-            return <div className="amenities-item" key={i}>{amenity[1]} phone booths</div>
-          } else if (amenity[0] === 'transit_station_miles') {
+              return <div className="amenities-item" key={i}>{amenity[1]} phone booths</div>
+          } else if (amenity[0] === 'transitStationMiles') {
               if (amenity[1] < 1) { 
                 return <div className="amenities-item" key={i}> &lt;1 mile to nearest transit station </div>
               } else {
                 return <div className="amenities-item" key={i}> {amenity[1]} miles to nearest transit station </div>
               }
-          } else if (amenity[0] === 'nearestParking') {
-              if (amenity[1] < 1) {
-                return <div className="amenities-item" key={i}>&lt;1 mile to nearest parking lot</div>
-              } else {
-                return <div className="amenities-item" key={i}>{amenity[1]} miles to nearest parking lot </div>
-              }
           } else if (amenity[0] === 'meetingRooms') {
-            return <div className="amenities-item" key={i}> {amenity[1]} meeting rooms </div>
+              return <div className="amenities-item" key={i}> {amenity[1]} meeting rooms </div>
           } else if (amenity[0] === 'peopleCapacity') {
-            return <div className="amenities-item" key={i}> {amenity[1]} total capacity </div>
-          } else {
+              return <div className="amenities-item" key={i}> {amenity[1]} total capacity </div>
+          } else if (amenity[0] === 'officeCapacity') {
+              return <div className="amenities-item" key={i}> {amenity[1]} offices </div>
+          } else if (amenity[0] === 'deskDay') {
+              return <div className="amenities-item" key={i}>Individual desk option</div>
+          } else if (amenity[0] === 'sharedDeskOption') {
+              return <div className="amenities-item" key={i}>Shared desk option</div>
+          } else if (amenity[0] === 'availability') {
+              return <div className="amenities-item" key={i}>Space available</div>
+          } else if (amenity[0] === 'eventSpace') {
+              return <div className="amenities-item" key={i}>Event space</div>
+          } else if (amenity[0] === 'wellnessRoom') {
+              return <div className="amenities-item" key={i}>Wellness Room</div>
+          } 
+          else {
             return <div className="amenities-item" key={i}>{(amenity[0][0].toUpperCase() + amenity[0].slice(1)).split("_").join(" ")}</div>
           }
         })
@@ -164,6 +175,7 @@ const SpaceShow = props =>  {
     } 
 
     function otherAmenities(spaceAmenities) {
+      
       let numAmenities = Object.keys(spaceAmenities).length
       if (numAmenities > 6) {
         if (isBrowser) {
@@ -247,7 +259,7 @@ const SpaceShow = props =>  {
                   <div className="amenities-wrapper">
                     <div className="amenities-header">Amenities</div>
                     <div className="amenities-div">
-                      {includedAmenities(space)}
+                      {includedAmenities(space.amenityCategories)}
                     </div>
                     {otherAmenities(space)}
                   </div>
@@ -299,7 +311,7 @@ const SpaceShow = props =>  {
                   <div className="amenities-wrapper-mobile">
                     <div className="amenities-header-mobile">Amenities</div>
                     <div className="amenities-div-mobile">
-                      {includedAmenities(space)}
+                      {includedAmenities(space.amenityCategories)}
                     </div>
                     {otherAmenities(space)}
                   </div>
