@@ -62,7 +62,6 @@ const SpaceShow = props =>  {
     }, [])
   
     function includedAmenities(spaceAmenities) {
-      console.log(spaceAmenities)
       if (isBrowser) {
         
         let { seatingAndSpace, transportation, facilities, accessibility, lifeEnhancements } = spaceAmenities
@@ -273,7 +272,7 @@ const SpaceShow = props =>  {
                   </div>
                   <div className="contact-info-wrapper">
                     <div className="contact-item-top">
-                      <a href={space.website}>{space.website}</a>
+                      <a className="space-website-link" href={space.website}>{space.website}</a>
                     </div>
                     <div className="contact-item">{space.email}</div>
                     <div className="contact-item">{space.phone}</div>

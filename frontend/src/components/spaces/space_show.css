@@ -173,6 +173,11 @@
     padding-bottom: 16px;
 }
 
+.space-website-link {
+    text-decoration: none;
+    color: #4abde9;
+}
+
 .space-show-description-mobile {
     padding-top: 50px;
     padding-bottom: 50px;
