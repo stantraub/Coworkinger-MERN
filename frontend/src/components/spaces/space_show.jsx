@@ -175,8 +175,10 @@ const SpaceShow = props =>  {
     } 
 
     function otherAmenities(spaceAmenities) {
-      
-      let numAmenities = Object.keys(spaceAmenities).length
+      let { seatingAndSpace, transportation, equipment, facilities, accessibility, lifeEnhancements, recreationalGames, foodAndDrinks } = spaceAmenities
+      let combinedArr = {...seatingAndSpace, ...transportation, ...facilities, ...accessibility, ...lifeEnhancements, ...equipment, ...recreationalGames, ...foodAndDrinks}
+      let numAmenities = Object.keys(combinedArr).length
+ 
       if (numAmenities > 6) {
         if (isBrowser) {
           return (
@@ -185,7 +187,7 @@ const SpaceShow = props =>  {
                 className="num-amenities-text"
                 onClick={() => toggleAmenitiesModal()}
               >
-                Show all {numAmenities} amenities
+                Show all {combinedArr['deskDay'] ? numAmenities += 1 : numAmenities} amenities
               </div>
             </div>
           );
@@ -261,7 +263,7 @@ const SpaceShow = props =>  {
                     <div className="amenities-div">
                       {includedAmenities(space.amenityCategories)}
                     </div>
-                    {otherAmenities(space)}
+                    {otherAmenities(space.amenityCategories)}
                   </div>
                 </div>
                 <div className="reserve-widget-wrapper">
