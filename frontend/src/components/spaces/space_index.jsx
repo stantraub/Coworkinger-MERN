@@ -40,6 +40,21 @@ const Spaces = props => {
                       url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
                       attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
                     />
+
+                {spaces.map(space => {
+                  
+                  return (
+                    <Marker
+                      key={space._id}
+                      position={[
+                        space.latitude,
+                        space.longitude
+                      ]}
+                    />
+                  )
+                  
+                  })}
+                    
                   </Map>
                 </div>
               </div>
