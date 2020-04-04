@@ -21,6 +21,11 @@
   height: 100vh;
 }
 
+.popup-space-description {
+    font-family: Avenir;
+    font-size: 16px;
+}
+
 .space-index-main-mobile {
     padding-left: 75px;
     padding-right: 75px;
