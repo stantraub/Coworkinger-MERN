@@ -65,7 +65,7 @@ const Spaces = props => {
                       <div>
                         <h2>{activeSpace.name}</h2>
                         <img className="main-pic" src={activeSpace.mainPhoto}></img>
-                        <span className="popup-space-description"><strong>${activeSpace.cost}</strong> per desk / month</span>
+                        <div className="popup-space-description"><strong>${activeSpace.cost}</strong> per desk / month</div>
                       </div>
                     </Popup>
                   )}
