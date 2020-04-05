@@ -69,11 +69,11 @@ const Navbar = (props) => {
         }
     }
     return (
-            <div className='main-nav'>
-                <span><Link to="/" className='main-logo'>Coworking</Link></span>
-                { getLinks() }
-            </div>
-        );
+      <div className='main-nav'>
+          <span><Link to="/" className='main-logo'>Coworking</Link></span>
+          { getLinks() }
+      </div>
+    );
 }
 
 export default Navbar;

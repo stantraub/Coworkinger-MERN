@@ -12,13 +12,6 @@
     border-bottom: 1px solid #e6e6e6;
 }
 
-.main-nav-mobile {
-    font-size: 2em;
-    font-weight: 500;
-    padding: 0 50px;
-    height: 150px;
-    line-height: 150px;
-}
 
 
 .main-logo {
@@ -87,7 +80,7 @@
     }
 
     .main-logo {
-        margin: 10px;
+        font-size: 27.5px;
     }
 }
 

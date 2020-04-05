@@ -1,11 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import {
-  BrowserView,
-  MobileView,
-  isBrowser,
-  isMobile
-} from "react-device-detect";
+
 
 import "./space_item.css"
 
@@ -36,57 +31,33 @@ const SpaceItem = props => {
   function email() {
     if (props.email !== "N/A") return props.email;
   }
-  if (isBrowser) {
-    return (
-      <div className="space-item-wrapper">
-        <Link to={`/spaces/${props.spaceId}`} className="space-link">
-          <img className="main-pic" src={props.mainPhoto} />
-        </Link>
-        <Link to={`/spaces/${props.spaceId}`} className="space-link">
-          <div className="space-item-info">
-            <div className="space-item-name">{props.name}</div>
-            <div className="space-item-amenities">
-              <div>
-                {props.city}, {props.state}
-              </div>
-              <span>{props.neighborhood}</span>
-              <div className="space-amenity-wrapper">{includedAmenities()}</div>
-              <div className="space-item-contact">
-                <div>{phone()}</div>
-                <div>{email()}</div>
-              </div>
+
+  return (
+    <div className="space-item-wrapper">
+      <Link to={`/spaces/${props.spaceId}`} className="space-link">
+        <img className="main-pic" src={props.mainPhoto} />
+      </Link>
+      <Link to={`/spaces/${props.spaceId}`} className="space-link">
+        <div className="space-item-info">
+          <div className="space-item-name">{props.name}</div>
+          <div className="space-item-amenities">
+            <div>
+              {props.city}, {props.state}
             </div>
-            <div className="space-item-cost">
-              <strong>${props.cost}</strong> per desk / month
+            <span>{props.neighborhood}</span>
+            <div className="space-amenity-wrapper">{includedAmenities()}</div>
+            <div className="space-item-contact">
+              <div>{phone()}</div>
+              <div>{email()}</div>
             </div>
           </div>
-        </Link>
-      </div>
-    );
-  } else {
-    return (
-      <div className="space-item-wrapper">
-        <Link to={`/spaces/${props.spaceId}`} className="space-link">
-          <img className="main-pic-mobile" src={props.mainPhoto} />
-        </Link>
-        <Link to={`/spaces/${props.spaceId}`} className="space-link">
-          <div>
-            <div className="space-item-name-mobile">{props.name}</div>
-            <div className="space-item-amenities-mobile">
-              <div>
-                {props.city}, {props.state}
-              </div>
-              <span>{props.neighborhood}</span>
-              <div className="space-amenity-wrapper">{includedAmenities()}</div>
-            </div>
-            <div className="space-item-cost-mobile">
-              <span>${props.cost} per desk / month</span>
-            </div>
+          <div className="space-item-cost">
+            <strong>${props.cost}</strong> per desk / month
           </div>
-        </Link>
-      </div>
-    );
-  }
+        </div>
+      </Link>
+    </div>
+  );
 };
 
 export default SpaceItem;
