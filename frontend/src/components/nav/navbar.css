@@ -74,7 +74,7 @@
 }
 
 
-@media only screen and (max-width: 625px) {
+@media only screen and (max-width: 800px) {
     .action-item {
         display: none;
     }
