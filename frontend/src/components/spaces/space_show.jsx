@@ -30,15 +30,15 @@ const SpaceShow = props => {
 
   function showAmenitiesModal(space) {
     return (
-        amenitiesModal ?
-        <div className="amenities-background-mobile">
-          <div className="amenities-modal-child-mobile">
-            <AmenitiesModal amenityCategories={space.amenityCategories} toggleAmenitiesModal={toggleAmenitiesModal} />
-          </div> 
-        </div>
-        : null
-    )
+          amenitiesModal ?
+            <div className="amenities-background">
+              <div className="amenities-modal-child">
+                <AmenitiesModal amenityCategories={space.amenityCategories} toggleAmenitiesModal={toggleAmenitiesModal} />
+              </div>
+            </div> : null
+        )
   }
+
   useEffect(() => {
     props.fetchSpace(props.match.params.id)
   }, [])

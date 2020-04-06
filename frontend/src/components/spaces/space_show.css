@@ -197,7 +197,7 @@
     .photos-btn-main-pic {
         box-shadow: rgba(0, 0, 0, 0.14) 0px 1px 1px 1px !important;
         background-color: #FFFFFF;
-        padding: 0.5rem 1.5rem;
+        padding: 0.5rem 1rem;
         font-size: 16px;
         font-family: inherit;
         font-weight: 500;
@@ -241,6 +241,12 @@
     .amenities-wrapper {
         margin-bottom: 0px;
     }
+
+    .amenities-modal-wrapper {
+        height: 100vh;
+        width: 100vw;
+    }
+    
 }
 
 .reserve-cost {
