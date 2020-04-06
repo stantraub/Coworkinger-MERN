@@ -1,13 +1,3 @@
-.carousel-background {
-  position: fixed;
-  top: 0;
-  bottom: 0;
-  right: 0;
-  left: 0;
-  background:#262626;
-  color: #FFFFFF;
-  z-index: 10;
-}
 
 .carousel-child {
   position: absolute; 
@@ -19,26 +9,12 @@
   flex-direction: row;
 }
 
-.carousel-child-mobile {
-  position: absolute; 
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-}
-
 .carousel-main-pic-wrapper {
     padding: 45px;
     justify-content: center;
     width: 75%;
     display: flex;
     flex-direction: row;
-}
-
-.carousel-main-pic-wrapper-mobile {
-    width: 100%;
-    display: flex;
-    flex-direction: row;
-    position: relative;
 }
 
 .arrow-column-left {
@@ -48,28 +24,11 @@
     justify-content: flex-start;
 }
 
-.arrow-column-left-mobile {
-    display: flex;
-    position: absolute;
-    left: -10px;
-    align-self: center;
-
-}
-
 .arrow-column-right {
     width: 10%;
     display: flex;
     align-items: center;
     justify-content: flex-end;
-}
-
-.arrow-column-right-mobile {
-
-    position: absolute;
-    z-index: 2;
-    right: -10px;
-    align-self: center;
-
 }
 
 .carousel-arrows {
@@ -78,18 +37,8 @@
     cursor: pointer;
 }
 
-.carousel-arrows-mobile {
-    width: 9em;
-    height: 9em;
-    cursor: pointer;
-}
-
 .carousel-pic-div {
     width: 80%;
-}
-
-.carousel-pic-div-mobile {
-    width: 100%;
 }
 
 .carousel-main-pic {
@@ -100,14 +49,7 @@
     border-radius: 16px;
     width: 100%;
     /* transform: translateY(-50%) */
-    
-}
 
-.carousel-main-pic-mobile {
-    height: 46em;
-    object-fit: cover;
-    cursor: pointer;
-    width: 100%;
 }
 
 .carousel-sidebar {
@@ -120,11 +62,6 @@
     flex-direction: column;
 }
 
-.carousel-x-mobile {
-    height: 14em;
-    position: relative;
-}
-
 .carousel-x-button {
     margin-right: 30px;
     cursor: pointer;
@@ -133,48 +70,87 @@
     position: absolute;
 }
 
-.carousel-x-button-mobile {
-    position: absolute;
-    top: 0;
-    right: 0;
-    padding: 30px 56px 16px !important;
-}
-
 .carousel-x-img {
     width: 32px;
 }
 
-.carousel-x-img-mobile {
-    width: 100px;
-
-}
-.carousel-pic-count {
+.carousel-pic-count {   
     font-weight: 500;
     padding-top: 104px !important;
     display: table-cell !important;
     vertical-align: top !important;
-    width: 264px !important;
+    width: 264px;
     min-width: 264px !important;
 }
 
-.carousel-pic-count-mobile {
-    font-weight: 500;
-    font-size: 2.5em;
-    padding-top: 20px;
-    margin-left: 5%;
-}
-/* .carousel-upcoming-pics {
-    position: relative !important;
-    padding-top: 8px !important;
-    padding-bottom: 8px !important;
-    height: 64px !important;
-    overflow: hidden !important;
+@media only screen and (max-width: 800px) {
+    .carousel-child {
+        width: 100vw;
+        height: 100vh;  
+        display: flex;
+        flex-direction: column-reverse;
+        justify-content: flex-end;
+    }
+
+    .carousel-main-pic-wrapper {
+        width: 100%;
+        padding: 0px;
+        display: flex;
+        flex-direction: row;
+        position: relative;
+    }
+
+    .arrow-column-left {
+        position: absolute;
+        left: 0;
+        align-self: center;
+    }
+
+    .arrow-column-right {
+        position: absolute;
+        z-index: 2;
+        right: 0;
+        align-self: center;
+    }
+
+    .carousel-arrows {
+        width: 45px;
+        height: 45px;
+    }
+
+    .carousel-pic-div {
+        width: 100%;
+    }
+
+    .carousel-main-pic {
+        height: 17.5rem;
+        object-fit: cover;
+        width: 100%;
+        border-radius: 0px;
+
+    }
+
+    .carousel-sidebar {
+        width: 100%;
+        
+    }
+
+    .carousel-x-button {
+        /* transform: translateY(-430px);
+        margin-left: 20px; */
+        /* transform: translateX(2px); */
+
+    }
+
+    .carousel-pic-count {
+        font-weight: 500;
+        font-size: 18px;
+        margin-left: 5%;
+        width: 100%;
+        padding: 20px;
+    }
 }
 
-.carousel-upcoming-item {
-    width: auto !important;
-    height: 48px;
-    overflow: hidden;
-    position: absolute;
-    border-radius: 4px;
-} */
+
+
+
