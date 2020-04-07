@@ -63,6 +63,10 @@
     z-index: 1 !important;
 }
 
+.photos-btn-first-column {
+    display: none;
+}
+
 .space-info-wrapper {
     display: flex;
     flex-direction: row;
@@ -171,7 +175,7 @@
     z-index: 10;
 }
 
-@media only screen and (max-width: 800px) {
+@media only screen and (max-width: 700px) {
     .space-info-wrapper {
         flex-direction: column;
     }
@@ -187,8 +191,6 @@
     .main-pic-container {
         width: 100%;
         position: relative;
-
-
     }
 
     .space-show-main-pic {
@@ -239,6 +241,9 @@
         padding-bottom: 16px !important;
         z-index: 4 !important;
         border-top: 1px solid rgb(235, 235, 235) !important;
+        border-left: 0px;
+        border-right: 0px;
+        border-bottom: 0px;
     }
 
     .contact-info-wrapper {
@@ -261,6 +266,107 @@
     .carousel-background {
         justify-content: flex-start;
     }
+}
+
+@media only screen and (max-height: 425px) {
+    .space-info-wrapper {
+        flex-direction: column;
+    }
+
+    .space-show-pic-column {
+        width: 100%;
+    }
+
+    .space-show-pic-column:nth-of-type(2) {
+        display: none;
+    }
+
+    .space-pics {
+        height: 90vh;
+    }
+
+    .main-pic-container {
+        width: 100%;
+        position: relative;
+    }
+
+    .space-show-main-pic {
+        width: 100%;
+        position: relative;
+        height: 100%;
+    }
+
+    .contact-info-wrapper {
+        display: none;
+    }
+
+    .space-show-info {
+        max-width: 100%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .amenities-wrapper {
+        margin-bottom: 0px;
+    }
+
+    .amenities-modal-wrapper {
+        height: 100vh;
+        width: 100vw;
+    }
+
+    .reserve-widget-wrapper {
+        position: sticky;
+        bottom: 0;
+        background-color: white;
+        width: 100%;
+        padding-right: 0px;
+        margin-left: 0px;
+        margin-top: 0px;
+        z-index: 4;
+        border-top: 1px solid rgb(235, 235, 235) !important;
+
+    }
+
+    .reserve-widget {
+        margin-top: 0px;
+        margin-left: 2rem;
+        margin-right: 2rem; 
+        height: 10vh;
+        /* z-index: 2; */
+        background-color: white;
+        padding-top: 16px !important;
+        padding-bottom: 16px !important;
+        /* z-index: 4 !important; */
+        border-left: 0px;
+        border-right: 0px;
+        border-top: none;
+
+        border-bottom: 0px;
+    }
+
+    .photos-btn {
+        display: none
+    }
+
+    .photos-btn-first-column {
+        display: block;
+        box-shadow: rgba(0, 0, 0, 0.14) 0px 1px 1px 1px !important;
+        background-color: #FFFFFF;
+        padding: 0.5rem 1rem;
+        font-size: 16px;
+        font-family: inherit;
+        font-weight: 500;
+        color: rgb(72, 72, 72);
+        border-radius: 4px;
+        position: absolute !important;
+        left: auto !important;
+        right: 20px !important;
+        bottom: 20px;
+        z-index: 1 !important;
+    }
+
+
 }
 
 .reserve-cost {

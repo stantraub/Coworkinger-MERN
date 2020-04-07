@@ -28,6 +28,11 @@
     border-radius: 4px;
 }
 
+@media only screen and (max-width: 1375px) {
+    .space-item-wrapper {
+        padding-left: 18px;
+    }
+}
 
 @media only screen and (max-width: 700px) {
     .space-index-main {
@@ -48,7 +53,6 @@
     .main-pic {
         width: 100%;
         height: 45vh;
-        border-radius: 4px;
         padding-top: 10px;
     }
 
@@ -106,7 +110,7 @@
     }
 }
 
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 550px) {
  .main-pic {
      width: 100%;
      height: 35vh;
@@ -116,11 +120,10 @@
 }
 
 
-@media only screen and (max-width: 500px) {
+@media only screen and (max-width: 520px) {
     .main-pic {
         width: 100%;
         height: 35vh;
-        border-radius: 4px;
         padding-top: 10px;
     }
 }
@@ -128,8 +131,8 @@
 @media only screen and (max-width: 400px) {
     .main-pic {
         width: 100%;
-        height: 27.5vh;
-        border-radius: 4px;
+        height: 25vh;
+        border-radius: 0px;
         padding-top: 10px;
     }
 }
@@ -138,7 +141,6 @@
     .main-pic {
         width: 100%;
         height: 20vh;
-        border-radius: 4px;
         padding-top: 10px;
     }
 }

@@ -26,6 +26,7 @@
     margin-bottom: 35px;
 }
 
+
 .search-box {
     width: 40%;
     height: 4em;
@@ -51,8 +52,8 @@
     }
 
     .main-section {
-        height: 90vh;
-        margin-top:-10px
+        height: 700px;
+        /* margin-top:-10px */
     }
 
     .search-box {
@@ -70,6 +71,17 @@
         color: white;
         font-weight: 500;
 
+    }
+}
+
+@media only screen and (max-width: 850px) {
+    .main-section {
+        height: 90vh;
+        margin-top: -15vh
+    }
+
+    .search-header {
+        font-size: 30px;
     }
 }
 

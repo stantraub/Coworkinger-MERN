@@ -53,16 +53,24 @@
     .space-index-header {
         font-size: 22px;
         font-weight: 500;
-        padding-left: 0px;
+        padding-left: 24px;
         margin-block-start: 0px;
         margin-block-end: 0px;
         margin-inline-start: 0px;
         margin-inline-end: 0px;
-        border-bottom: 1px solid #e6e6e6;
+        border-bottom: none;
 
     }
 
 }
+
+@media only screen and (max-width: 700px) {
+    .space-index-header {
+        border-bottom: 1px solid #e6e6e6;
+    }
+
+}
+
 
 .popup-space-description {
     font-family: Avenir;

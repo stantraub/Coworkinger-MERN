@@ -131,6 +131,12 @@ const SpaceShow = props => {
                   className="space-show-pic-image"
                   src={space.spacePhotos[2]}
                 ></img>
+                <button
+                onClick={() => togglePicsCarousel()}
+                  className="photos-btn-first-column"
+              >
+              View Photos
+              </button>
               </div>
               <div className="space-show-pic-column">
                 <img
