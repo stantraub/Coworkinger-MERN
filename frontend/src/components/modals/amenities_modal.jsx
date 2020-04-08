@@ -142,7 +142,7 @@ const Amenities = props => {
     return (
         <div className="amenities-modal-wrapper">
             <div className="x-button" onClick={() => props.toggleAmenitiesModal()}>
-                <img className="x-img" src="http://cdn.onlinewebfonts.com/svg/img_170267.png"></img>
+                <img className="x-img" src="https://coworking-dev.s3-us-west-1.amazonaws.com/img_170267-min.png"></img>
             </div>
             <div className="amenities-modal-header">Amenities</div>
             <div className="amenities-content">
