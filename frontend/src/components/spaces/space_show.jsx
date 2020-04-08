@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import PicsCarousel from '../modals/pics_carousel';
 import AmenitiesModal from '../modals/amenities_modal';
 import './space_show.css'
+import Spinner from '../spinner/spinner';
 
 
 const SpaceShow = props => {
@@ -103,8 +104,8 @@ const SpaceShow = props => {
     }
         // if space is undefined, set space equal to an empty object
   const {space = {}} = props
-  if (space.mainPhoto) {
-      return (
+  return space.mainPhoto ? 
+      (
         <div className="space-show-main-div">
           {showPicsCarousel(space)}
           {showAmenitiesModal(space)}
@@ -190,13 +191,10 @@ const SpaceShow = props => {
             </div>
           </div>
         </div>
-      ); 
-  } else {
-      return (
-          <div>
-          </div>
+      ) : (
+        <Spinner />
       )
-  }
+
 }
 
 

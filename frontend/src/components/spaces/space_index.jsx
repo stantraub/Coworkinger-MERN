@@ -3,7 +3,7 @@ import SpaceItem from './space_item';
 import './space_index.css'
 import { Map, Marker, Popup, TileLayer } from "react-leaflet";
 import { Icon } from "leaflet";
-
+import Spinner from '../spinner/spinner'
 
 const Spaces = props => {
   const [activeSpace, setActiveSpace] = useState(null)
@@ -12,7 +12,7 @@ const Spaces = props => {
   }, [])
 
     if (props.spaces.length === 0) {
-        return <div>There are no spaces in this location</div>;
+        return <Spinner />
     } else {
         const { spaces } = props
         return (
