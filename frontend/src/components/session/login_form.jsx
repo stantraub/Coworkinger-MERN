@@ -1,6 +1,7 @@
 import React from 'react';
 import { withRouter } from 'react-router-dom';
 import './session_modal.css'
+import Spinner from '../spinner/spinner';
 
 class LoginForm extends React.Component {
     constructor(props) {
@@ -9,6 +10,7 @@ class LoginForm extends React.Component {
         this.state = {
             email: '',
             password: '',
+            loading: false,
             errors: {}
         }
 
@@ -33,7 +35,7 @@ class LoginForm extends React.Component {
 
     handleSubmit(e) {
         e.preventDefault();
-
+        
         let user = {
             email: this.state.email,
             password: this.state.password
@@ -48,12 +50,16 @@ class LoginForm extends React.Component {
             password: "123456"
         }
 
-        this.props.login(user, this.props.history).then(this.props.closeModal)
+        this.props.login(user, this.props.history)
+        .then(() => this.setState({loading: false}))
+        .then(this.props.closeModal)
     }
 
     render() {
-        return (
-          <div className="session-container">
+        return this.state.loading ? (
+         <Spinner />
+        ) : (
+        <div className="session-container">
             <div className="session-header">Sign in to your account</div>
             <form onSubmit={this.handleSubmit} className="session-form">
               <input
@@ -77,14 +83,21 @@ class LoginForm extends React.Component {
                   value="Sign In"
                   className="session-submit"
               />
-            <button className="demo-login-button" onClick={() => this.processDemo()}>Demo Login</button>
+            <button className="demo-login-button" 
+            onClick={() => {
+                this.setState({
+                    loading: true
+                })
+                this.processDemo()
+            }
+            }>Demo Login</button>
 
             </form>
             <br />
             <div className="change-form-div">Don't have an account? <span className="session-switch" onClick={() => this.props.openModal('signup')}>Sign Up</span></div>
 
           </div>
-        );
+        )
     }
 }
 

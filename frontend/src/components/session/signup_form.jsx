@@ -1,6 +1,7 @@
 import React from "react";
 import { withRouter } from "react-router-dom";
 import './session_modal.css';
+import Spinner from "../spinner/spinner";
 
 class SignupForm extends React.Component {
   constructor(props) {
@@ -10,6 +11,7 @@ class SignupForm extends React.Component {
       username: "",
       password: "",
       password2: "",
+      loading: false,
       errors: {}
     };
 
@@ -42,7 +44,9 @@ class SignupForm extends React.Component {
       password2: this.state.password2
     };
 
-    this.props.signup(user, this.props.history).then(this.props.closeModal);;
+    this.props.signup(user, this.props.history)
+    .then(() => this.setState({loading: false}))
+    .then(this.props.closeModal);;
   }
 
   processDemo() {
@@ -55,7 +59,9 @@ class SignupForm extends React.Component {
   }
 
   render() {
-    return (
+    return this.state.loading ? (
+     <Spinner />
+    ) : (
       <div className="session-container">
         <div className="session-header">Create your account</div>
           <form onSubmit={this.handleSubmit} className="session-form">
@@ -94,13 +100,19 @@ class SignupForm extends React.Component {
               />
               <br />
               <input type="submit" value="Sign Up" className="session-submit" />
-              <button className="demo-login-button" onClick={() => this.processDemo()}>Demo Login</button>
+              <button className="demo-login-button" onClick={() => {
+                this.setState({
+                  loading: true
+                })
+                this.processDemo()
+            }
+            }>Demo Login</button>
             </div>
           </form>
           <br />
           <div className="change-form-div">Have an Account? <span className="session-switch" onClick={() => this.props.openModal('login')}>Log In</span></div>
       </div>
-    );
+    )
   }
 }
 
