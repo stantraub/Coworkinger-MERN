@@ -14,6 +14,7 @@ class SignupForm extends React.Component {
     };
 
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.processDemo = this.processDemo.bind(this);
     this.clearedErrors = false;
   }
 
@@ -44,59 +45,60 @@ class SignupForm extends React.Component {
     this.props.signup(user, this.props.history).then(this.props.closeModal);;
   }
 
-  // renderErrors() {
-  //   return (
-  //     <ul>
-  //       {Object.keys(this.state.errors).map((error, i) => (
-  //         <li key={`error-${i}`}>{this.state.errors[error]}</li>
-  //       ))}
-  //     </ul>
-  //   );
-  // }
+  processDemo() {
+    let user = {
+      email: "demouser@gmail.com",
+      password: "123456"
+    }
+
+    this.props.login(user, this.props.history).then(this.props.closeModal)
+  }
 
   render() {
     return (
       <div className="session-container">
-        <h1 className="session-header">Create your account</h1>
-        <form onSubmit={this.handleSubmit} className="session-form">
-          <div className="signup-form">
-            <br />
-            <input
-              type="text"
-              value={this.state.email}
-              onChange={this.update("email")}
-              placeholder="Email"
-              className="session-input"
-            />
-            <br />
-            <input
-              type="text"
-              value={this.state.username}
-              onChange={this.update("username")}
-              placeholder="Username"
-              className="session-input"
-            />
-            <br />
-            <input
-              type="password"
-              value={this.state.password}
-              onChange={this.update("password")}
-              placeholder="Password"
-              className="session-input"
-            />
-            <br />
-            <input
-              type="password"
-              value={this.state.password2}
-              onChange={this.update("password2")}
-              placeholder="Confirm Password"
-              className="session-input"
-            />
-            <br />
-            <input type="submit" value="Sign Up" className="session-submit" />
-           
-          </div>
-        </form>
+        <div className="session-header">Create your account</div>
+          <form onSubmit={this.handleSubmit} className="session-form">
+            <div className="signup-form">
+              <br />
+              <input
+                type="text"
+                value={this.state.email}
+                onChange={this.update("email")}
+                placeholder="Email"
+                className="session-input"
+              />
+              <br />
+              <input
+                type="text"
+                value={this.state.username}
+                onChange={this.update("username")}
+                placeholder="Username"
+                className="session-input"
+              />
+              <br />
+              <input
+                type="password"
+                value={this.state.password}
+                onChange={this.update("password")}
+                placeholder="Password"
+                className="session-input"
+              />
+              <br />
+              <input
+                type="password"
+                value={this.state.password2}
+                onChange={this.update("password2")}
+                placeholder="Confirm Password"
+                className="session-input"
+              />
+              <br />
+              <input type="submit" value="Sign Up" className="session-submit" />
+              <button className="demo-login-button" onClick={() => this.processDemo()}>Demo Login</button>
+            </div>
+          </form>
+          <br />
+          <div className="change-form-div">Have an Account? <span className="session-switch" onClick={() => this.props.openModal('login')}>Log In</span></div>
       </div>
     );
   }

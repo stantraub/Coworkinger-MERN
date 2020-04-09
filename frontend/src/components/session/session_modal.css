@@ -9,8 +9,9 @@
 }
 
 .session-header {
-    font-family: "Avenir";
-    font-weight: 200;
+    font-weight: 500;
+    font-size: 36px;
+    padding-bottom: inherit;
 }
 
 .session-form {
@@ -20,12 +21,12 @@
 .session-input {
     width: 500px;
     border: 1px solid darkgray;
+    font-family: inherit;
     background-color: #E8F0FE;
     margin-bottom: 15px;
     border-radius: 3px;
     height: 3em;
     padding: 6px 20px;
-    font-family: "Avenir";
     font-size: 13px;
 }
 
@@ -34,14 +35,44 @@
     color: white;
     height: 3em;
     width: 545px;
-    font-family: "Avenir";
+    font-family: inherit;
     font-size: 16px;
-    font-weight: 500;
+    font-weight: 600;
     border-radius: 3px;
     box-shadow: 12px 15px 20px rgba(0,0,0,.1);
 }
 
 .session-submit:hover {
     background-color: #009ACD;
+    cursor: pointer;
+}
+
+.demo-login-button {
+    margin-top: 10px;
+    cursor: pointer;
+    background-color: #02b3e4;
+    color: white;
+    height: 3em;
+    width: 545px;
+    font-family: inherit;
+    font-size: 16px;
+    font-weight: 600;
+    border-radius: 3px;
+    box-shadow: 12px 15px 20px rgba(0,0,0,.1);
+}
+
+.demo-login-button:hover {
+    background-color: #009ACD;
+    cursor: pointer;
+}
+
+
+.change-form-div {
+    font-weight: 500;
+    font-size: 18px;
+}
+
+.session-switch {
+    color: #009ACD;
     cursor: pointer;
 }

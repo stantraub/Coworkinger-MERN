@@ -13,6 +13,7 @@ class LoginForm extends React.Component {
         }
 
         this.handleSubmit = this.handleSubmit.bind(this);
+        this.processDemo = this.processDemo.bind(this)
         // this.renderErrors = this.renderErrors.bind(this);
     }
 
@@ -41,20 +42,19 @@ class LoginForm extends React.Component {
         this.props.login(user).then(this.props.closeModal);
     }
 
-    // renderErrors() {
-    //     return (
-    //       <ul>
-    //         {Object.keys(this.state.errors).map((error, i) => (
-    //           <li key={`error-${i}`}>{this.state.errors[error]}</li>
-    //         ))}
-    //       </ul>
-    //     );
-    // }
+    processDemo() {
+        let user = {
+            email: "demouser@gmail.com",
+            password: "123456"
+        }
+
+        this.props.login(user, this.props.history).then(this.props.closeModal)
+    }
 
     render() {
         return (
           <div className="session-container">
-            <h1 className="session-header">Sign in to your account</h1>
+            <div className="session-header">Sign in to your account</div>
             <form onSubmit={this.handleSubmit} className="session-form">
               <input
                 type="text"
@@ -77,11 +77,12 @@ class LoginForm extends React.Component {
                   value="Sign In"
                   className="session-submit"
               />
+            <button className="demo-login-button" onClick={() => this.processDemo()}>Demo Login</button>
+
             </form>
             <br />
-            <span>Forgot your password?</span>
-            <br />
-            <span>Create an account</span>
+            <div className="change-form-div">Don't have an account? <span className="session-switch" onClick={() => this.props.openModal('signup')}>Sign Up</span></div>
+
           </div>
         );
     }

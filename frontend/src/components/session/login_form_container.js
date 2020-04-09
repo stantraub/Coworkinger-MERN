@@ -2,7 +2,7 @@ import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
 import { login } from '../../actions/session_actions';
 import LoginForm from './login_form';
-import { closeModal } from '../../actions/modal_actions'
+import { closeModal, openModal } from '../../actions/modal_actions'
 
 const msp = ({ errors }) => {
     return {
@@ -11,8 +11,9 @@ const msp = ({ errors }) => {
 };
 
 const mdp = (dispatch) => ({
-        login: user => dispatch(login(user)),
-        closeModal: () => dispatch(closeModal())
+    login: user => dispatch(login(user)),
+    openModal: modal => dispatch(openModal(modal)),
+    closeModal: () => dispatch(closeModal())
 })
 
 
