@@ -20,14 +20,6 @@ class SignupForm extends React.Component {
     this.clearedErrors = false;
   }
 
-  componentWillReceiveProps(nextProps) {
-    if (nextProps.signedIn === true) {
-      this.props.history.push("/login");
-    }
-
-    this.setState({ errors: nextProps.errors });
-  }
-
   update(field) {
     return e =>
       this.setState({
@@ -36,7 +28,6 @@ class SignupForm extends React.Component {
   }
 
   handleSubmit(e) {
-    e.preventDefault();
     let user = {
       email: this.state.email,
       username: this.state.username,
@@ -55,7 +46,11 @@ class SignupForm extends React.Component {
       password: "123456"
     }
 
-    this.props.login(user, this.props.history).then(this.props.closeModal)
+    this.props.login(user, this.props.history)
+    .then(() => this.setState({
+      loading: false
+    }))
+    .then(this.props.closeModal)
   }
 
   render() {
@@ -64,7 +59,10 @@ class SignupForm extends React.Component {
     ) : (
       <div className="session-container">
         <div className="session-header">Create your account</div>
-          <form onSubmit={this.handleSubmit} className="session-form">
+          <form onSubmit={() => {
+            this.setState({loading: true})
+            this.handleSubmit()
+          }} className="session-form">
             <div className="signup-form">
               <br />
               <input

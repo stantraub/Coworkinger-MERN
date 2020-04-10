@@ -16,15 +16,6 @@ class LoginForm extends React.Component {
 
         this.handleSubmit = this.handleSubmit.bind(this);
         this.processDemo = this.processDemo.bind(this)
-        // this.renderErrors = this.renderErrors.bind(this);
-    }
-
-    componentWillReceiveProps(nextProps) {
-        if (nextProps.currentUser === true) {
-            this.props.history.push('/reviews');
-        }
-
-        this.setState({ errors: nextProps.errors})
     }
 
     update(field) {
@@ -33,15 +24,17 @@ class LoginForm extends React.Component {
         })
     }
 
-    handleSubmit(e) {
-        e.preventDefault();
-        
+    handleSubmit() {
         let user = {
             email: this.state.email,
             password: this.state.password
         };
 
-        this.props.login(user).then(this.props.closeModal);
+        this.props.login(user)
+        .then(() => this.setState({
+            loading: false
+        }))
+        .then(this.props.closeModal);
     }
 
     processDemo() {
@@ -61,7 +54,11 @@ class LoginForm extends React.Component {
         ) : (
         <div className="session-container">
             <div className="session-header">Sign in to your account</div>
-            <form onSubmit={this.handleSubmit} className="session-form">
+            <form onSubmit={() => {
+                this.setState({
+                    loading: true
+                })
+                this.handleSubmit()}} className="session-form">
               <input
                 type="text"
                 value={this.state.email}
