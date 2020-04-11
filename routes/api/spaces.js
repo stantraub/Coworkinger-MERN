@@ -26,7 +26,14 @@ router.get('/', (req, res) => {
 
 router.get('/:id', (req, res) => {
     Space.findById(req.params.id)
-        .populate('reviews')
+        .populate({
+            path: 'reviews',
+            model: 'reviews',
+            populate: {
+                path: 'reviewer',
+                model: 'users'
+            }
+        })
         .then(space => res.json(space))
         .catch(err =>
             res.status(404).json({ nospacefound: 'No space found with that ID' })

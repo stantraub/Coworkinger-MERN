@@ -41,11 +41,11 @@ router.post('/',
         //     return res.status(400).json(errors);
         // }
 
-        const { text, rating, reviewerId, spaceId} = req.body
+        const { text, rating, reviewer, spaceId} = req.body
         const review = new Review({
             text,
             rating,
-            reviewerId,
+            reviewer,
             spaceId
         });
 

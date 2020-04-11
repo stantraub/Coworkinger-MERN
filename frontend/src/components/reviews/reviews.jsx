@@ -8,7 +8,7 @@ const Reviews = props => {
             <div className='reviews-header'>
                 <h2>Reviews</h2>
             </div>
-            {reviews.map((review, i) => {
+            {reviews.map((review) => {
             return <ReviewItem key={review._id} review={review} />
             })}
             

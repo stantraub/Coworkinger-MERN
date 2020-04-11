@@ -2,7 +2,7 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
 const ReviewSchema = new Schema({
-    reviewerId: {
+    reviewer: {
         type: Schema.Types.ObjectId,
         ref: 'users'
     },
@@ -17,11 +17,11 @@ const ReviewSchema = new Schema({
     spaceId: {
         type: Schema.Types.ObjectId,
         ref: 'spaces'
+    },
+    date: {
+        type: Date,
+        default: Date.now
     }
-    // date: {
-    //     type: Date,
-    //     default: Date.now
-    // }
 });
 
 const Review = mongoose.model('reviews', ReviewSchema);
