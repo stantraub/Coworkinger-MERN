@@ -17,7 +17,7 @@ const PicsCarousel = props =>{
         <div className="carousel-child">
             <div className="carousel-main-pic-wrapper">
                 <div className="arrow-column-left">
-                    <img onClick={() => changePic(spacePics.length, -1)} className="carousel-arrows" src="https://coworking-dev.s3-us-west-1.amazonaws.com/24095038_white-arrow-transparent-png-1.png"></img>
+                    <img onClick={() => changePic(spacePics.length, -1)} className="carousel-arrows" src="https://coworking-dev.s3-us-west-1.amazonaws.com/24095038_white-arrow-transparent-png-1-min.png"></img>
                 </div>
                 <div className="carousel-pic-div">
                     <img className="carousel-main-pic" src={spacePics[currentIdx]}></img>
