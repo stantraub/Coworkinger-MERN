@@ -34,7 +34,7 @@ router.get('/:id', (req, res) => {
 
 router.post('/',
     // passport.authenticate('jwt', { session: false }),
-    (req, res) => {
+    async (req, res) => {
         // const { errors, isValid } = validateReviewInput(req.body);
 
         // if (!isValid) {
@@ -49,20 +49,13 @@ router.post('/',
             spaceId
         });
 
-        Space.findById(spaceId)
-            .populate('reviews')
-            .then(space => {
-                space.reviews.push(review)
-                space.save()
-                review.save()
-                res.json(space)
-            })
-            
-           
-
-        // newReview.save()
-        // .then()
-        // .then(review => res.json(review));
+        const space = await Space.findById(spaceId)
+        
+        space.reviews.push(review)
+        await space.save()
+        await review.save()
+        
+        res.json(review)
     }
 );
 
