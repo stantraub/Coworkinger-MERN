@@ -5,6 +5,8 @@ import {
 }
     from '../actions/space_actions'
 
+import { RECEIVE_NEW_REVIEW } from '../actions/review_actions'
+
 import merge from "lodash/merge";
 
 const SpacesReducer = (oldState = {}, action) => {
@@ -13,6 +15,7 @@ const SpacesReducer = (oldState = {}, action) => {
     switch (action.type) {
         case RECEIVE_SPACE:
             newState[action.space.data._id] = action.space.data
+           
             return newState
         case RECEIVE_ALL_SPACES:
             return merge({}, action.spaces)
@@ -21,9 +24,9 @@ const SpacesReducer = (oldState = {}, action) => {
                 ...oldState,
                 [action.space.data._id]: action.space.data
             }
-        // case REMOVE_SPACE:
-        //     delete newState[action.spaceId]
-        //     return newState
+        case RECEIVE_NEW_REVIEW:
+            newState[action.review.data._id].reviews = action.review.data
+            return newState
         default:
             return oldState;
     }

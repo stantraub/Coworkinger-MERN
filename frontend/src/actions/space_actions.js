@@ -1,9 +1,11 @@
 import { getSpaces, getOwnerSpaces, getSpace, createNewSpace } from '../util/space_api_util';
+import { addNewReview } from '../util/review_api_util'
 
 export const RECEIVE_ALL_SPACES = "RECEIVE_SPACES";
 export const RECEIVE_SPACE = "RECEIVE_SPACE"
 export const RECEIVE_OWNER_SPACES = "RECEIVE_OWNER_SPACES";
 export const RECEIVE_NEW_SPACE = "RECEIVE_NEW_SPACE";
+
 
 export const receiveSpace = space => ({
     type: RECEIVE_SPACE,
@@ -24,6 +26,7 @@ export const receiveNewSpace = space => ({
     type: RECEIVE_NEW_SPACE,
     space
 })
+
 
 export const fetchSpace = (id) => dispatch => (
     getSpace(id)

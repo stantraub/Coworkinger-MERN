@@ -24,15 +24,6 @@ router.get('/', (req, res) => {
         .catch(err => res.status(404).json({ nospacesfound: 'No spaces found' }));
 });
 
-router.get('/user/:user_id', (req, res) => {
-    Space.find({ owner: req.params.user_id })
-        .then(spaces => res.json(spaces))
-        .catch(err =>
-            res.status(404).json({ nospacesfound: 'No spaces found from that owner' }
-            )
-        );
-});
-
 router.get('/:id', (req, res) => {
     Space.findById(req.params.id)
         .populate('reviews')
@@ -49,10 +40,6 @@ router.post('/',
         // if (!isValid) {
         //     return res.status(400).json(errors);
         // }
-        
-        console.log(req.body)
-
-
         const newSpace = new Space({
             name: req.body.name,
             address: req.body.address,
@@ -67,7 +54,4 @@ router.post('/',
     }
 );
 
-// router.patch('/add-review/:id', (req, res) => {
-
-// })
 module.exports = router;

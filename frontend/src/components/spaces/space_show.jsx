@@ -3,6 +3,7 @@ import PicsCarousel from '../modals/pics_carousel';
 import AmenitiesModal from '../modals/amenities_modal';
 import './space_show.css'
 import Spinner from '../spinner/spinner';
+import ReviewsContainer from '../reviews/reviews_container'
 
 
 const SpaceShow = props => {
@@ -175,6 +176,7 @@ const SpaceShow = props => {
                 </div>
                 {otherAmenities(space.amenityCategories)}
               </div>
+              <ReviewsContainer  />
             </div>
             <div className="reserve-widget-wrapper">
               <div className="reserve-widget">
