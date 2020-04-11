@@ -15,6 +15,7 @@ var storage = multer.memoryStorage();
 var upload = multer({ storage: storage });
 
 const Space = require('../../models/Space');
+const Review = require('../../models/Review')
 const validateSpaceInput = require('../../validation/spaces');
 
 router.get('/', (req, res) => {
@@ -34,6 +35,7 @@ router.get('/user/:user_id', (req, res) => {
 
 router.get('/:id', (req, res) => {
     Space.findById(req.params.id)
+        .populate('reviews')
         .then(space => res.json(space))
         .catch(err =>
             res.status(404).json({ nospacefound: 'No space found with that ID' })
@@ -65,4 +67,7 @@ router.post('/',
     }
 );
 
+// router.patch('/add-review/:id', (req, res) => {
+
+// })
 module.exports = router;

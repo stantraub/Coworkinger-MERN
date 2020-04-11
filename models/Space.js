@@ -202,7 +202,11 @@ const SpaceSchema = new Schema({
     {
       type: String
     }
-  ]
+  ],
+  reviews: [{
+    type: Schema.Types.ObjectId,
+    ref: 'reviews'
+  }]
 });
 
 const Space = mongoose.model('spaces', SpaceSchema);

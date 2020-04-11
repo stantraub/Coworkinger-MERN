@@ -3,6 +3,7 @@ const router = express.Router();
 const mongoose = require('mongoose');
 const passport = require('passport');
 
+const Space = require('../../models/Space')
 const Review = require('../../models/Review');
 const validateReviewInput = require('../../validation/reviews');
 
@@ -32,20 +33,36 @@ router.get('/:id', (req, res) => {
 });
 
 router.post('/',
-    passport.authenticate('jwt', { session: false }),
+    // passport.authenticate('jwt', { session: false }),
     (req, res) => {
-        const { errors, isValid } = validateReviewInput(req.body);
+        // const { errors, isValid } = validateReviewInput(req.body);
 
-        if (!isValid) {
-            return res.status(400).json(errors);
-        }
+        // if (!isValid) {
+        //     return res.status(400).json(errors);
+        // }
 
-        const newReview = new Review({
-            text: req.body.text,
-            user: req.user.id
+        const { text, rating, reviewerId, spaceId} = req.body
+        const review = new Review({
+            text,
+            rating,
+            reviewerId,
+            spaceId
         });
 
-        newReview.save().then(review => res.json(review));
+        Space.findById(spaceId)
+            .populate('reviews')
+            .then(space => {
+                space.reviews.push(review)
+                space.save()
+                review.save()
+                res.json(space)
+            })
+            
+           
+
+        // newReview.save()
+        // .then()
+        // .then(review => res.json(review));
     }
 );
 
