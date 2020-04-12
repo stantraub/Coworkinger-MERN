@@ -8,7 +8,9 @@ const Reviews = props => {
             <div className='reviews-header'>
                 <h2>Reviews</h2>
                 <div className="reviews-header-info">
-                    <img className="star" src={"https://coworking-dev.s3-us-west-1.amazonaws.com/blue-star-icon-14-min.png"} />
+                    <div className="star-container">
+                        <img className="star" src={"https://coworking-dev.s3-us-west-1.amazonaws.com/blue-star-icon-14-min.png"} />
+                    </div>
                     <div className="reviews-rating">{rating}</div>
                     <div className="separator"></div>
                     <span className="reviews-length-counter">{reviews.length}</span>
