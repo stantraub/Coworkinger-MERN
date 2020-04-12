@@ -5,6 +5,12 @@ import { Link } from "react-router-dom";
 import "./space_item.css"
 
 const SpaceItem = props => {
+  let rating = props.rating.$numberDecimal
+  function formatRating(rating) {
+    let formatted = parseFloat(rating)
+    return formatted.toString().length === 1 ? formatted.toFixed(1) : formatted.toFixed(2)
+  }
+
   function includedAmenities() {
     let included = "";
 
@@ -39,6 +45,15 @@ const SpaceItem = props => {
       </Link>
       <Link to={`/spaces/${props.spaceId}`} className="space-link">
         <div className="space-item-info">
+          {rating > 0 ? (
+            <div className="space-rating-container">
+              <div className="space-star-container">
+                <img className="star" src={"https://coworking-dev.s3-us-west-1.amazonaws.com/blue-star-icon-14-min.png"} />
+              </div>
+              <span className="space-rating">{rating > 0 ? formatRating(rating) : null}</span>
+              <span className="space-num-reviews">({props.reviews.length})</span>
+            </div>
+          ) : null}
           <div className="space-item-name">{props.name}</div>
           <div className="space-item-amenities">
             <div>

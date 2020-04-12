@@ -2,7 +2,6 @@ import React from 'react'
 import ReviewItem from './review_item'
 const Reviews = props => {
     const { reviews, rating } = props
-
     return reviews.length > 0 ? (
         <div>
             <div className='reviews-header'>
