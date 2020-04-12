@@ -1,5 +1,6 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
+
 const SpaceSchema = new Schema({
   name: {
     type: String,
@@ -40,6 +41,10 @@ const SpaceSchema = new Schema({
   cost: {
     type: Number,
     required: false
+  },
+  rating: {
+    type: Number,
+    default: 0.0
   },
   phone: {
     type: String,
