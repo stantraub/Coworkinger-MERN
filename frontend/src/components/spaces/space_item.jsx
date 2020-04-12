@@ -66,10 +66,10 @@ const SpaceItem = props => {
               <div>{email()}</div>
             </div>
           </div>
-          <div className="space-item-cost">
+        </div>
+        <div className="space-item-cost">
             <strong>${props.cost}</strong> per desk / month
           </div>
-        </div>
       </Link>
     </div>
   );
