@@ -5,10 +5,11 @@
 
 .reviews-header-info {
     font-size: 18px;
+    display: flex;
+    flex-direction: row;
 }
 
 .separator {
-    height: 12px !important;
     border-right: 1px solid rgb(235, 235, 235) !important;
 }
 
@@ -16,7 +17,7 @@
     width: 20px;
     width: 20px;
     padding-right: 5px;
-    transform: translateY(3px) !important;
+    /* transform: translateY(3px) !important; */
 }
 .reviews-rating {
     padding-right: 10px;
@@ -27,6 +28,7 @@
 .reviews-length-counter {
     font-weight: 600;
     padding-left: 10px;
+    padding-right: 5px;
 }
 
 .review-item-container {
