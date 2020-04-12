@@ -4,8 +4,10 @@ import { withRouter } from 'react-router-dom'
 
 const msp = (state, ownProps) => {
     const { id } = ownProps.match.params
+    let space = state.entities.spaces[id]
     return {
-        reviews: state.entities.spaces[id].reviews
+        reviews: space.reviews,
+        rating: Math.ceil(parseFloat(space.rating.$numberDecimal) * 100) / 100
     }
 }
 

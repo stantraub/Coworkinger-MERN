@@ -7,7 +7,7 @@ const ReviewSchema = new Schema({
         ref: 'users'
     },
     rating: {
-        type: Number,
+        type: mongoose.Types.Decimal128,
         required: true
     },
     text: {

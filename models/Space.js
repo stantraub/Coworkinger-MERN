@@ -43,7 +43,7 @@ const SpaceSchema = new Schema({
     required: false
   },
   rating: {
-    type: Number,
+    type: mongoose.Types.Decimal128,
     default: 0.0
   },
   phone: {

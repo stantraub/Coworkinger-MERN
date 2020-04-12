@@ -7,8 +7,26 @@
     font-size: 18px;
 }
 
+.separator {
+    height: 12px !important;
+    border-right: 1px solid rgb(235, 235, 235) !important;
+}
+
+.star {
+    width: 20px;
+    width: 20px;
+    padding-right: 5px;
+    transform: translateY(3px) !important;
+}
+.reviews-rating {
+    padding-right: 10px;
+    font-weight: 600;
+
+}
+
 .reviews-length-counter {
     font-weight: 600;
+    padding-left: 10px;
 }
 
 .review-item-container {
