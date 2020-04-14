@@ -11,6 +11,28 @@ const Spaces = props => {
       props.fetchSpaces()
   }, [])
 
+  function renderImage() {
+    let domainName = 'https://coworking-dev.s3-us-west-1.amazonaws.com/'
+    if (!activeSpace.mainPhoto.includes(domainName)) {
+      return (
+        <img 
+          className="main-pic"
+          src={
+            domainName +
+            activeSpace.mainPhoto
+          }
+        />
+      )
+    } else {
+      return (
+        <img 
+          src={activeSpace.mainPhoto}
+          className="main-pic"
+        />
+      )
+    }
+  }
+
     if (props.spaces.length === 0) {
         return <Spinner />
     } else {
@@ -57,7 +79,7 @@ const Spaces = props => {
                   >
                     <div>
                       <h2>{activeSpace.name}</h2>
-                      <img className="main-pic" src={activeSpace.mainPhoto}></img>
+                      {renderImage()}
                       <div className="popup-space-description"><strong>${activeSpace.cost}</strong> per desk / month</div>
                     </div>
                   </Popup>

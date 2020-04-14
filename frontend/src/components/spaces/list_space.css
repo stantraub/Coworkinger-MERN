@@ -1,0 +1,8 @@
+.list-space-form {
+    width: 25%;
+}
+
+.input-container {
+    display: flex;
+    flex-direction: column;
+}

@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import './list_space.css'
 
 class ListSpace extends React.Component {
   constructor(props) {
@@ -27,12 +28,14 @@ class ListSpace extends React.Component {
       name: this.state.name,
       address: this.state.address,
       file: this.state.file,
-      // state: this.state.state,
-      // zipcode: this.state.zipcode,
-      // description: this.state.description,
+      state: this.state.state,
+      zipcode: this.state.zipcode,
+      description: this.state.description,
       email: this.state.email,
       cost: this.state.cost,
-      phone: this.state.phone
+      phone: this.state.phone,
+      latitude: this.state.latitude,
+      longitude: this.state.longitude
     };
 
     const { createSpace, history } = this.props
@@ -56,8 +59,8 @@ class ListSpace extends React.Component {
   render() {
     return (
       <div>
-        <form onSubmit={this.handleSubmit}>
-          <div>
+        <form onSubmit={this.handleSubmit} className="list-space-form">
+          <div className="input-container">
             <input
               type="textarea"
               value={this.state.name}
@@ -70,6 +73,25 @@ class ListSpace extends React.Component {
               onChange={this.update("address")}
               placeholder="Address"
             />
+            <input
+              type="textarea"
+              value={this.state.state}
+              onChange={this.update("state")}
+              placeholder="State"
+            />
+            <input
+              type="textarea"
+              value={this.state.zipcode}
+              onChange={this.update("zipcode")}
+              placeholder="Zipcode"
+            />
+            <input
+              type="textarea"
+              value={this.state.description}
+              onChange={this.update("description")}
+              placeholder="Description"
+            />
+
             <input
               type="textarea"
               value={this.state.email}
@@ -87,6 +109,18 @@ class ListSpace extends React.Component {
               value={this.state.phone}
               onChange={this.update("phone")}
               placeholder="Phone"
+            />
+            <input
+              type="textarea"
+              value={this.state.latitude}
+              onChange={this.update("latitude")}
+              placeholder="Latitude"
+            />
+            <input
+              type="textarea"
+              value={this.state.longitude}
+              onChange={this.update("longitude")}
+              placeholder="Longitude"
             />
             <h5>Add an Image</h5>
             <input 

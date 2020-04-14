@@ -1,4 +1,4 @@
-import { getSpaces, getOwnerSpaces, getSpace, createNewSpace } from '../util/space_api_util';
+import { getSpaces, getOwnerSpaces, getSpace } from '../util/space_api_util';
 import { addNewReview } from '../util/review_api_util'
 import axios from 'axios'
 
@@ -57,6 +57,12 @@ export const createSpace = (values, history) => async dispatch => {
             'Content-Type': file.type
         }
     })
+
+    const space = await axios.post('/api/spaces', {
+        ...values,
+        mainPhoto: uploadConfig.data.key
+    })
+    history.push('/spaces')
     // return createNewSpace(values)
     //   .then(space => dispatch(receiveNewSpace(space)))
     //   .catch(err => console.log(err));

@@ -6,9 +6,32 @@ import "./space_item.css"
 
 const SpaceItem = props => {
   let rating = props.rating.$numberDecimal
+
   function formatRating(rating) {
     let formatted = parseFloat(rating)
     return formatted.toString().length === 1 ? formatted.toFixed(1) : formatted.toFixed(2)
+  }
+
+  function renderImage() {
+    let domainName = 'https://coworking-dev.s3-us-west-1.amazonaws.com/'
+    if (!props.mainPhoto.includes(domainName)) {
+      return (
+        <img 
+          className="main-pic"
+          src={
+            domainName +
+            props.mainPhoto
+          }
+        />
+      )
+    } else {
+      return (
+        <img 
+          src={props.mainPhoto}
+          className="main-pic"
+        />
+      )
+    }
   }
 
   function includedAmenities() {
@@ -41,7 +64,7 @@ const SpaceItem = props => {
   return (
     <div className="space-item-wrapper">
       <Link to={`/spaces/${props.spaceId}`} className="space-link">
-        <img className="main-pic" src={props.mainPhoto} />
+        {renderImage()}
       </Link>
       <Link to={`/spaces/${props.spaceId}`} className="space-link">
         <div className="space-item-info">

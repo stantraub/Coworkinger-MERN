@@ -19,6 +19,28 @@ const SpaceShow = props => {
     setAmenitiesModal(!amenitiesModal)
   }
 
+    function renderImage(photo) {
+    let domainName = 'https://coworking-dev.s3-us-west-1.amazonaws.com/'
+    if (!photo.includes(domainName)) {
+      return (
+        <img 
+          className="space-show-main-pic"
+          src={
+            domainName +
+            photo
+          }
+        />
+      )
+    } else {
+      return (
+        <img 
+          src={photo}
+          className="space-show-main-pic"
+        />
+      )
+    }
+  }
+
   function showPicsCarousel(space) {
       return (
         picsCarousel ? 
@@ -112,10 +134,8 @@ const SpaceShow = props => {
           {showAmenitiesModal(space)}
           <div className="space-pics">
             <div className="main-pic-container">
-              <img
-                className="space-show-main-pic"
-                src={space.spacePhotos[0]}
-              ></img>
+              {renderImage(space.mainPhoto)}
+              >
               <button
                 onClick={() => togglePicsCarousel()}
                   className="photos-btn-main-pic"
@@ -172,9 +192,9 @@ const SpaceShow = props => {
               <div className="amenities-wrapper">
                 <div className="amenities-header">Amenities</div>
                 <div className="amenities-div">
-                  {includedAmenities(space.amenityCategories)}
+                  {space.amenityCategories ? includedAmenities(space.amenityCategories) : `${space.name} has not listed any amenities yet`}
                 </div>
-                {otherAmenities(space.amenityCategories)}
+                {space.amenityCategories ? otherAmenities(space.amenityCategories): null}
               </div>
               <ReviewsContainer  />
             </div>

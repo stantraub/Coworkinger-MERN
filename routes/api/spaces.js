@@ -40,19 +40,26 @@ router.get('/:id', (req, res) => {
         );
 });
 
-router.post('/',
-    passport.authenticate('jwt', { session: false }), (req, res) => {
+router.post('/', (req, res) => {
         // const { errors, isValid } = validateSpaceInput(req.body);
 
         // if (!isValid) {
         //     return res.status(400).json(errors);
         // }
+
+        const { name, address, state, zipcode, description, cost, phone, email, mainPhoto, latitude, longitude } = req.body
         const newSpace = new Space({
-            name: req.body.name,
-            address: req.body.address,
-            cost: req.body.cost,
-            phone:req.body.phone,
-            email: req.body.email
+            name,
+            address,
+            mainPhoto,
+            state,
+            zipcode,
+            description,
+            email,
+            cost,
+            phone,
+            latitude,
+            longitude
         });
 
         console.log('hit post route')
