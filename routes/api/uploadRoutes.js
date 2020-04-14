@@ -1,6 +1,6 @@
 const AWS = require('aws-sdk')
 const uuid = require('uuid/v1')
-const keys = require('../../config/keys_dev')
+const keys = require('../../config/keys')
 
 
 const s3 = new AWS.S3({
