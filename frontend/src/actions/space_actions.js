@@ -1,5 +1,6 @@
 import { getSpaces, getOwnerSpaces, getSpace, createNewSpace } from '../util/space_api_util';
 import { addNewReview } from '../util/review_api_util'
+import axios from 'axios'
 
 export const RECEIVE_ALL_SPACES = "RECEIVE_SPACES";
 export const RECEIVE_SPACE = "RECEIVE_SPACE"
@@ -46,9 +47,17 @@ export const fetchOwnerSpaces = (id) => dispatch => (
         .catch(err => console.log(err))
 )
 
-export const createSpace = (data) => dispatch => {
-    console.log(data)
-    return createNewSpace(data)
-      .then(space => dispatch(receiveNewSpace(space)))
-      .catch(err => console.log(err));
+export const createSpace = (values, history) => async dispatch => {
+    const uploadConfig = await axios.get('/api/upload')
+    console.log(uploadConfig)
+    delete axios.defaults.headers.common['Authorization']
+    const { file } = values
+    await axios.put(uploadConfig.data.url, file, {
+        headers: {
+            'Content-Type': file.type
+        }
+    })
+    // return createNewSpace(values)
+    //   .then(space => dispatch(receiveNewSpace(space)))
+    //   .catch(err => console.log(err));
 }

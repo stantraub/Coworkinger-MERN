@@ -7,6 +7,7 @@ class ListSpace extends React.Component {
     this.state = {
       name: "",
       address: "",
+      file: null,
       // city: "",
       // state: "",
       // zipcode: "",
@@ -22,10 +23,10 @@ class ListSpace extends React.Component {
   handleSubmit(e) {
     e.preventDefault();
 
-    let space = {
+    let formValues = {
       name: this.state.name,
       address: this.state.address,
-      // city: this.state.city,
+      file: this.state.file,
       // state: this.state.state,
       // zipcode: this.state.zipcode,
       // description: this.state.description,
@@ -34,11 +35,15 @@ class ListSpace extends React.Component {
       phone: this.state.phone
     };
 
-    // console.log(formData)
+    const { createSpace, history } = this.props
 
-    this.props.createSpace(space)
+    createSpace(formValues, history)
     .then(res => console.log(res))
     .catch(err => console.log(err));
+  }
+
+  onFileChange(event) {
+    this.setState({file: event.target.files[0]})
   }
 
   update(field) {
@@ -83,6 +88,11 @@ class ListSpace extends React.Component {
               onChange={this.update("phone")}
               placeholder="Phone"
             />
+            <h5>Add an Image</h5>
+            <input 
+              onChange={this.onFileChange.bind(this)}
+              type="file" 
+              accept="image/*" />
             <input type="submit" value="Submit" />
           </div>
         </form>
