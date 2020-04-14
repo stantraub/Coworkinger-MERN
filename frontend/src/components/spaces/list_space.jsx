@@ -9,13 +9,17 @@ class ListSpace extends React.Component {
       name: "",
       address: "",
       file: null,
-      // city: "",
-      // state: "",
-      // zipcode: "",
-      // description: "",
+      city: "",
+      state: "",
+      zipcode: "",
+      description: "",
       email: "",
+      peopleCapacity: "",
+      officeCapacity: "",
       cost: "",
-      phone: ""
+      phone: "",
+      latitude: "",
+      longitude: ""
     };
 
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -28,10 +32,13 @@ class ListSpace extends React.Component {
       name: this.state.name,
       address: this.state.address,
       file: this.state.file,
+      city: this.state.city,
       state: this.state.state,
       zipcode: this.state.zipcode,
       description: this.state.description,
       email: this.state.email,
+      peopleCapacity: this.state.peopleCapacity,
+      officeCapacity: this.state.officeCapacity,
       cost: this.state.cost,
       phone: this.state.phone,
       latitude: this.state.latitude,
@@ -78,6 +85,12 @@ class ListSpace extends React.Component {
               value={this.state.state}
               onChange={this.update("state")}
               placeholder="State"
+            />
+            <input
+              type="textarea"
+              value={this.state.city}
+              onChange={this.update("city")}
+              placeholder="City"
             />
             <input
               type="textarea"

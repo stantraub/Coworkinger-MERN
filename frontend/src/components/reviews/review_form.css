@@ -1,0 +1,51 @@
+.review-form-container {
+    max-width: 50%;
+    margin: 0 auto;
+}
+
+.review-input-container {
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    cursor: text;
+    padding: 18px;
+    max-width: 630px;
+}
+
+.review-text {
+    font-size: 1.25rem;
+    line-height: 1.33333em;
+    line-height: 1.44em;
+    border: 0;
+    outline: none;
+    padding: 0;
+    resize: none;
+    margin-top: 20px;
+    width: 100%;
+    min-height: 258px;
+    font-family: inherit;
+}
+
+.review-submit {
+    background-color: #02b3e4;
+    margin-top: 24px;
+    color: white;
+    height: 48px;
+    min-width: 240px;
+    font-family: inherit;
+    font-size: 16px;
+    font-weight: 600;
+    border-radius: 3px;
+    box-shadow: 12px 15px 20px rgba(0,0,0,.1);
+}
+
+@media only screen and (max-width: 425px) {
+    .review-form-container {
+        max-width: 80%;
+     
+    }
+
+    .review-submit {
+        min-width: 200px;
+    }
+
+}

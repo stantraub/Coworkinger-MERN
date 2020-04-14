@@ -38,6 +38,22 @@
     padding-right: 5px;
 }
 
+.write-review-container {
+    border-bottom: 1px solid #e6e6e6;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    font-size: 18px;
+}
+
+.write-review-question {
+    font-weight: 600;
+}
+
+.start-review-link {
+    text-decoration: none;
+    color: #4abde9;
+}
+
 .review-item-container {
     border-bottom: 1px solid #e6e6e6;
 }

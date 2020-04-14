@@ -5,7 +5,6 @@ import axios from 'axios'
 export const RECEIVE_ALL_SPACES = "RECEIVE_SPACES";
 export const RECEIVE_SPACE = "RECEIVE_SPACE"
 export const RECEIVE_OWNER_SPACES = "RECEIVE_OWNER_SPACES";
-export const RECEIVE_NEW_SPACE = "RECEIVE_NEW_SPACE";
 
 
 export const receiveSpace = space => ({
@@ -18,17 +17,6 @@ export const receiveSpaces = spaces => ({
     spaces: spaces.data
 })
 
-export const receiveOwnerSpaces = spaces => ({
-    type: RECEIVE_OWNER_SPACES,
-    spaces
-})
-
-export const receiveNewSpace = space => ({
-    type: RECEIVE_NEW_SPACE,
-    space
-})
-
-
 export const fetchSpace = (id) => dispatch => (
     getSpace(id)
         .then(space => dispatch(receiveSpace(space)))
@@ -38,12 +26,6 @@ export const fetchSpace = (id) => dispatch => (
 export const fetchSpaces = () => dispatch => (
     getSpaces()
         .then(spaces => dispatch(receiveSpaces(spaces)))
-        .catch(err => console.log(err))
-)
-
-export const fetchOwnerSpaces = (id) => dispatch => (
-    getOwnerSpaces(id)
-        .then(spaces => dispatch(receiveOwnerSpaces(spaces)))
         .catch(err => console.log(err))
 )
 

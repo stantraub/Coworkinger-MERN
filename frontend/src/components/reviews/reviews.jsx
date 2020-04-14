@@ -1,7 +1,9 @@
 import React from 'react'
 import ReviewItem from './review_item'
+import { Link } from 'react-router-dom'
 const Reviews = props => {
     const { reviews, rating } = props
+    const { id: spaceId } = props.match.params
     return reviews.length > 0 ? (
         <div>
             <div className='reviews-header'>
@@ -15,6 +17,10 @@ const Reviews = props => {
                     <span className="reviews-length-counter">{reviews.length}</span>
                     <span>reviews</span>
                 </div>
+            </div>
+            <div className="write-review-container">
+                <span className="write-review-question">Worked at this space? </span>
+                <span><Link className="start-review-link" to={`write-review/${spaceId}`}>Write a review</Link></span>
             </div>
             {reviews.map((review) => {
                 return <ReviewItem key={review._id} review={review} />

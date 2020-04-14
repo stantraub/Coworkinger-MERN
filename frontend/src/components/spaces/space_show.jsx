@@ -63,9 +63,16 @@ const SpaceShow = props => {
     )
   }
 
-  useEffect(() => {
-    props.fetchSpace(props.match.params.id)
-  }, [])
+      useEffect(() => {
+        if (!props.space) {
+          let {
+            id: spaceId
+          } = props.match.params
+          props.fetchSpace(spaceId)
+        }
+
+
+      }, [])
   
   function includedAmenities(spaceAmenities) {
       let { seatingAndSpace, transportation, facilities, accessibility, lifeEnhancements } = spaceAmenities
@@ -126,7 +133,9 @@ const SpaceShow = props => {
       }
     }
         // if space is undefined, set space equal to an empty object
+  console.log(props.space)
   const {space = {}} = props
+
   return space.mainPhoto ? 
       (
         <div className="space-show-main-div">
