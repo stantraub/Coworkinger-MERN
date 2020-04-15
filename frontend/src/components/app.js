@@ -9,6 +9,7 @@ import SpaceIndexContainer from './spaces/space_index_container';
 import SpaceShowContainer from './spaces/space_show_container'
 import ListSpaceContainer from './spaces/list_space_container'
 import ReviewFormContainer from './reviews/review_form_container'
+import UserShowContainer from './user/user_show_container'
 
 const App = () => (
   <div>
@@ -20,6 +21,8 @@ const App = () => (
       <Route exact path="/spaces/:id" component={SpaceShowContainer}/>
       <ProtectedRoute exact path="/spaces/write-review/:id" component={ReviewFormContainer} />
       <ProtectedRoute exact path="/create_space" component={ListSpaceContainer} />
+      <ProtectedRoute exact path="/profile/:id" component={UserShowContainer} />
+
     </Switch>
   </div>
 );

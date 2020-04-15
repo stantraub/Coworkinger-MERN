@@ -9,8 +9,10 @@ const Navbar = (props) => {
         props.logout();
     }
 
+
     function getLinks() {
         if (props.loggedIn) {
+          const {id: userId } = props.currentUser
             return (
               <div className="action-buttons-wrapper">
                 <div className="action-item">
@@ -27,7 +29,7 @@ const Navbar = (props) => {
                   <span>
                     <Link
                       style={{ textDecoration: "none", color: "black" }}
-                      to={"/profile"}
+                      to={`/profile/${userId}`}
                     >
                       Profile
                     </Link>

@@ -5,10 +5,6 @@ const Reviews = props => {
     const { reviews, rating } = props
     const { id: spaceId } = props.match.params
     const { isAuthenticated } = props
-
-    function checkAuth() {
-
-    }
     
     return reviews.length > 0 ? (
         <div>

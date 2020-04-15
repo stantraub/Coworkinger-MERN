@@ -9,13 +9,13 @@ const passport = require('passport');
 const validateRegisterInput = require('../../validation/register');
 const validateLoginInput = require('../../validation/login');
 
-router.get("/test", (req, res) => res.json({ msg: "This is the users route" }));
-
 router.get('/current', passport.authenticate('jwt', { session: false }), (req, res) => {
   res.json({
     id: req.user.id,
     username: req.user.username,
-    email: req.user.email
+    email: req.user.email,
+    profilePic: req.user.profilePic,
+    createdAt: req.user.date
   });
 })
 
@@ -75,7 +75,7 @@ router.post('/login', (req, res) => {
       bcrypt.compare(password, user.password)
         .then(isMatch => {
           if (isMatch) {
-            const payload = { id: user.id, name: user.name };
+            const payload = { id: user.id, username: user.username, email: user.email, createdAt: user.date, profilePic: user.profilePic };
 
             jwt.sign(
               payload,

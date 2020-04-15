@@ -1,0 +1,66 @@
+.user-show-container {
+    max-width: 1080px !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    border-width: 1px !important;
+    width: auto !important;
+    padding-top: 40px;
+    padding-right: 24px !important;
+    padding-left: 24px !important;
+    display: flex;
+    flex-direction: row;
+}
+
+.user-show-div {
+    display: flex;
+    padding: 24px;
+    flex-direction: column;
+    border: solid 1px !important;
+    border-color: rgb(228, 228, 228) !important;
+    width: 33.3333% !important;
+    align-items: center;
+}
+
+.user-show-profilePic-container {
+    width: 120px;
+    height: 120px;
+    padding-bottom: 10px;
+}
+
+.user-show-profilePic {
+    width: 100%;
+    border-radius: 50%;
+}
+
+.user-show-info-container {
+    padding-left: 8px !important;
+    padding-right: 8px !important;
+    margin-left: 80px !important;
+    width: 66.6667% !important;
+    float: left !important;
+}
+
+.user-show-info-header {
+    font-size: 46px;
+    line-height: 1.13043em !important;
+    color: rgb(72, 72, 72) !important;
+}
+
+.user-show-join-date {
+    padding-top: 10px;
+    padding-bottom: 30px;
+}
+
+.user-show-reviews-div {
+    border-color: rgb(228, 228, 228) !important;;
+    border-top: 1px solid;
+    border-bottom: 1px solid;
+    padding-top: 30px;
+    padding-bottom: 30px
+}
+
+.user-show-reviews-link {
+    font-size: 14px;
+    text-decoration: none;
+    color: #4abde9;
+}
