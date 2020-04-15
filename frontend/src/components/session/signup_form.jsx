@@ -97,7 +97,11 @@ class SignupForm extends React.Component {
                 className="session-input"
               />
               <br />
-              <input type="submit" value="Sign Up" className="session-submit" />
+              <button 
+                type="submit"
+                value="Sign In"
+                className="session-submit"
+              >Sign Up</button>              
               <button className="demo-login-button" onClick={() => {
                 this.setState({
                   loading: true

@@ -75,11 +75,11 @@ class LoginForm extends React.Component {
                 className="session-input"
               />
               <br />
-              <input 
-                  type="submit"
-                  value="Sign In"
-                  className="session-submit"
-              />
+            <button 
+                type="submit"
+                value="Sign In"
+                className="session-submit"
+            >Sign In</button>
             <button className="demo-login-button" 
             onClick={() => {
                 this.setState({
