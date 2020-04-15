@@ -55,7 +55,7 @@ const Reviews = props => {
                 </div>
             ) : (
                 <div className = "write-review-container" >
-                    <span className="review-login-action">Log in</span>
+                    <span className="review-login-action">Log in </span>
                     <span>to post a review</span>
                 </div>
                 )

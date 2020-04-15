@@ -16,7 +16,7 @@ const UserSchema = new Schema({
     },
     profilePic: {
         type: String,
-        required: false
+        default: "https://coworking-dev.s3-us-west-1.amazonaws.com/profile_pic.jpg"
     },
     date: {
         type: Date,
