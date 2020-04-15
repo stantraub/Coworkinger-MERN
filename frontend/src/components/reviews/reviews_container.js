@@ -1,6 +1,8 @@
 import { connect } from 'react-redux'
 import Reviews from './reviews'
 import { withRouter } from 'react-router-dom'
+import { openModal } from '../../actions/modal_actions'
+
 
 const msp = (state, ownProps) => {
     const { id } = ownProps.match.params
@@ -15,5 +17,9 @@ const msp = (state, ownProps) => {
     }
 }
 
+const mdp = dispatch => ({
+    openModal: modal => dispatch(openModal(modal))
+})
 
-export default withRouter(connect (msp, null)(Reviews))
+
+export default withRouter(connect (msp, mdp)(Reviews))

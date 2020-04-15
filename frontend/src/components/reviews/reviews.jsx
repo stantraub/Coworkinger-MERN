@@ -32,7 +32,8 @@ const Reviews = props => {
                 </div>
             ) : (
                 <div className = "write-review-container" >
-                    <span>Log In to post a review</span>
+                    <span onClick={() => props.openModal('login')} className="review-login-action">Log in </span>
+                    <span>to post a review</span>
                 </div>
                 )
             }
@@ -49,12 +50,13 @@ const Reviews = props => {
             </div>
             {isAuthenticated ? ( 
                 <div className = "write-review-container" >
-                    <span className="write-review-question">Worked at this space? </span>
+                    <span onClick={() => props.openModal('login')} className="write-review-question">Worked at this space? </span>
                     <span><Link className="start-review-link" to={`write-review/${spaceId}`}>Write a review</Link></span>
                 </div>
             ) : (
                 <div className = "write-review-container" >
-                    <span>Log In to post a review</span>
+                    <span className="review-login-action">Log in</span>
+                    <span>to post a review</span>
                 </div>
                 )
             }

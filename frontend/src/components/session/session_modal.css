@@ -76,3 +76,26 @@
     color: #009ACD;
     cursor: pointer;
 }
+
+@media only screen and (max-width: 425px) {
+    .session-container {
+        width: 15em;
+        padding: 20px 40px
+    }
+
+    .session-header {
+        font-size: 30px;
+    }
+
+    .session-input {
+        width: 198px;
+    }
+
+    .session-submit {
+        width: 240px;
+    }
+
+    .demo-login-button {
+        width: 240px;
+    }
+}

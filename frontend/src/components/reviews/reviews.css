@@ -49,6 +49,11 @@
     font-size: 18px;
 }
 
+.review-login-action {
+    color: #4abde9;
+    cursor: pointer;
+}
+
 .write-review-question {
     font-weight: 600;
 }
