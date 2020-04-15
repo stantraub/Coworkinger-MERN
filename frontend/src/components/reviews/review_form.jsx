@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import './review_form.css'
 import Spinner from '../spinner/spinner';
-import { addReview } from '../../actions/review_actions';
 
 
 const ReviewForm = (props) => {
@@ -30,6 +29,7 @@ const ReviewForm = (props) => {
         }
 
         props.addReview(review)
+        .then(() => props.history.push(`/spaces/${spaceId}`))
     }
 
     const update = (field) => {
