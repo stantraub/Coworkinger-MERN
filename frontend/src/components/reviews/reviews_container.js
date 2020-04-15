@@ -7,10 +7,11 @@ const msp = (state, ownProps) => {
     let space = state.entities.spaces[id]
     let rating = parseFloat(space.rating.$numberDecimal)
     rating = rating.toString().length === 1 ? rating.toFixed(1) : rating.toFixed(2)
-
+    let { isAuthenticated } = state.session
     return {
         reviews: space.reviews,
-        rating: rating
+        rating: rating,
+        isAuthenticated
     }
 }
 

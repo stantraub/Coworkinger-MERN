@@ -11,7 +11,7 @@
     max-width: 630px;
 }
 
-.review-text {
+.review-form-text {
     font-size: 1.25rem;
     line-height: 1.33333em;
     line-height: 1.44em;
@@ -36,6 +36,7 @@
     font-weight: 600;
     border-radius: 3px;
     box-shadow: 12px 15px 20px rgba(0,0,0,.1);
+    cursor: pointer;
 }
 
 @media only screen and (max-width: 425px) {

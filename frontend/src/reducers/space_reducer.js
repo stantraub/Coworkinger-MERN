@@ -10,7 +10,6 @@ import merge from "lodash/merge";
 
 const SpacesReducer = (oldState = {}, action) => {
     Object.freeze(oldState);
-    let newState = {}
     switch (action.type) {
         case RECEIVE_SPACE:
             return {
@@ -20,8 +19,9 @@ const SpacesReducer = (oldState = {}, action) => {
         case RECEIVE_ALL_SPACES:
             return merge({}, action.spaces)
         case RECEIVE_NEW_REVIEW:
-            newState[action.review.data._id].reviews = action.review.data
-            return newState
+            return {
+                ...oldState[action.review.data.spaceId].reviews.push(action.review.data)
+            }
         default:
             return oldState;
     }

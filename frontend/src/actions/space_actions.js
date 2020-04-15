@@ -1,5 +1,4 @@
 import { getSpaces, getOwnerSpaces, getSpace } from '../util/space_api_util';
-import { addNewReview } from '../util/review_api_util'
 import axios from 'axios'
 
 export const RECEIVE_ALL_SPACES = "RECEIVE_SPACES";

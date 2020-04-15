@@ -4,6 +4,12 @@ import { Link } from 'react-router-dom'
 const Reviews = props => {
     const { reviews, rating } = props
     const { id: spaceId } = props.match.params
+    const { isAuthenticated } = props
+
+    function checkAuth() {
+
+    }
+    
     return reviews.length > 0 ? (
         <div>
             <div className='reviews-header'>
@@ -18,18 +24,40 @@ const Reviews = props => {
                     <span>reviews</span>
                 </div>
             </div>
-            <div className="write-review-container">
-                <span className="write-review-question">Worked at this space? </span>
-                <span><Link className="start-review-link" to={`write-review/${spaceId}`}>Write a review</Link></span>
-            </div>
+  
+            {isAuthenticated ? ( 
+                <div className = "write-review-container" >
+                    <span className="write-review-question">Worked at this space? </span>
+                    <span><Link className="start-review-link" to={`write-review/${spaceId}`}>Write a review</Link></span>
+                </div>
+            ) : (
+                <div className = "write-review-container" >
+                    <span>Log In to post a review</span>
+                </div>
+                )
+            }
+
             {reviews.map((review) => {
                 return <ReviewItem key={review._id} review={review} />
             })}
             
         </div>
     ) : (
-        <div className='reviews-header'>
-            <h2>No reviews (yet)</h2>
+        <div>
+            <div className='no-reviews-header'>
+                <h2>No reviews (yet)</h2>
+            </div>
+            {isAuthenticated ? ( 
+                <div className = "write-review-container" >
+                    <span className="write-review-question">Worked at this space? </span>
+                    <span><Link className="start-review-link" to={`write-review/${spaceId}`}>Write a review</Link></span>
+                </div>
+            ) : (
+                <div className = "write-review-container" >
+                    <span>Log In to post a review</span>
+                </div>
+                )
+            }
         </div>
     )
 }

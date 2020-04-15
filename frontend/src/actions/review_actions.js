@@ -1,4 +1,5 @@
-import { addNewReview } from '../util/review_api_util'
+import axios from 'axios'
+
 export const RECEIVE_NEW_REVIEW = 'RECEIVE_NEW_REVIEW'
 
 export const receiveNewReview = (review) => ({
@@ -7,7 +8,7 @@ export const receiveNewReview = (review) => ({
 })
 
 export const addReview = (data) => dispatch => (
-    addNewReview(data)
+    axios.post('/api/reviews', data)
     .then(review => dispatch(receiveNewReview(review)))
     .catch(err => console.log(err))
 )

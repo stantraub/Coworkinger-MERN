@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import './review_form.css'
 import Spinner from '../spinner/spinner';
+import { addReview } from '../../actions/review_actions';
 
 
 const ReviewForm = (props) => {
@@ -9,21 +10,26 @@ const ReviewForm = (props) => {
         text: ""
     })
 
-    const { space } = props
+    const { space, reviewer } = props
+    let { id: spaceId } = props.match.params
 
     useEffect(() => {
         if (!space) {
-            let {
-                id: spaceId
-            } = props.match.params
             props.fetchSpace(spaceId)
         }
-        
-    
     }, [])
 
-    const handleSubmit = () => {
+    const handleSubmit = (e) => {
+        e.preventDefault()
 
+        let review = {
+            rating: form.rating,
+            text: form.text,
+            reviewer,
+            spaceId
+        }
+
+        props.addReview(review)
     }
 
     const update = (field) => {
@@ -35,22 +41,24 @@ const ReviewForm = (props) => {
         )
     }
 
+    console.log(form)
+
 
     return space ? (
         <div className="review-form-container">
             <h1>{space.name}</h1>
-            <form>
+            <form onSubmit={handleSubmit}>
                 <div className="review-input-container">
                     <input 
                         type="textarea"
                         placeholder="rating"
-                        // onChange={}
+                        onChange={update('rating')}
                     />
                     <br />
                     <textarea 
-                        // value={}
+                        onChange={update('text')}
                         placeholder="Write your review..."
-                        className="review-text"
+                        className="review-form-text"
                     />
                
                     
