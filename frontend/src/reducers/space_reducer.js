@@ -13,7 +13,6 @@ const SpacesReducer = (oldState = {}, action) => {
     switch (action.type) {
         case RECEIVE_SPACE:
             return {
-                ...oldState,
                 [action.space.data._id]: action.space.data
             }
         case RECEIVE_ALL_SPACES:
