@@ -9,6 +9,7 @@ const passport = require('passport');
 const users = require("./routes/api/users");
 const reviews = require("./routes/api/reviews");
 const spaces = require("./routes/api/spaces");
+const uploadRoutes = require('./routes/api/uploadRoutes')
 
 mongoose
   .connect(db, { useNewUrlParser: true, useUnifiedTopology: true })
@@ -32,7 +33,7 @@ app.use(bodyParser.json());
 app.use("/api/users", users);
 app.use("/api/reviews", reviews);
 app.use("/api/spaces", spaces);
-require("./routes/api/uploadRoutes")(app);
+app.use("/api/upload", uploadRoutes);
 // app.use("/api/uploadRoutes", uploadRoutes)
 
 const port = process.env.PORT || 5000;

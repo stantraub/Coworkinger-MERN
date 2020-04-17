@@ -2,17 +2,7 @@ const express = require('express');
 const router = express.Router();
 const mongoose = require('mongoose');
 const passport = require('passport');
-const multer = require("multer");
-const uuid = require('uuid')
-const AWS = require("aws-sdk");
-const AWS_ACCESS_KEY_ID = require("../../config/keys").accessKeyId
-const AWS_SECRET_ACCESS_KEY = require("../../config/keys").secretAccessKey
-const AWS_REGION = require("../../config/keys").region
-const AWS_BUCKET = require("../../config/keys").bucket
 
-
-var storage = multer.memoryStorage();
-var upload = multer({ storage: storage });
 
 const Space = require('../../models/Space');
 const Review = require('../../models/Review')

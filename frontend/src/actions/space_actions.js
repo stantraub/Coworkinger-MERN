@@ -29,8 +29,12 @@ export const fetchSpaces = () => dispatch => (
 )
 
 export const createSpace = (values, history) => async dispatch => {
-    const uploadConfig = await axios.get('/api/upload')
-    console.log(uploadConfig)
+    console.log(values)
+    const uploadConfig = await axios.get('/api/upload/space-pic', {
+        params: {
+            name: values.name
+        }
+    })
     delete axios.defaults.headers.common['Authorization']
     const { file } = values
     await axios.put(uploadConfig.data.url, file, {
@@ -43,7 +47,7 @@ export const createSpace = (values, history) => async dispatch => {
         ...values,
         mainPhoto: uploadConfig.data.key
     })
-    history.push('/spaces')
+    
     // return createNewSpace(values)
     //   .then(space => dispatch(receiveNewSpace(space)))
     //   .catch(err => console.log(err));

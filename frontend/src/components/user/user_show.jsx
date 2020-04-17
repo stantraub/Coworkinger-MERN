@@ -23,7 +23,7 @@ const UserShow = (props) => {
             <div className="user-show-info-container">
                 <div className="user-show-info-header">Hi, I'm {username}</div>
                 <div className="user-show-join-date">Joined in {formatDate(createdAt)}</div>
-                <div class="user-show-reviews-div">
+                <div className="user-show-reviews-div">
                     <Link to={'/users/review'} className="user-show-reviews-link">Reviews by you</Link>
                 </div>
             </div>

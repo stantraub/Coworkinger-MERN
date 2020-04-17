@@ -95,4 +95,9 @@ router.post('/login', (req, res) => {
     })
 })
 
+
+router.patch('/update-profilePic', async (req, res) => {
+  // let user = await User.findById
+})
+
 module.exports = router;
