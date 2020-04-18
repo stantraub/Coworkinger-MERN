@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 import './user_show.css'
 
 const UserShow = (props) => {
-    const { profilePic, username, createdAt} = props.currentUser
+    const { profilePic, username, createdAt, id} = props.currentUser
 
     function formatDate(joinDate) {
         let formattedDate = Date(joinDate).split(" ")
@@ -18,7 +18,7 @@ const UserShow = (props) => {
                 <div className="user-show-profilePic-container">
                     <img src={profilePic} className="user-show-profilePic" />
                 </div>
-                <div>Update photo</div>
+                <Link to={`/profile/edit-photo/${id}`} className="user-show-reviews-link">Update photo</Link>
             </div>
             <div className="user-show-info-container">
                 <div className="user-show-info-header">Hi, I'm {username}</div>

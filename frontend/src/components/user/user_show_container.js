@@ -1,17 +1,11 @@
 import { connect } from "react-redux";
 import UserShow from "./user_show";
 
-const mapStateToProps = state => {
-  console.log(state)
+const msp = state => {
   return {
     currentUser: state.session.user
   };
 };
 
-const mapDispatchToProps = dispatch => {
-  return {
-    
-  };
-};
 
-export default connect(mapStateToProps, mapDispatchToProps)(UserShow);
+export default connect(msp, null)(UserShow);
