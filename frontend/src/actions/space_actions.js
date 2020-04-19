@@ -43,6 +43,9 @@ export const createSpace = (values, history) => async dispatch => {
         }
     })
 
+    const token = localStorage.getItem("jwtToken")
+    axios.defaults.headers.common["Authorization"] = token
+
     const space = await axios.post('/api/spaces', {
         ...values,
         mainPhoto: uploadConfig.data.key

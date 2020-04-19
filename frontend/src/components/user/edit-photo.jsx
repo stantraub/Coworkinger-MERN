@@ -15,7 +15,7 @@ const EditPhoto = (props) => {
             <h1>Profile Photos</h1>     
             <div className="profile-photo-container">
                 <div className="panel-header">
-                    <div className="edit-prifile-section-heading">Profile Photo</div>
+                    <div className="edit-profile-section-heading">Profile Photo</div>
                 </div>
                 <div className="panel-body-photos-section">
                     <div className="current-photo-container">
