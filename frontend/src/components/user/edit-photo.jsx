@@ -4,8 +4,7 @@ import './edit-photo.css'
 const EditPhoto = (props) => {
     const [file, setFile] = useState(null)
     let { profilePic, id } = props.user
-
-
+    
     function handleFile(e) {
         setFile(e.target.files[0])
     }
