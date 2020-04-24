@@ -60,6 +60,8 @@
     margin-top: 0px;
 }
 
+
+
 .edit-photo-label {
     border: 1px solid #c4c4c4;
     background: white;
@@ -74,5 +76,4 @@
 
 .edit-photo-input {
     display: none;
-    cursor: pointer;
 }

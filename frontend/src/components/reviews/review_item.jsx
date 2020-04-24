@@ -11,10 +11,32 @@ const ReviewItem = props => {
         let year = formattedDate[3]
         return `${month} ${year}`
     }
+
+    function renderImage(photo) {
+        let domainName = 'https://coworking-dev.s3-us-west-1.amazonaws.com/'
+        if (!photo.includes(domainName)) {
+        return (
+            <img 
+            className="reviewer-pic"
+            src={
+                domainName +
+                photo
+            }
+            />
+        )
+        } else {
+            return (
+                <img 
+                src={photo}
+                className="reviewer-pic"
+                />
+            )
+        }
+    }
     return (
         <div className="review-item-container">
             <div className="reviewer-info-container">
-                <img src={review.reviewer.profilePic} className="reviewer-pic" />
+                {renderImage(review.reviewer.profilePic)}
                 <div className="reviewer-info">
                     <div className="reviewer-username">{review.reviewer.username}</div>
                     <div className="review-date">{formatDate(review.date)}</div>
