@@ -12,11 +12,21 @@ const UserShow = (props) => {
         return `${month} ${year}`
     }
 
+    function renderImage(photo) {
+        let domainName = 'https://coworking-dev.s3-us-west-1.amazonaws.com/'
+        return (
+            <img 
+            src={domainName + profilePic} 
+            className="user-show-profilePic" 
+            />
+        )
+    }
+
     return (
         <div className="user-show-container">
             <div className="user-show-div">
                 <div className="user-show-profilePic-container">
-                    <img src={profilePic} className="user-show-profilePic" />
+                {renderImage(profilePic)}
                 </div>
                 <Link to={`/profile/edit-photo/${id}`} className="user-show-reviews-link">Update photo</Link>
             </div>

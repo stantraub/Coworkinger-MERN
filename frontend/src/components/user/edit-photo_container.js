@@ -1,4 +1,5 @@
 import { connect } from 'react-redux'
+import { updateProfilePic } from '../../actions/user_actions'
 import EditPhoto from './edit-photo'
 
 const msp = (state) => {
@@ -8,8 +9,8 @@ const msp = (state) => {
     };
 }
 
-const mdp = dispatch => {
-
-}
+const mdp = dispatch => ({
+    updateProfilePic: (values) => dispatch(updateProfilePic(values))
+})
 
 export default connect(msp,mdp)(EditPhoto)
