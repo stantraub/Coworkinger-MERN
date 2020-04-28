@@ -1,0 +1,12 @@
+.user-reviews-container {
+    max-width: 1080px !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    border-width: 1px !important;
+    width: auto !important;
+    padding-top: 40px;
+    padding-right: 24px !important;
+    padding-left: 24px !important;
+    display: flex;
+    flex-direction: column;
+}
