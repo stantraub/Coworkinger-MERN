@@ -14,14 +14,13 @@ router.get('/', (req, res) => {
         .catch(err => res.status(404).json({ noreviewsfound: 'No reviews found' }));
 });
 
-router.get('/user/:user_id', (req, res) => {
-    Review.find({ user: req.params.user_id })
-        .sort({ date: -1 })
-        .then(reviews => res.json(reviews))
-        .catch(err =>
-            res.status(404).json({ noreviewsfound: 'No reviews found from that user' }
-            )
-        );
+router.get('/user/:id', async (req, res) => {
+    try {
+        const reviews = await Review.find({ reviewer: req.params.id }).sort({date: -1})
+        res.json(reviews)
+    } catch (error) {
+        res.status(404).json({ noreviewsfound: 'No reviews found from that user' })
+    }
 });
 
 router.get('/:id', (req, res) => {
