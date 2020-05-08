@@ -51,13 +51,13 @@ router.post('/',
         const space = await Space.findById(spaceId)
         let oldNumReviews = space.reviews.length
         let oldSpaceRating = space.rating
-        await space.reviews.push(review)
+        space.reviews.push(review)
         let newNumReviews = space.reviews.length
-        space.rating = await ((oldSpaceRating*oldNumReviews) + parseFloat(rating)) / (newNumReviews * 1.0)
+        space.rating = ((oldSpaceRating*oldNumReviews) + parseFloat(rating)) / (newNumReviews * 1.0)
         await space.save()
         await review.save()
         
-        res.json(review)
+        res.status(201).json(review)
     }
 );
 
