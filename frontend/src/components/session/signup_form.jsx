@@ -71,6 +71,7 @@ class SignupForm extends React.Component {
                 onChange={this.update("email")}
                 placeholder="Email"
                 className="session-input"
+                required
               />
               <br />
               <input
@@ -79,6 +80,7 @@ class SignupForm extends React.Component {
                 onChange={this.update("username")}
                 placeholder="Username"
                 className="session-input"
+                required
               />
               <br />
               <input
@@ -87,6 +89,7 @@ class SignupForm extends React.Component {
                 onChange={this.update("password")}
                 placeholder="Password"
                 className="session-input"
+                required
               />
               <br />
               <input
@@ -95,6 +98,7 @@ class SignupForm extends React.Component {
                 onChange={this.update("password2")}
                 placeholder="Confirm Password"
                 className="session-input"
+                required
               />
               <br />
               <button 
