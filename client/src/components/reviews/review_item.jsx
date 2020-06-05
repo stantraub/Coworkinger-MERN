@@ -22,6 +22,7 @@ const ReviewItem = props => {
                 domainName +
                 photo
             }
+            alt="Reviewer"
             />
         )
         } else {
@@ -29,6 +30,7 @@ const ReviewItem = props => {
                 <img 
                 src={photo}
                 className="reviewer-pic"
+                alt="Reviewer"
                 />
             )
         }

@@ -18,6 +18,7 @@ const UserShow = (props) => {
             <img 
             src={domainName + profilePic} 
             className="user-show-profilePic" 
+            alt="profile"
             />
         )
     }

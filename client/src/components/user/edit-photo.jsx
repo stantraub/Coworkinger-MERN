@@ -22,6 +22,7 @@ const EditPhoto = (props) => {
             <img 
             className="current-photo"
             src={domainName + photo}
+            alt="profile"
             />
         )
     }

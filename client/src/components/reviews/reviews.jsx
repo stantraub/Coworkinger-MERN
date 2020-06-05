@@ -12,7 +12,7 @@ const Reviews = props => {
                 <h2>Reviews</h2>
                 <div className="reviews-header-info">
                     <div className="star-container">
-                        <img className="star" src={"https://coworking-dev.s3-us-west-1.amazonaws.com/blue-star-icon-14-min.png"} />
+                        <img className="star" src={"https://coworking-dev.s3-us-west-1.amazonaws.com/blue-star-icon-14-min.png"} alt="star" />
                     </div>
                     <div className="reviews-rating">{rating}</div>
                     <div className="separator"></div>

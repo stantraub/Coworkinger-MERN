@@ -29,15 +29,11 @@ const SpaceShow = props => {
             domainName +
             photo
           }
+          alt="space"
         />
       )
     } else {
-      return (
-        <img 
-          src={photo}
-          className="space-show-main-pic"
-        />
-      )
+      return <img src={photo} alt="space" className="space-show-main-pic" />;
     }
   }
 
@@ -157,10 +153,12 @@ const SpaceShow = props => {
                 <img
                   className="space-show-pic-image"
                   src={space.spacePhotos[1]}
+                  alt="main"
                 ></img>
                 <img
                   className="space-show-pic-image"
                   src={space.spacePhotos[2]}
+                  alt="second"
                 ></img>
                 <button
                 onClick={() => togglePicsCarousel()}
@@ -173,10 +171,12 @@ const SpaceShow = props => {
                 <img
                   className="space-show-pic-image"
                   src={space.spacePhotos[3]}
+                  alt="third"
                 ></img>
                 <img
                   className="space-show-pic-image"
                   src={space.spacePhotos[4]}
+                  alt="fourth"
                 ></img>
                 <button
                   onClick={() => togglePicsCarousel()}

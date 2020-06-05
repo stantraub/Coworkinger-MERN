@@ -22,6 +22,7 @@ const SpaceItem = props => {
             domainName +
             props.mainPhoto
           }
+          alt="Main"
         />
       )
     } else {
@@ -29,6 +30,7 @@ const SpaceItem = props => {
         <img 
           src={props.mainPhoto}
           className="main-pic"
+          alt="Main"
         />
       )
     }
@@ -71,7 +73,7 @@ const SpaceItem = props => {
           {rating > 0 ? (
             <div className="space-rating-container">
               <div className="space-star-container">
-                <img className="star" src={"https://coworking-dev.s3-us-west-1.amazonaws.com/blue-star-icon-14-min.png"} />
+                <img className="star" src={"https://coworking-dev.s3-us-west-1.amazonaws.com/blue-star-icon-14-min.png"} alt="star" />
               </div>
               <span className="space-rating">{rating > 0 ? formatRating(rating) : null}</span>
               <span className="space-num-reviews">({props.reviews.length})</span>

@@ -41,9 +41,6 @@ const ReviewForm = (props) => {
         )
     }
 
-    console.log(form)
-
-
     return space ? (
         <div className="review-form-container">
             <h1>{space.name}</h1>
