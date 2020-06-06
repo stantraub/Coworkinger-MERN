@@ -28,7 +28,7 @@ const SpaceMap = (props) => {
     const { spaces = {}} = props;
 
     return (
-      <div className="space-index-map">
+      <div className="map">
         <Map center={[37.773943, -122.449484]} zoom={13.4}>
           <TileLayer
             url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"

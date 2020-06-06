@@ -5,7 +5,7 @@ import SpaceMapContainer from '../components/spaces/space_map_container'
 
 const Spaces = () => {
   return (
-    <div className="flex-row">
+    <div className="space-page flex-row">
       <SpaceWrapperContainer />
       <SpaceMapContainer />
     </div>

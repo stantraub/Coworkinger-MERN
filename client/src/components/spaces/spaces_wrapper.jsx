@@ -15,8 +15,8 @@ const SpacesWrapper = (props) => {
 
         return (
             <div className="spaces">
-                <div className="space-index-header">
-                Coworking spaces in San Francisco
+                <div className="spaces__header">
+                Spaces in San Francisco
                 </div>
                 {spaces.map(({ _id, ...otherSpaceProps }) => {
                 return <SpaceItem key={_id} spaceId={_id} {...otherSpaceProps} />;

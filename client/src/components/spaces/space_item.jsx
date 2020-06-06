@@ -1,9 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-
-import "./space_item.css"
-
 const SpaceItem = props => {
   let rating = props.rating.$numberDecimal
 
@@ -17,7 +14,7 @@ const SpaceItem = props => {
     if (!props.mainPhoto.includes(domainName)) {
       return (
         <img 
-          className="main-pic"
+          className="space-item__pic"
           src={
             domainName +
             props.mainPhoto
@@ -29,7 +26,7 @@ const SpaceItem = props => {
       return (
         <img 
           src={props.mainPhoto}
-          className="main-pic"
+          className="space-item__pic"
           alt="Main"
         />
       )
@@ -64,37 +61,45 @@ const SpaceItem = props => {
   }
 
   return (
-    <div className="space-item-wrapper">
-      <Link to={`/spaces/${props.spaceId}`} className="space-link">
+    <div className="space-item">
+      <Link to={`/spaces/${props.spaceId}`} className="space-item__link-pic">
         {renderImage()}
       </Link>
-      <Link to={`/spaces/${props.spaceId}`} className="space-link">
-        <div className="space-item-info">
-          {rating > 0 ? (
-            <div className="space-rating-container">
-              <div className="space-star-container">
-                <img className="star" src={"https://coworking-dev.s3-us-west-1.amazonaws.com/blue-star-icon-14-min.png"} alt="star" />
-              </div>
-              <span className="space-rating">{rating > 0 ? formatRating(rating) : null}</span>
-              <span className="space-num-reviews">({props.reviews.length})</span>
+      <Link to={`/spaces/${props.spaceId}`} className="space-item__link-info">
+        {rating > 0 ? (
+          <div className="space-rating-container flex-row">
+            <div className="space-star-container">
+              <img
+                className="star"
+                src={
+                  "https://coworking-dev.s3-us-west-1.amazonaws.com/blue-star-icon-14-min.png"
+                }
+                alt="star"
+              />
             </div>
-          ) : null}
-          <div className="space-item-name">{props.name}</div>
-          <div className="space-item-amenities">
-            <div>
-              {props.city}, {props.state}
-            </div>
-            <span>{props.neighborhood}</span>
-            <div className="space-amenity-wrapper">{includedAmenities()}</div>
-            <div className="space-item-contact">
-              <div>{phone()}</div>
-              <div>{email()}</div>
-            </div>
+            <span className="space-rating">
+              {rating > 0 ? formatRating(rating) : null}
+            </span>
+            <span className="space-num-reviews">
+              ({props.reviews.length})
+            </span>
+          </div>
+        ) : null}
+        <div className="space-item-name">{props.name}</div>
+        <div className="space-item-amenities">
+          <div>
+            {props.city}, {props.state}
+          </div>
+          <span>{props.neighborhood}</span>
+          <div className="space-amenity-wrapper">{includedAmenities()}</div>
+          <div className="space-item-contact">
+            <div>{phone()}</div>
+            <div>{email()}</div>
           </div>
         </div>
-        <div className="space-item-cost">
-            <strong>${props.cost}</strong> per desk / month
-          </div>
+        <div className="space-item__cost">
+          <strong>${props.cost}</strong> per desk / month
+        </div>
       </Link>
     </div>
   );

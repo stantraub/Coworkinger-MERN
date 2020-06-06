@@ -1,11 +1,19 @@
-.space-index-map {
-    width: 50%;
-    height: 90vh;
-    top: 10vh; 
-    position: sticky; 
+.map {
+  width: 50vw;
+  height: 100%;
+  z-index: 1;
+  position: fixed;
+  right: 0;
 }
 
 .leaflet-container {
   width: 100%;
-  height: 100vh;
+  height: 100%;
 }
+
+.popup-space-description {
+    font-size: 16px;
+    padding-top: 10px;
+}
+
+
