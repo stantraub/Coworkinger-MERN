@@ -67,22 +67,20 @@ const SpaceItem = props => {
       </Link>
       <Link to={`/spaces/${props.spaceId}`} className="space-item__link-info">
         {rating > 0 ? (
-          <div className="space-rating-container flex-row">
-            <div className="space-star-container">
+          <div className="space-rating flex-row">
+            <div className="space-rating__star-container">
               <img
-                className="star"
+                className="space-rating__star-img"
                 src={
                   "https://coworking-dev.s3-us-west-1.amazonaws.com/blue-star-icon-14-min.png"
                 }
                 alt="star"
               />
             </div>
-            <span className="space-rating">
+            <div className="space-rating__average">
               {rating > 0 ? formatRating(rating) : null}
-            </span>
-            <span className="space-num-reviews">
-              ({props.reviews.length})
-            </span>
+            </div>
+            <span className="space-rating__num-reviews">({props.reviews.length})</span>
           </div>
         ) : null}
         <div className="space-item__name">{props.name}</div>
@@ -91,7 +89,9 @@ const SpaceItem = props => {
             {props.city}, {props.state}
           </div>
           <span>{props.neighborhood}</span>
-          <div className="space-item__amenities-list">{includedAmenities()}</div>
+          <div className="space-item__amenities-list">
+            {includedAmenities()}
+          </div>
           <div>{phone()}</div>
           <div>{email()}</div>
         </div>
