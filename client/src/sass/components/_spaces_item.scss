@@ -2,19 +2,25 @@
     border-top: .1rem solid #e6e6e6;
     padding: 2rem 0;
     border-radius: .3rem;
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
-    gap: 2rem;
+    height: 22.1rem;
     position: relative;
 
     &__link-pic {
-        width: 100%;
+        width: 30rem;
         height: 100%;
     }
 
     &__link-info {
         text-decoration: none;
         color: $link-color-dark;
+        position: relative;
+        width: 62.5%;
+        height: 100%;
+        margin-left: 1.5rem;
+
+        @media only screen and (max-width: 85em) {
+            width: 100%;
+        }
     }
 
     &__pic {
@@ -24,8 +30,24 @@
         object-fit: cover;
     }
 
+    &__name {
+        font-size: 1.8rem;
+        padding-bottom: 1rem;
+    }
+
+    &__amenities {  
+        color: $color-primary-dark;
+        font-size: 1.4rem;
+
+        &-list {
+            padding: 1rem 0;
+        }
+    }
+
     &__cost {
-        float: right;
+        position: absolute;
+        bottom: 0;
+        right: 0;
         font-size: 1.8rem;
     }
 }
@@ -64,120 +86,49 @@
 
 
 
-@media only screen and (max-width: 1375px) {
-    .space-item-wrapper {
-        padding-left: 18px;
-    }
-}
-
-@media only screen and (max-width: 700px) {
-    .space-index-main {
-        padding: 30px;
-    }
-    .space-item-wrapper {
-        flex-direction: column;
-        border-top: none;
-        width: 100%;
-        padding: 0px;
-        height: 20%;
-        padding-top: 20px;
-        padding-bottom: 10px;
-        margin: 0px;
-        border-radius: 3px;
-    }
-
-    .main-pic {
-        width: 100%;
-        height: 45vh;
-        /* padding-top: 10px; */
-    }
-
-    .space-item-cost {
-        position: relative;
-        font-size: 16px
-    }
-
-    .space-link {
-        width: 100%;
-        height: 100%;
-        /* padding-bottom: 12px; */
-    }
-
-    .space-item-info {
-        padding: 0px;
-    }
-}
-
-.space-link {
-    text-decoration: none;
-    color: black;
-    cursor: pointer;
-}
 
 
-.space-item-name {
-    font-size: 18px;
-    padding-bottom: 10px
-}
+// @media only screen and (max-width: 650px) {
+//     .main-pic {
+//         width: 100%;
+//         height: 40vh;
+//         border-radius: 4px;
+//         /* padding-top: 10px; */
+//     }
+// }
+
+// @media only screen and (max-width: 550px) {
+//  .main-pic {
+//      width: 100%;
+//      height: 35vh;
+//      border-radius: 4px;
+//      /* padding-top: 10px; */
+//  }
+// }
 
 
-.space-item-amenities {
-    color: gray;
-    font-size: 14px;
-}
+// @media only screen and (max-width: 520px) {
+//     .main-pic {
+//         width: 100%;
+//         height: 35vh;
+//         /* padding-top: 10px; */
+//     }
+// }
 
+// @media only screen and (max-width: 400px) {
+//     .main-pic {
+//         width: 100%;
+//         height: 25vh;
+//         /* border-radius: 0px; */
+//         /* padding-top: 10px; */
+//     }
+// }
 
-.space-amenity-wrapper {
-    padding-top: 10px;
-    padding-bottom: 10px
-}
-
-.space-item-contact {
-    padding-top: 10px;
-    padding-bottom: 10px
-}
-
-@media only screen and (max-width: 650px) {
-    .main-pic {
-        width: 100%;
-        height: 40vh;
-        border-radius: 4px;
-        /* padding-top: 10px; */
-    }
-}
-
-@media only screen and (max-width: 550px) {
- .main-pic {
-     width: 100%;
-     height: 35vh;
-     border-radius: 4px;
-     /* padding-top: 10px; */
- }
-}
-
-
-@media only screen and (max-width: 520px) {
-    .main-pic {
-        width: 100%;
-        height: 35vh;
-        /* padding-top: 10px; */
-    }
-}
-
-@media only screen and (max-width: 400px) {
-    .main-pic {
-        width: 100%;
-        height: 25vh;
-        /* border-radius: 0px; */
-        /* padding-top: 10px; */
-    }
-}
-
-@media only screen and (max-width: 320px) {
-    .main-pic {
-        width: 100%;
-        height: 20vh;
-        /* padding-top: 10px; */
-    }
-}
+// @media only screen and (max-width: 320px) {
+//     .main-pic {
+//         width: 100%;
+//         height: 20vh;
+//         /* padding-top: 10px; */
+//     }
+// }
 

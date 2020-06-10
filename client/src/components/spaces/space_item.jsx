@@ -61,7 +61,7 @@ const SpaceItem = props => {
   }
 
   return (
-    <div className="space-item">
+    <div className="space-item flex-row">
       <Link to={`/spaces/${props.spaceId}`} className="space-item__link-pic">
         {renderImage()}
       </Link>
@@ -85,17 +85,15 @@ const SpaceItem = props => {
             </span>
           </div>
         ) : null}
-        <div className="space-item-name">{props.name}</div>
-        <div className="space-item-amenities">
+        <div className="space-item__name">{props.name}</div>
+        <div className="space-item__amenities">
           <div>
             {props.city}, {props.state}
           </div>
           <span>{props.neighborhood}</span>
-          <div className="space-amenity-wrapper">{includedAmenities()}</div>
-          <div className="space-item-contact">
-            <div>{phone()}</div>
-            <div>{email()}</div>
-          </div>
+          <div className="space-item__amenities-list">{includedAmenities()}</div>
+          <div>{phone()}</div>
+          <div>{email()}</div>
         </div>
         <div className="space-item__cost">
           <strong>${props.cost}</strong> per desk / month
