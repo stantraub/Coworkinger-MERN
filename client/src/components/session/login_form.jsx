@@ -10,7 +10,8 @@ const LoginForm = (props) => {
 
     const [loading, setLoading] = useState(false)
 
-    const handleSubmit = async () => {
+    const handleSubmit = async (e) => {
+        e.preventDefault()
         await props.login(form)
         setLoading(false)
         props.closeModal()
@@ -27,6 +28,11 @@ const LoginForm = (props) => {
         props.closeModal()
     }
 
+    const handleInputChange = (e) => {
+        const { name, value } = e.target;
+        setForm({ ...form, [name]: value });
+    };
+
     return loading ? (
       <Spinner />
     ) : (
@@ -41,21 +47,30 @@ const LoginForm = (props) => {
         >
           <input
             type="text"
-            onChange={(e) => setForm({ email: e.target.value })}
+            name="email"
+            onChange={handleInputChange}
             placeholder="Email Address"
             className="session__input"
+            autoComplete="on"
             required
           />
           <br />
           <input
             type="password"
-            onChange={(e) => setForm({ password: e.target.value })}
+            name="password"
+            onChange={handleInputChange}
             placeholder="Password"
             className="session__input"
+            autoComplete="on"
             required
           />
           <br />
-          <button type="submit" value="Sign In" className="session-btn">
+          <button
+            type="submit"
+            value="Sign In"
+            onClick={(e) => handleSubmit(e)}
+            className="session-btn"
+          >
             Sign In
           </button>
           <button
