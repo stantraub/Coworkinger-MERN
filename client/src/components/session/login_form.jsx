@@ -30,20 +30,20 @@ const LoginForm = (props) => {
     return loading ? (
       <Spinner />
     ) : (
-      <div className="session-container">
-        <div className="session-header">Sign in to your account</div>
+      <div className="session">
+        <div className="session__header">Sign in to your account</div>
         <form
           onSubmit={() => {
             setLoading(true);
             handleSubmit();
           }}
-          className="session-form"
+          className="session__form"
         >
           <input
             type="text"
             onChange={(e) => setForm({ email: e.target.value })}
             placeholder="Email Address"
-            className="session-input"
+            className="session__input"
             required
           />
           <br />
@@ -51,7 +51,7 @@ const LoginForm = (props) => {
             type="password"
             onChange={(e) => setForm({ password: e.target.value })}
             placeholder="Password"
-            className="session-input"
+            className="session__input"
             required
           />
           <br />
@@ -61,18 +61,18 @@ const LoginForm = (props) => {
           <button
             className="session-btn"
             onClick={() => {
-              setLoading(true)
-              processDemo()
+              setLoading(true);
+              processDemo();
             }}
           >
             Demo Login
           </button>
         </form>
         <br />
-        <div className="change-form-div">
+        <div className="session__change">
           Don't have an account?{" "}
           <span
-            className="session-switch"
+            className="session__change__switch"
             onClick={() => props.openModal("signup")}
           >
             Sign Up

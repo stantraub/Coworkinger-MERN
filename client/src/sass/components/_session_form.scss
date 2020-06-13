@@ -1,31 +1,42 @@
-.session-container {
+.session {
     background-color: white;
     width: 50rem;
     padding: 4rem 6rem;
     text-align: center;
     border-radius: 5px;
-}
 
-.session-header {
-    font-weight: 500;
-    font-size: 36px;
-    padding-bottom: inherit;
-}
+    &__header {
+        font-weight: 500;
+        font-size: 3.6rem;
+        padding-bottom: 3rem;
+    }
 
-.session-form {
-    width: 100%;
-}
+    &__form {
+        width: 100%;
+    }
 
-.session-input {
-    width: 100%;
-    border: 1px solid darkgray;
-    font-family: inherit;
-    background-color: #E8F0FE;
-    margin-bottom: 15px;
-    border-radius: 3px;
-    height: 3em;
-    padding: 6px 20px;
-    font-size: 13px;
+    &__input {
+        width: 100%;
+        border: .1rem solid darkgray;
+        font-family: inherit;
+        background-color: #E8F0FE;
+        margin-bottom: 1.5rem;
+        border-radius: .4rem;
+        height: 4rem;
+        padding: .6rem 2rem;
+        font-size: 1.3rem;
+    }
+
+
+    &__change {
+        font-weight: 500;
+        font-size: 1.8rem;
+
+        &__switch {
+            color: #009ACD;
+            cursor: pointer;
+        }
+    }
 }
 
 .session-btn {
@@ -36,7 +47,7 @@
     width: 100%;
     font-family: inherit;
     font-size: 1.6rem;
-    font-weight: 600;
+    font-weight: 700;
     border-radius: .4rem;
     box-shadow: .8rem 1rem 2rem 0rem rgba(46,61,73,0.15);
     transition: background-color .3s;
@@ -49,17 +60,6 @@
     &:first-of-type {
         margin: 1.5rem 0;
     }
-}
-
-
-.change-form-div {
-    font-weight: 500;
-    font-size: 18px;
-}
-
-.session-switch {
-    color: #009ACD;
-    cursor: pointer;
 }
 
 @media only screen and (max-width: 425px) {
