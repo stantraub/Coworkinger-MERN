@@ -28,40 +28,27 @@
     font-size: 13px;
 }
 
-.session-submit {
+.session-btn {
     background-color: #02b3e4;
+    border:none;
     color: white;
-    height: 3em;
+    height: 4rem;
     width: 100%;
     font-family: inherit;
-    font-size: 16px;
+    font-size: 1.6rem;
     font-weight: 600;
-    border-radius: 3px;
-    box-shadow: 12px 15px 20px rgba(0,0,0,.1);
-}
+    border-radius: .4rem;
+    box-shadow: .8rem 1rem 2rem 0rem rgba(46,61,73,0.15);
+    transition: background-color .3s;
 
-.session-submit:hover {
-    background-color: #009ACD;
-    cursor: pointer;
-}
+    &:hover {
+        background-color: #009ACD;
+        cursor: pointer;
+    }
 
-.demo-login-button {
-    margin-top: 10px;
-    cursor: pointer;
-    background-color: #02b3e4;
-    color: white;
-    height: 3em;
-    width: 100%;
-    font-family: inherit;
-    font-size: 16px;
-    font-weight: 600;
-    border-radius: 3px;
-    box-shadow: 12px 15px 20px rgba(0,0,0,.1);
-}
-
-.demo-login-button:hover {
-    background-color: #009ACD;
-    cursor: pointer;
+    &:first-of-type {
+        margin: 1.5rem 0;
+    }
 }
 
 

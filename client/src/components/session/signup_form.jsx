@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import { withRouter } from "react-router-dom";
-import './session_modal.css';
 import Spinner from "../spinner/spinner";
 
 const SignupForm = (props) => {
@@ -79,9 +78,9 @@ const SignupForm = (props) => {
             <button 
               type="submit"
               value="Sign In"
-              className="session-submit"
+              className="session-btn"
             >Sign Up</button>              
-            <button className="demo-login-button" onClick={() => {
+            <button className="session-btn" onClick={() => {
               setLoading(true)
               processDemo()
           }

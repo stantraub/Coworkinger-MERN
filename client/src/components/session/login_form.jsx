@@ -1,103 +1,85 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { withRouter } from 'react-router-dom';
-import './session_modal.css'
 import Spinner from '../spinner/spinner';
 
-class LoginForm extends React.Component {
-    constructor(props) {
-        super(props);
+const LoginForm = (props) => {
+    const [form, setForm] = useState({
+        email: '',
+        password: ''
+    })
 
-        this.state = {
-            email: '',
-            password: '',
-            loading: false,
-            errors: {}
-        }
+    const [loading, setLoading] = useState(false)
 
-        this.handleSubmit = this.handleSubmit.bind(this);
-        this.processDemo = this.processDemo.bind(this)
+    const handleSubmit = async () => {
+        await props.login(form)
+        setLoading(false)
+        props.closeModal()
     }
 
-    update(field) {
-        return e => this.setState({
-            [field]: e.currentTarget.value
-        })
-    }
-
-    handleSubmit() {
-        let user = {
-            email: this.state.email,
-            password: this.state.password
-        };
-
-        this.props.login(user)
-        .then(() => this.setState({
-            loading: false
-        }))
-        .then(this.props.closeModal);
-    }
-
-    processDemo() {
-        let user = {
+    const processDemo = async () => {
+         let user = {
             email: "demouser@gmail.com",
             password: "123456"
         }
 
-        this.props.login(user, this.props.history)
-        .then(() => this.setState({loading: false}))
-        .then(this.props.closeModal)
+        await props.login(user, props.history)
+        setLoading(false)
+        props.closeModal()
     }
 
-    render() {
-        return this.state.loading ? (
-         <Spinner />
-        ) : (
-        <div className="session-container">
-            <div className="session-header">Sign in to your account</div>
-            <form onSubmit={() => {
-                this.setState({
-                    loading: true
-                })
-                this.handleSubmit()}} className="session-form">
-              <input
-                type="text"
-                value={this.state.email}
-                onChange={this.update("email")}
-                placeholder="Email Address"
-                className="session-input"
-                required
-              />
-              <br />
-              <input
-                type="password"
-                value={this.state.password}
-                onChange={this.update("password")}
-                placeholder="Password"
-                className="session-input"
-                required
-              />
-              <br />
-            <button 
-                type="submit"
-                value="Sign In"
-                className="session-submit"
-            >Sign In</button>
-            <button className="demo-login-button" 
+    return loading ? (
+      <Spinner />
+    ) : (
+      <div className="session-container">
+        <div className="session-header">Sign in to your account</div>
+        <form
+          onSubmit={() => {
+            setLoading(true);
+            handleSubmit();
+          }}
+          className="session-form"
+        >
+          <input
+            type="text"
+            onChange={(e) => setForm({ email: e.target.value })}
+            placeholder="Email Address"
+            className="session-input"
+            required
+          />
+          <br />
+          <input
+            type="password"
+            onChange={(e) => setForm({ password: e.target.value })}
+            placeholder="Password"
+            className="session-input"
+            required
+          />
+          <br />
+          <button type="submit" value="Sign In" className="session-btn">
+            Sign In
+          </button>
+          <button
+            className="session-btn"
             onClick={() => {
-                this.setState({
-                    loading: true
-                })
-                this.processDemo()
-            }
-            }>Demo Login</button>
-
-            </form>
-            <br />
-            <div className="change-form-div">Don't have an account? <span className="session-switch" onClick={() => this.props.openModal('signup')}>Sign Up</span></div>
-
-          </div>
-        )
-    }
+              setLoading(true)
+              processDemo()
+            }}
+          >
+            Demo Login
+          </button>
+        </form>
+        <br />
+        <div className="change-form-div">
+          Don't have an account?{" "}
+          <span
+            className="session-switch"
+            onClick={() => props.openModal("signup")}
+          >
+            Sign Up
+          </span>
+        </div>
+      </div>
+    );
 }
 
 export default withRouter(LoginForm);
