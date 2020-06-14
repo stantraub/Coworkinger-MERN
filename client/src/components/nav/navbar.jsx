@@ -1,8 +1,8 @@
-import React from 'react';
+import React, {Fragment} from 'react';
 import { Link } from 'react-router-dom';
 
-import MenuContainer from './menu_container'
-import MenuDropdown from './menu-dropdown'
+import MenuContainer from './menu_icon_container'
+import MenuDropdownContainer from './menu-dropdown_container'
 
 const Navbar = (props) => {
   function logoutUser(e) {
@@ -11,9 +11,10 @@ const Navbar = (props) => {
   }
 
   function getLinks() {
-      if (props.loggedIn) {
-        const {id: userId } = props.currentUser
-        return (
+    if (props.loggedIn) {
+      const {id: userId } = props.currentUser
+      return (
+        <Fragment>
           <div className="nav__links flex-row">
             <Link className="nav__link" to={"/create_space"}>
               List a workspace
@@ -30,11 +31,13 @@ const Navbar = (props) => {
             <button className="signup-button" onClick={logoutUser}>
               Logout
             </button>
-            <MenuContainer />
           </div>
-        );
-      } else {
-          return (
+          <MenuContainer />
+        </Fragment>
+      );
+    } else {
+        return (
+          <Fragment>
             <div className="nav__links flex-row">
               <Link className="nav__link" to={"/spaces"}>
                 Find a workspace
@@ -51,10 +54,11 @@ const Navbar = (props) => {
               >
                 Signup
               </button>
-              <MenuContainer />
             </div>
-          );
-      }
+            <MenuContainer />
+          </Fragment>
+        );
+    }
   }
   
   return (
@@ -62,8 +66,8 @@ const Navbar = (props) => {
       <Link to="/" className="nav__logo">
         Coworkinger
       </Link>
-      {getLinks()}
-      {props.hidden ? null : <MenuDropdown />}
+      <span>{getLinks()}</span>
+      {props.hidden ? null : <MenuDropdownContainer />}
     </nav>
   );
 }
