@@ -1,6 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
+import MenuContainer from './menu_container'
+import MenuDropdown from './menu-dropdown'
 const Navbar = (props) => {
     function logoutUser(e) {
         e.preventDefault();
@@ -12,37 +14,29 @@ const Navbar = (props) => {
           const {id: userId } = props.currentUser
           return (
             <div className="nav__links flex-row">
-              <Link
-                className="nav__link"
-                to={"/create_space"}
-              >
+              <Link className="nav__link" to={"/create_space"}>
                 List a workspace
               </Link>
 
-              <Link
-                className="nav__link"
-                to={`/profile/${userId}`}
-              >
+              <Link className="nav__link" to={`/profile/${userId}`}>
                 Profile
               </Link>
 
-              <Link
-                className="nav__link"
-                to={"/spaces"}
-              >
+              <Link className="nav__link" to={"/spaces"}>
                 Find a Workspace
               </Link>
 
               <button className="signup-button" onClick={logoutUser}>
                 Logout
               </button>
+              <MenuContainer />
             </div>
           );
         } else {
             return (
               <div className="nav__links flex-row">
                 <Link className="nav__link" to={"/spaces"}>
-                  Find a workspace 
+                  Find a workspace
                 </Link>
                 <div
                   className="nav__link"
@@ -56,15 +50,20 @@ const Navbar = (props) => {
                 >
                   Signup
                 </button>
+                <MenuContainer />
               </div>
             );
         }
     }
+    
     return (
-      <div className='nav flex-row'>
-          <span><Link to="/" className='nav__logo'>Coworkinger</Link></span>
-          { getLinks() }
-      </div>
+      <nav className="nav flex-row">
+        <Link to="/" className="nav__logo">
+          Coworkinger
+        </Link>
+        {getLinks()}
+        {props.hidden ? null : <MenuDropdown />}
+      </nav>
     );
 }
 
