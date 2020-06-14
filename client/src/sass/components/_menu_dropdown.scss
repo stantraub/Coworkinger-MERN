@@ -1,0 +1,19 @@
+.menu-dropdown {
+  position: absolute;
+  width: 100vw;
+  height: 90vh;
+  display: flex;
+  flex-direction: column;
+  top: 10vh;
+  left: -3vw;
+  padding: 2rem;
+  background-color: white;
+  z-index: 5;
+
+  &__items {
+    display: flex;
+    flex-direction: column;
+    overflow: scroll;
+  }
+
+}
