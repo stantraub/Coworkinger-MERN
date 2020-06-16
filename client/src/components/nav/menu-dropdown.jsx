@@ -21,7 +21,11 @@ const MenuDropdown = (props) => {
           Profile
         </Link>
 
-        <Link className="menu-dropdown__link" to={"/spaces"}>
+        <Link
+          className="menu-dropdown__link"
+          to={"/spaces"}
+          onClick={() => props.toggleMenuHidden()}
+        >
           Find a Workspace
         </Link>
 
@@ -31,7 +35,11 @@ const MenuDropdown = (props) => {
       </div>
     ) : (
       <div className="menu-dropdown flex-column">
-        <Link className="menu-dropdown__link" to={"/spaces"}>
+        <Link
+          className="menu-dropdown__link"
+          to={"/spaces"}
+          onClick={() => props.toggleMenuHidden()}
+        >
           Find a workspace
         </Link>
         <div

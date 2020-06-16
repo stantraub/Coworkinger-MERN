@@ -1,7 +1,7 @@
 import React, {Fragment} from 'react';
 import { Link } from 'react-router-dom';
 
-import MenuContainer from './menu_icon_container'
+import MenuIconContainer from './menu_icon_container'
 import MenuDropdownContainer from './menu-dropdown_container'
 
 const Navbar = (props) => {
@@ -32,7 +32,7 @@ const Navbar = (props) => {
               Logout
             </button>
           </div>
-          <MenuContainer />
+          <MenuIconContainer />
         </Fragment>
       );
     } else {
@@ -55,7 +55,7 @@ const Navbar = (props) => {
                 Signup
               </button>
             </div>
-            <MenuContainer />
+            <MenuIconContainer />
           </Fragment>
         );
     }
