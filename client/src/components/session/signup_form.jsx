@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { withRouter } from "react-router-dom";
+import { Link } from "react-router-dom"
 import Spinner from "../spinner/spinner";
 
 const SignupForm = (props) => {
@@ -16,7 +17,7 @@ const SignupForm = (props) => {
     e.preventDefault()
     await props.signup(form, props.history)
     setLoading(false)
-    props.closeModal()
+    props.history.push("/spaces");
   }
 
   const processDemo = async () => {
@@ -27,7 +28,7 @@ const SignupForm = (props) => {
 
     await props.login(user, props.history)
     setLoading(false)
-    props.closeModal()
+    props.history.push("/spaces");
   }
 
   const handleInputChange = e => {
@@ -47,46 +48,54 @@ const SignupForm = (props) => {
         }}
         className="session__form"
       >
-        <input
-          type="text"
-          name="email"
-          value={form.email}
-          onChange={handleInputChange}
-          placeholder="Email"
-          className="session__input"
-          required
-        />
-        <br />
-        <input
-          type="text"
-          name="username"
-          value={form.username}
-          onChange={handleInputChange}
-          placeholder="Username"
-          className="session__input"
-          required
-        />
-        <br />
-        <input
-          type="password"
-          name="password"
-          value={form.password}
-          onChange={handleInputChange}
-          placeholder="Password"
-          className="session__input"
-          required
-        />
-        <br />
-        <input
-          type="password"
-          name="password2"
-          value={form.password2}
-          onChange={handleInputChange}
-          placeholder="Confirm Password"
-          className="session__input"
-          required
-        />
-        <br />
+        <label className="session__label">
+          Email
+          <input
+            type="text"
+            name="email"
+            value={form.email}
+            onChange={handleInputChange}
+            placeholder="name@email.com"
+            className="session__input"
+            required
+          />
+        </label>
+        <label className="session__label">
+          Username
+          <input
+            type="text"
+            name="username"
+            value={form.username}
+            onChange={handleInputChange}
+            placeholder="Username"
+            className="session__input"
+            required
+          />
+        </label>
+        <label className="session__label">
+          Password
+          <input
+            type="password"
+            name="password"
+            value={form.password}
+            onChange={handleInputChange}
+            placeholder="Create a password"
+            className="session__input"
+            required
+          />
+        </label>
+        <label className="session__label">
+          Confirm Password
+          <input
+            type="password"
+            name="password2"
+            value={form.password2}
+            onChange={handleInputChange}
+            placeholder="Confirm password"
+            className="session__input"
+            required
+          />
+        </label>
         <button
           type="submit"
           value="Sign In"
@@ -105,14 +114,11 @@ const SignupForm = (props) => {
           Demo Login
         </button>
       </form>
-      <br />
       <div className="session__change">
         Have an Account?{" "}
-        <span
-          className="session__change__switch"
-        >
+        <Link className="session__change__switch" to={"/users/login"}>
           Log In
-        </span>
+        </Link>
       </div>
     </div>
   );

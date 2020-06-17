@@ -42,16 +42,20 @@ const MenuDropdown = (props) => {
         >
           Find a workspace
         </Link>
-        <div
+        <Link
+          to={"/users/login"}
           className="menu-dropdown__link"
+          onClick={() => props.toggleMenuHidden()}
         >
           Sign In
-        </div>
-        <div
+        </Link>
+        <Link
           className="menu-dropdown__link"
+          to={"/users/signup"}
+          onClick={() => props.toggleMenuHidden()}
         >
           Signup
-        </div>
+        </Link>
       </div>
     );
  

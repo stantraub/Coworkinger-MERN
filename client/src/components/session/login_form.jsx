@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { withRouter } from 'react-router-dom';
+import { Link } from 'react-router-dom'
 import Spinner from '../spinner/spinner';
 
 const LoginForm = (props) => {
@@ -14,7 +15,7 @@ const LoginForm = (props) => {
         e.preventDefault()
         await props.login(form)
         setLoading(false)
-        props.closeModal()
+        props.history.push('/spaces')
     }
 
     const processDemo = async () => {
@@ -25,7 +26,8 @@ const LoginForm = (props) => {
 
         await props.login(user, props.history)
         setLoading(false)
-        props.closeModal()
+        props.history.push("/spaces");
+
     }
 
     const handleInputChange = (e) => {
@@ -45,26 +47,30 @@ const LoginForm = (props) => {
           }}
           className="session__form"
         >
-          <input
-            type="text"
-            name="email"
-            onChange={handleInputChange}
-            placeholder="Email Address"
-            className="session__input"
-            autoComplete="on"
-            required
-          />
-          <br />
-          <input
-            type="password"
-            name="password"
-            onChange={handleInputChange}
-            placeholder="Password"
-            className="session__input"
-            autoComplete="on"
-            required
-          />
-          <br />
+          <label className="session__label">
+            Email
+            <input
+              type="text"
+              name="email"
+              onChange={handleInputChange}
+              placeholder="name@email.com"
+              className="session__input"
+              autoComplete="on"
+              required
+            />
+          </label>
+          <label className="session__label">
+            Password
+            <input
+              type="password"
+              name="password"
+              onChange={handleInputChange}
+              placeholder="password"
+              className="session__input"
+              autoComplete="on"
+              required
+            />
+          </label>
           <button
             type="submit"
             value="Sign In"
@@ -83,14 +89,11 @@ const LoginForm = (props) => {
             Demo Login
           </button>
         </form>
-        <br />
         <div className="session__change">
           Don't have an account?{" "}
-          <span
-            className="session__change__switch"
-          >
+          <Link to="/users/signup" className="session__change__switch">
             Sign Up
-          </span>
+          </Link>
         </div>
       </div>
     );

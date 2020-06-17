@@ -42,16 +42,12 @@ const Navbar = (props) => {
               <Link className="nav__link" to={"/spaces"}>
                 Find a workspace
               </Link>
-              <div
-                className="nav__link"
-              >
+              <Link className="nav__link" to="/users/login">
                 Sign In
-              </div>
-              <button
-                className="signup-button"
-              >
-                Signup
-              </button>
+              </Link>
+              <Link className="nav__link" to="/users/signup">
+                <button className="signup-button">Signup</button>
+              </Link>
             </div>
             <MenuIconContainer />
           </Fragment>
