@@ -88,7 +88,6 @@ const LoginForm = (props) => {
           Don't have an account?{" "}
           <span
             className="session__change__switch"
-            onClick={() => props.openModal("signup")}
           >
             Sign Up
           </span>

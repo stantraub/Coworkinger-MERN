@@ -1,6 +1,6 @@
 import React, { Fragment } from 'react'
 
-const Menu = ({toggleMenuHidden, hidden}) => (
+const MenuIcon = ({toggleMenuHidden, hidden}) => (
   <Fragment>
     <input 
       type="checkbox" 
@@ -18,4 +18,4 @@ const Menu = ({toggleMenuHidden, hidden}) => (
   </Fragment>
 )
 
-export default Menu
+export default MenuIcon

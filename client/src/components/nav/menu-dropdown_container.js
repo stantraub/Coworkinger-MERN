@@ -1,6 +1,5 @@
 import { connect } from 'react-redux'
 import { toggleMenuHidden } from '../../actions/menu_actions'
-import { openModal } from '../../actions/modal_actions'
 import { logout } from "../../actions/session_actions";
 
 import MenuDropdown from './menu-dropdown.jsx'
@@ -12,7 +11,6 @@ const msp = (state) => ({
 
 const mdp = (dispatch) => ({
     toggleMenuHidden: () => dispatch(toggleMenuHidden()),
-    openModal: modal => dispatch(openModal(modal)),
     logout: () => dispatch(logout())
 })
 

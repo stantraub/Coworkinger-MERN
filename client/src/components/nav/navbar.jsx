@@ -44,12 +44,10 @@ const Navbar = (props) => {
               </Link>
               <div
                 className="nav__link"
-                onClick={() => props.openModal("login")}
               >
                 Sign In
               </div>
               <button
-                onClick={() => props.openModal("signup")}
                 className="signup-button"
               >
                 Signup

@@ -44,12 +44,10 @@ const MenuDropdown = (props) => {
         </Link>
         <div
           className="menu-dropdown__link"
-          onClick={() => props.openModal("login")}
         >
           Sign In
         </div>
         <div
-          onClick={() => props.openModal("signup")}
           className="menu-dropdown__link"
         >
           Signup
