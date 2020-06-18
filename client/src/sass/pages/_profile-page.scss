@@ -1,14 +1,20 @@
-.user-show-container {
-    max-width: 1080px !important;
-    margin-left: auto !important;
-    margin-right: auto !important;
-    border-width: 1px !important;
-    width: auto !important;
-    padding-top: 40px;
-    padding-right: 24px !important;
-    padding-left: 24px !important;
-    display: flex;
-    flex-direction: row;
+.profile-page {
+    margin-top: 10vh;
+    height: 90vh;
+}
+
+.user-show__wrapper {
+    width: 108rem;
+    margin-top: 10rem;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.user-show__container {
+    max-width: 1080px;
+    margin-left: auto;
+    margin-right: auto;
+
 }
 
 .user-show-div {
@@ -33,12 +39,15 @@
     border-radius: 50%;
 }
 
+
+
 .user-show-info-container {
-    padding-left: 8px !important;
-    padding-right: 8px !important;
-    margin-left: 80px !important;
-    width: 66.6667% !important;
-    float: left !important;
+    margin-top: 10vh;
+    padding-left: 8px;
+    padding-right: 8px;
+    margin-left: 80px;
+    width: 66.6667%;
+    float: left;
 }
 
 .user-show-info-header {
@@ -50,6 +59,7 @@
 .user-show-join-date {
     padding-top: 10px;
     padding-bottom: 30px;
+    font-size: 1.6rem;
 }
 
 .user-show-reviews-div {
@@ -61,7 +71,7 @@
 }
 
 .user-show-reviews-link {
-    font-size: 14px;
+    font-size: 1.4rem;
     text-decoration: none;
     color: #4abde9;
 }

@@ -7,7 +7,6 @@ const MenuDropdown = (props) => {
         props.logout();
     }
 
-
     return props.loggedIn ? (
       <div className="menu-dropdown flex-column">
         <Link className="menu-dropdown__link" to={"/create_space"}>
