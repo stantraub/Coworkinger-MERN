@@ -11,21 +11,11 @@
 }
 
 .user-show__container {
-    max-width: 1080px;
     margin-left: auto;
     margin-right: auto;
 
 }
 
-.user-show-div {
-    display: flex;
-    padding: 24px;
-    flex-direction: column;
-    border: solid 1px !important;
-    border-color: rgb(228, 228, 228) !important;
-    width: 33.3333% !important;
-    align-items: center;
-}
 
 .user-show-profilePic-container {
     width: 120px;
@@ -39,16 +29,6 @@
     border-radius: 50%;
 }
 
-
-
-.user-show-info-container {
-    margin-top: 10vh;
-    padding-left: 8px;
-    padding-right: 8px;
-    margin-left: 80px;
-    width: 66.6667%;
-    float: left;
-}
 
 .user-show-info-header {
     font-size: 46px;
