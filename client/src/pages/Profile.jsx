@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 const ProfilePage = (props) => {
   const { profilePic, username, createdAt, id } = props.currentUser;
-  // extract into separate component!
+
   function formatDate(joinDate) {
     let formattedDate = Date(joinDate).split(" ");
     let month = formattedDate[1];
