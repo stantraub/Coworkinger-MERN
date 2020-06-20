@@ -1,0 +1,64 @@
+.profile-page {
+    margin-top: 10vh;
+    height: 90vh;
+    padding: 4rem;
+}
+
+.user-show {
+    width: 108rem;
+    margin: auto;
+
+    @media only screen and (max-width: 68.75em) {
+        flex-direction: column;
+        
+    }
+
+    &__container {
+        width: 30%;
+        border: 1px solid $color-grey-light-2;
+        justify-content: center;
+        align-items: center;
+    }
+
+    &__pic-container {
+        width: 12rem;
+        height: 12rem;
+        padding-bottom: 10px;
+        text-align: center;
+    }
+
+    &__pic-image {
+        width: 100%;
+        height: 100%;
+        border-radius: 50%;
+    }
+
+    &__info-container {
+        width: 70%;
+        padding-left: 9rem;
+    }
+
+    &__info-header {
+        font-size: 4.6rem;
+    }
+
+    &__join-date {
+        margin-top: 1rem;
+        margin-bottom: 3rem;
+        font-size: 1.6rem;
+    }
+
+    &__reviews {
+        border-top: 1px solid $color-grey-light-2;
+        border-bottom: 1px solid $color-grey-light-2; 
+        padding: 3rem 0;
+
+        &-link {
+            font-size: 1.4rem;
+            text-decoration: none;
+            color: #4abde9;
+        }
+    }   
+}
+
+

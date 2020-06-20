@@ -1,0 +1,26 @@
+.menu-dropdown {
+  position: absolute;
+  width: 100%;
+  height: 90vh;
+  top: 10vh;
+  padding: 4.5rem 4rem;
+  left: 0;
+  background-color: white;
+  z-index: 10;
+
+  &__link {
+    font-size: 1.7rem;
+    display: block;
+    border-top: 1px solid $color-grey-light-2;
+    text-decoration: none;
+    padding: 1rem 0;
+    color: $link-color-dark;
+
+    &:first-child {
+      border-top: none;
+    }
+    
+  }
+
+
+}

@@ -1,0 +1,96 @@
+.session {
+    background-color: white;
+    margin-top: 10vh;
+    margin-left: auto;
+    margin-right: auto;
+    width: 75rem;
+    padding: 4rem 6rem;
+    text-align: center;
+    border-radius: 5px;
+
+    @media only screen and (max-width: 50em) {
+        width: 53rem;
+        padding: 3rem 4rem;
+    }
+
+    @media only screen and (max-width: 31.25em) {
+        width: 100%;
+    }
+
+    &__header {
+        font-weight: 500;
+        font-size: 3.6rem;
+        margin-bottom: 2.5rem;
+
+        @media only screen and (max-width: 31.25em) {
+            font-size: 3rem;
+        }
+    }
+
+    &__form {
+        width: 100%;
+    }
+
+    &__label {
+        display:block;
+        text-align: left;
+        font-size: 1.4rem;
+    }
+
+    &__input {
+        width: 100%;
+        border: .1rem solid darkgray;
+        font-family: inherit;
+        background-color: #E8F0FE;
+        margin: 1.6rem 0;
+        border-radius: .4rem;
+        height: 4.5rem;
+        padding: .6rem 2rem;
+        font-size: 1.3rem;
+
+        @media only screen and (max-width: 50em) {
+            height: 6rem;
+        }
+    }
+
+
+    &__change {
+        font-weight: 500;
+        font-size: 1.8rem;
+        margin-top: 1.75rem;
+
+        &__switch {
+            color: #009ACD;
+            text-decoration: none;
+            cursor: pointer;
+        }
+    }
+}
+
+.session-btn {
+    background-color: #02b3e4;
+    border:none;
+    color: white;
+    height: 4.5rem;
+    width: 100%;
+    font-family: inherit;
+    font-size: 1.6rem;
+    font-weight: 700;
+    border-radius: .4rem;
+    box-shadow: .8rem 1rem 2rem 0rem rgba(46,61,73,0.15);
+    transition: background-color .3s;
+
+    @media only screen and (max-width: 50em) {
+        height: 6rem;
+        font-size: 1.8rem;
+    }
+
+    &:hover {
+        background-color: #009ACD;
+        cursor: pointer;
+    }
+
+    &:first-of-type {
+        margin: 1.5rem 0;
+    }
+}

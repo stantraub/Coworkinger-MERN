@@ -1,0 +1,62 @@
+.nav {
+    position: fixed;
+    top: 0;
+    background-color: $color-primary-light;
+    z-index: 2;
+    justify-content: space-between;
+    padding: 0 2.5rem;
+    height: 10vh;
+    width: 100%;
+    align-items: center;
+    border-bottom: 1px solid $color-grey-light-2;
+
+
+    &__logo {
+        font-size: 3rem;
+        font-weight: 400;
+        text-decoration: none;
+        color: $color-secondary-light;
+
+        @media only screen and (max-width: 31.25em) {
+            font-size: 2.2rem;
+        }
+    }
+
+    &__links {
+       align-items: center;
+       position: relative;
+
+        @media only screen and (max-width: 37.5em) {
+            display: none;
+        }
+    }
+
+    &__link {
+        font-size: 1.4rem;
+        text-decoration: none;
+        color: $link-color-dark;
+        padding: 0 1rem;
+        cursor: pointer;
+    }
+}
+
+.signup-button {
+    border: .1rem solid $color-secondary-light;
+    background-color: transparent;
+    color: $color-secondary-light;
+    font-size: 1.4rem;
+    margin-left: 1rem;
+    padding: .5rem 1rem;
+    font-family: inherit;
+    border-radius: 2.1rem;
+    outline: none;
+    cursor: pointer;
+    transition: all .2s;
+
+    &:hover {
+        border-color: $color-secondary-dark;
+        color: $color-secondary-dark;
+    }
+}
+
+
