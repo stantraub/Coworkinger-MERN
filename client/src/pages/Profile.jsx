@@ -16,7 +16,7 @@ const ProfilePage = (props) => {
     return (
       <img
         src={domainName + profilePic}
-        className="user-show-profilePic"
+        className="user-show__pic-image"
         alt="profile"
       />
     );
@@ -24,25 +24,25 @@ const ProfilePage = (props) => {
 
   return (
     <div className="profile-page">
-      <div className="user-show__wrapper flex-row">
-        <div className="user-show__container">
-          <div className="user-show-profilePic-container">
+      <div className="user-show flex-row">
+        <div className="user-show__container flex-col">
+          <div className="user-show__pic-container">
             {renderImage(profilePic)}
           </div>
           <Link
             to={`/profile/edit-photo/${id}`}
-            className="user-show-reviews-link"
+            className="user-show__reviews-link"
           >
             Update photo
           </Link>
         </div>
-        <div className="user-show-info-container">
-          <div className="user-show-info-header">Hi, I'm {username}</div>
-          <div className="user-show-join-date">
+        <div className="user-show__info-container">
+          <div className="user-show__info-header">Hi, I'm {username}</div>
+          <div className="user-show__join-date">
             Joined in {formatDate(createdAt)}
           </div>
-          <div className="user-show-reviews-div">
-            <Link to={"/users/review"} className="user-show-reviews-link">
+          <div className="user-show__reviews">
+            <Link to={"/users/review"} className="user-show__reviews-link">
               Reviews by you
             </Link>
           </div>

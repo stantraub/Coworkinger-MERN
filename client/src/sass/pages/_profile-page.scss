@@ -1,57 +1,64 @@
 .profile-page {
     margin-top: 10vh;
     height: 90vh;
+    padding: 4rem;
 }
 
-.user-show__wrapper {
+.user-show {
     width: 108rem;
-    margin-top: 10rem;
-    margin-left: auto;
-    margin-right: auto;
+    margin: auto;
+
+    @media only screen and (max-width: 68.75em) {
+        flex-direction: column;
+        
+    }
+
+    &__container {
+        width: 30%;
+        border: 1px solid $color-grey-light-2;
+        justify-content: center;
+        align-items: center;
+    }
+
+    &__pic-container {
+        width: 12rem;
+        height: 12rem;
+        padding-bottom: 10px;
+        text-align: center;
+    }
+
+    &__pic-image {
+        width: 100%;
+        height: 100%;
+        border-radius: 50%;
+    }
+
+    &__info-container {
+        width: 70%;
+        padding-left: 9rem;
+    }
+
+    &__info-header {
+        font-size: 4.6rem;
+    }
+
+    &__join-date {
+        margin-top: 1rem;
+        margin-bottom: 3rem;
+        font-size: 1.6rem;
+    }
+
+    &__reviews {
+        border-top: 1px solid $color-grey-light-2;
+        border-bottom: 1px solid $color-grey-light-2; 
+        padding: 3rem 0;
+
+        &-link {
+            font-size: 1.4rem;
+            text-decoration: none;
+            color: #4abde9;
+        }
+    }   
 }
 
-.user-show__container {
-    margin-left: auto;
-    margin-right: auto;
 
-}
-
-
-.user-show-profilePic-container {
-    width: 120px;
-    height: 120px;
-    padding-bottom: 10px;
-}
-
-.user-show-profilePic {
-    width: 100%;
-    height: 100%;
-    border-radius: 50%;
-}
-
-
-.user-show-info-header {
-    font-size: 46px;
-    line-height: 1.13043em !important;
-    color: rgb(72, 72, 72) !important;
-}
-
-.user-show-join-date {
-    padding-top: 10px;
-    padding-bottom: 30px;
-    font-size: 1.6rem;
-}
-
-.user-show-reviews-div {
-    border-color: rgb(228, 228, 228) !important;;
-    border-top: 1px solid;
-    border-bottom: 1px solid;
-    padding-top: 30px;
-    padding-bottom: 30px
-}
-
-.user-show-reviews-link {
-    font-size: 1.4rem;
-    text-decoration: none;
-    color: #4abde9;
-}

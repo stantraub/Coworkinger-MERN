@@ -9,13 +9,18 @@ const MenuDropdown = (props) => {
 
     return props.loggedIn ? (
       <div className="menu-dropdown flex-column">
-        <Link className="menu-dropdown__link" to={"/create_space"}>
+        <Link
+          className="menu-dropdown__link"
+          to={"/create_space"}
+          onClick={() => props.toggleMenuHidden()}
+        >
           List a workspace
         </Link>
 
         <Link
           className="menu-dropdown__link"
           to={`/profile/${props.currentUser.id}`}
+          onClick={() => props.toggleMenuHidden()}
         >
           Profile
         </Link>
