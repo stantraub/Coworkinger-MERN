@@ -6,7 +6,6 @@ import ReviewsContainer from '../reviews/reviews_container'
 
 
 const SpaceShow = props => {
-
   const [picsCarousel, setPicsCarousel] = useState(false)
   const [amenitiesModal, setAmenitiesModal] = useState(false)
 
