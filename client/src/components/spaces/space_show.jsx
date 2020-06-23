@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import PicsCarousel from '../modals/pics_carousel';
 import AmenitiesModal from '../modals/amenities_modal';
-import './space_show.css'
 import Spinner from '../spinner/spinner';
 import ReviewsContainer from '../reviews/reviews_container'
 
