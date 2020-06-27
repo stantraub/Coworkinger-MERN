@@ -6,14 +6,11 @@ const PicturesGrid = (props) => {
     return (
       <div className="pictures">
         <div className="pictures__main-container">
-          {/* 
-                      <button
-        
+          <button
             className="photos-btn-main-pic"
           >
             View Photos
           </button>
-        */}
           <img className="space-show-pic-image" src={photos[0]} alt="main" />
         </div>
         <div className="space-show-space-pics">
