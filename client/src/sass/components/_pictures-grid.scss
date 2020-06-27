@@ -9,6 +9,8 @@
     &__main-container {
         grid-area: main;
     }
+
+    
 }
 
 .space-show-main-pic {
@@ -17,10 +19,6 @@
     overflow: hidden;
 }
 
-.space-show-space-pics {
-    width: 50%;
-    display: flex;
-}
 
 .space-show-pic-column {
     display: flex;
