@@ -1,13 +1,14 @@
 import React from 'react'
 import ReviewItem from './review_item'
 import { Link } from 'react-router-dom'
+
 const Reviews = props => {
     const { reviews, rating } = props
     const { id: spaceId } = props.match.params
     const { isAuthenticated } = props
     
     return reviews.length > 0 ? (
-        <div>
+        <section>
             <div className='reviews-header'>
                 <h2>Reviews</h2>
                 <div className="reviews-header-info">
@@ -38,9 +39,9 @@ const Reviews = props => {
                 return <ReviewItem key={review._id} review={review} />
             })}
             
-        </div>
+        </section>
     ) : (
-        <div>
+        <section>
             <div className='no-reviews-header'>
                 <h2>No reviews (yet)</h2>
             </div>
@@ -56,7 +57,7 @@ const Reviews = props => {
                 </div>
                 )
             }
-        </div>
+        </section>
     )
 }
 

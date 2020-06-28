@@ -1,5 +1,4 @@
 import React from 'react'
-import './reviews.css'
 
 const ReviewItem = props => {
     console.log(props)
