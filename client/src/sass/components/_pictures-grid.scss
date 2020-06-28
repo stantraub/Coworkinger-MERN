@@ -11,8 +11,9 @@
 
     &__main-container {
         width: 50%;
+        position: relative;
 
-        @media only screen and (max-width: 59.38em) {
+        @media only screen and (max-width: 62.5em) {
             width: 66.6667%;
         }
 
@@ -30,7 +31,7 @@
     &__secondary-container {
         width: 50%;
 
-         @media only screen and (max-width: 59.38em) {
+         @media only screen and (max-width: 62.5em) {
             width: 33.3333%;
         }
 
@@ -41,8 +42,9 @@
 
     &__secondary-col-1 {
         width: 50%;
+        position: relative;
 
-        @media only screen and (max-width: 59.38em) {
+        @media only screen and (max-width: 62.5em) {
             width: 100%;
         }
         
@@ -50,10 +52,13 @@
 
     &__secondary-col-2 {
         width: 50%;
+        position: relative;
 
-        @media only screen and (max-width: 59.38em) {
+        @media only screen and (max-width: 62.5em) {
             display: none;
         }
+
+  
     }
 
 
@@ -63,44 +68,41 @@
         height: 50%;
         object-fit: cover;
     }
+
+    &__view-photo-btn {
+        position: absolute;
+        cursor: pointer;
+        background-color: $color-primary-light;
+        border-radius: 8px;
+        font-size: 1.6rem;
+        font-family: inherit;
+        padding: .9rem 1.75rem;
+        right: 2.4rem;
+        bottom: 2.4rem;
+        z-index: 1;
+        border: 1px solid rgb(34, 34, 34);
+
+        @media only screen and (max-width: 62.5em) {
+            right: 2rem;
+            bottom: 2rem;
+        }
     
-}
+    }
 
+    &__btn-tablet {
+        display: none;
 
+        @media only screen and (max-width: 62.5em) {
+            display: block;
+        }
+    }
 
-.space-show-pic-column {
-    display: flex;
-    flex-direction: column;
-    width: 50%;
-    position: relative;
-}
+    &__btn-mobile {
+        display: none;
 
-.space-show-pic-image {
-    border: 1px solid gray;
-    overflow: hidden;
-    width: 100%;
-    height: 100%;
-}
-
-
-.photos-btn {
-    box-shadow: rgba(0, 0, 0, 0.14) 0px 1px 1px 1px !important;
-    background-color: #FFFFFF;
-    padding: 0.5rem 1.5rem;
-    font-size: 16px;
-    font-family: inherit;
-    font-weight: 500;
-    color: rgb(72, 72, 72);
-    cursor:pointer;
-    border-radius: 4px;
-    position: absolute !important;
-    left: auto !important;
-    transform: translateY(0px) !important;
-    right: 24px !important;
-    bottom: 24px !important;
-    z-index: 1 !important;
-}
-
-.photos-btn-first-column {
-    display: none;
+        @media only screen and (max-width: 46.88em) {
+            display: block;
+        }
+    }
+    
 }
