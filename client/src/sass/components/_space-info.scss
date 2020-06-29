@@ -1,0 +1,37 @@
+.space-info {
+    margin: auto;
+
+    &__summary {
+        margin-top: 2.4rem;
+    }
+
+    &__name {
+        font-size: 3.2rem;
+        font-weight: 600;
+    }
+
+    &__city {
+        padding: 1rem 0;
+    }
+
+    &__description-wrapper {
+        border-top: 1px solid #e6e6e6;
+        border-bottom: 1px solid #e6e6e6;
+    }
+
+    &__description-text {
+        padding: 1.6rem 0;
+    }
+}
+
+.amenities-wrapper {
+    margin-bottom: 0px;
+}
+
+.amenities-header {
+    font-weight: 800
+}
+
+.amenities-div {
+    columns: 2 auto;
+}
