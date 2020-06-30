@@ -1,57 +1,54 @@
-.reserve-widget-wrapper {
-    margin-right: auto;
-    margin-left: 30px;
-    width: 376px;
-    padding-right: 24px;
-}
-
 .reserve-widget {
-    margin-top: 24px;
-    padding-left: 24px;
-    padding-right: 24px;
-    padding-bottom: 12px;
-    padding-top: 12px;
-    border: 1px solid #e6e6e6
+    align-items: center;
+    width: 50%;
+
+    &__wrapper {
+        margin-top: 2.4rem;
+        padding: 1.2rem 2.4rem 1.2rem 2.4rem;
+        width: 35rem;
+        border: 1px solid $color-grey-light-2;
+    }
+
+    &__cost {
+        font-size: 2.2rem;
+        font-weight: 700;
+    }
+
+    &__per-month {
+        font-size: 1.6rem;
+    }
 }
 
-.space-website-link {
-    text-decoration: none;
-    color: #4abde9;
-}
+.contact-info {
+    font-size: 1.6rem;
+    margin: 1.5rem 0;
+    padding: 1.2rem 2.4rem 0 2.4rem;
+    width: 35rem;
+    border: 1px solid $color-grey-light-2;
 
-.contact-info-wrapper {
-    margin-top: 15px;
-    margin-bottom: 15px;
-    padding-left: 24px;
-    padding-right: 24px;
+    &__item {
+        border-top: 1px solid $color-grey-light-2;
+        padding: 1.2rem 0;
 
-    padding-top: 12px;
-    border: 1px solid #e6e6e6;
+        &-top {
+            padding-bottom: 1.2rem;
+        }
+    }
 
-}
+    &__website-link {
+        text-decoration: none;
+        color: $color-secondary-light;
+    }
 
-.contact-item-top {
-    padding-bottom: 12px;
-}
-.contact-item {
-    border-top: 1px solid #e6e6e6;
-    padding-top: 12px;
-    padding-bottom: 12px;
 }
 
 .reserve-tour-btn {
     margin-top: 20px;
     width: 100%;
-    color: white;
-    background-color: #4abde9;
+    color: $color-primary-light;
+    background-color: $color-secondary-light;
     font-family: inherit;
     border-radius: 4px;
     font-weight: 500;
     padding: 10px 22px;
-}
-
-.reserve-cost {
-    font-size: 22px;
-    font-weight: 700;
-    max-width: 30%;
 }

@@ -13,7 +13,7 @@ const SpaceShow = ({space, match, fetchSpace}) => {
     return space ?  (
         <div className="space-show">
             <PicturesGrid photos={space.spacePhotos}/>
-            <div className="space-info-wrapper">
+            <div className="space-show__info-wrapper flex-row">
                 <SpaceInfo 
                     name={space.name} 
                     city={space.city}
