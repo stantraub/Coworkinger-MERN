@@ -9,15 +9,15 @@ const Reviews = props => {
     
     return reviews.length > 0 ? (
         <section>
-            <div className='reviews-header'>
-                <h2>Reviews</h2>
-                <div className="reviews-header-info">
-                    <div className="star-container">
-                        <img className="star" src={"https://coworking-dev.s3-us-west-1.amazonaws.com/blue-star-icon-14-min.png"} alt="star" />
+            <div className="reviews-stats__header">Reviews</div>
+            <div className='reviews-stats'>
+                <div className="reviews-stats__header-info flex-row">
+                    <div className="reviews-stats__star-container">
+                        <img className="reviews-stats__star" src={"https://coworking-dev.s3-us-west-1.amazonaws.com/blue-star-icon-14-min.png"} alt="star" />
                     </div>
-                    <div className="reviews-rating">{rating}</div>
-                    <div className="separator"></div>
-                    <span className="reviews-length-counter">{reviews.length}</span>
+                    <div className="reviews-stats__rating">{rating}</div>
+                    <div className="reviews-stats__separator"></div>
+                    <span className="reviews-stats__length-counter">{reviews.length}</span>
                     <span>reviews</span>
                 </div>
             </div>

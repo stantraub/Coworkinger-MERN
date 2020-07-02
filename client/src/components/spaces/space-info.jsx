@@ -71,9 +71,9 @@ const SpaceInfo = ({name, city, description, amenityCategories}) => {
                     {description}
                 </p>
             </div>
-            <div className="amenities-wrapper">
-                <div className="amenities-header">Amenities</div>
-                <div className="amenities-div">
+            <div className="amenities-container">
+                <div className="amenities-container__header">Amenities</div>
+                <div className="amenities-container__grid">
                     {amenityCategories ? includedAmenities(amenityCategories) : `${name} has not listed any amenities yet`}
                 </div>
                 {amenityCategories ? otherAmenities(amenityCategories) : null}

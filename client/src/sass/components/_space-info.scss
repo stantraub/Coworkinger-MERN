@@ -11,6 +11,7 @@
     }
 
     &__city {
+        font-size: 1.6rem;
         padding: 1rem 0;
     }
 
@@ -21,17 +22,20 @@
 
     &__description-text {
         padding: 1.6rem 0;
+        font-size: 1.6rem;
+
     }
 }
 
-.amenities-wrapper {
-    margin-bottom: 0px;
-}
+.amenities-container {
+    padding: 2rem 0;
+    font-size: 1.6rem;
 
-.amenities-header {
-    font-weight: 800
-}
+    &__header {
+        font-weight: 800;
+    }
 
-.amenities-div {
-    columns: 2 auto;
+    &__grid {
+        columns: 2 auto;
+    }
 }
