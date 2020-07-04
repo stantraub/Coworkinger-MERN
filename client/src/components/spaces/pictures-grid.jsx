@@ -1,8 +1,6 @@
 import React from 'react'
 
-const PicturesGrid = (props) => {
-    const { photos } = props
-
+const PicturesGrid = ({photos}) => {
     return (
       <section className="pictures flex-row">
         <div className="pictures__main-container">

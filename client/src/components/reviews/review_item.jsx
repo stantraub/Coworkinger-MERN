@@ -1,7 +1,6 @@
 import React from 'react'
 
 const ReviewItem = props => {
-    console.log(props)
     const { review } = props
 
     function formatDate(reviewDate) {
@@ -16,7 +15,7 @@ const ReviewItem = props => {
         if (!photo.includes(domainName)) {
         return (
             <img 
-            className="reviewer-pic"
+            className="review-item__reviewer-pic"
             src={
                 domainName +
                 photo
@@ -28,19 +27,19 @@ const ReviewItem = props => {
             return (
                 <img 
                 src={photo}
-                className="reviewer-pic"
+                className="review-item__reviewer-pic"
                 alt="Reviewer"
                 />
             )
         }
     }
     return (
-        <div className="review-item-container">
-            <div className="reviewer-info-container">
+        <div className="review-item">
+            <div className="review-item__reviewer flex-row">
                 {renderImage(review.reviewer.profilePic)}
-                <div className="reviewer-info">
-                    <div className="reviewer-username">{review.reviewer.username}</div>
-                    <div className="review-date">{formatDate(review.date)}</div>
+                <div className="review-item__reviewer-container flex-col">
+                    <div className="review-item__reviewer-username">{review.reviewer.username}</div>
+                    <div className="review-item__reviewer-date">{formatDate(review.date)}</div>
                 </div>
             </div>
                 

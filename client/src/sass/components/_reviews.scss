@@ -72,34 +72,32 @@
     color: #4abde9;
 }
 
-.review-item-container {
+.review-item {
     border-bottom: 1px solid #e6e6e6;
-}
+    font-size: 1.6rem;
 
-.reviewer-info-container {
-    display: flex;
-    flex-direction: row;
-    padding-top: 20px;
-}
+    &__reviewer {
+        padding-top: 2rem;
 
-.reviewer-pic {
-    border-radius: 50%;
-    width: 48px;
-    height: 48px;
-}
+        &-pic {
+            border-radius: 50%;
+            width: 4.8rem;
+            height: 4.8rem;
+        }
 
-.reviewer-info {
-    display: flex;
-    flex-direction: column;
-    margin-left: 16px;
-}
+        &-container{
+            margin-left: 1.6rem;
+        }
 
-.reviewer-username {
-    font-weight: 600;
-}
+        &-username {
+            font-weight: 600;
+        }
 
-.review-date {
-    font-size: 14px;
+        &-data {
+            font-size: 1.4rem;
+        }
+    }
+
 }
 
 .review-text {
