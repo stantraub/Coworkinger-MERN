@@ -3,7 +3,8 @@ import SpaceShow from "./space-show";
 import { fetchSpace } from "../../actions/space_actions";
 
 const msp = (state, ownProps) => ({
-    space: state.entities.spaces[ownProps.match.params.id]
+  space: state.entities.spaces[ownProps.match.params.id],
+  carouselHidden: state.ui.carousel.hidden
 })
 
 const mdp = (dispatch) => ({

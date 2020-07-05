@@ -8,7 +8,7 @@ const carouselReducer = (state = INITIAL_STATE, action) => {
     switch (action.type) {
         case TOGGLE_CAROUSEL_HIDDEN:
             return {...state,
-                hidden: !hidden
+                hidden: !state.hidden
             }
         default: 
             return state

@@ -1,7 +1,6 @@
 import React from 'react'
 
-const ReviewItem = props => {
-    const { review } = props
+const ReviewItem = ({review}) => {
 
     function formatDate(reviewDate) {
         let formattedDate = Date(reviewDate).split(" ")
@@ -43,7 +42,7 @@ const ReviewItem = props => {
                 </div>
             </div>
                 
-            <div className="review-text">{review.text}</div>
+            <div className="review-item__text">{review.text}</div>
         </div>
     )
 }
