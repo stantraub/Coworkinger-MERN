@@ -9,7 +9,7 @@ const SpaceMap = (props) => {
         if (!activeSpace.mainPhoto.includes(domainName)) {
             return (
             <img
-                className="main-pic"
+                className="map__popup-photo"
                 src={domainName + activeSpace.mainPhoto}
                 alt="Main"
             />
@@ -18,7 +18,7 @@ const SpaceMap = (props) => {
             return (
               <img
                 src={activeSpace.mainPhoto}
-                className="main-pic"
+                className="map__popup-photo"
                 alt="Main"
               />
             );
@@ -50,10 +50,10 @@ const SpaceMap = (props) => {
               position={[activeSpace.latitude, activeSpace.longitude]}
               onClose={() => setActiveSpace(null)}
             >
-              <div>
+              <div className="map__popup-container">
                 <h2>{activeSpace.name}</h2>
                 {renderImage()}
-                <div className="popup-space-description">
+                <div className="map__popup-description">
                   <strong>${activeSpace.cost}</strong> per desk / month
                 </div>
               </div>

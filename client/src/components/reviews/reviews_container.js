@@ -17,4 +17,4 @@ const msp = (state, ownProps) => {
 }
 
 
-export default withRouter(connect (msp, null)(Reviews))
+export default withRouter(connect(msp, null)(Reviews))

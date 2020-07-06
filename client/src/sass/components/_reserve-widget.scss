@@ -1,0 +1,60 @@
+.reserve-widget {
+    align-items: flex-end;
+    width: 50%;
+
+    &__container {
+        position: sticky;
+        top: 10rem;
+        // box-shadow: rgba(0, 0, 0, 0.12) 0px 6px 16px;
+    }
+
+    &__wrapper {
+        margin-top: 2.4rem;
+        padding: 1.2rem 2.4rem 1.2rem 2.4rem;
+        width: 35rem;
+        border: 1px solid $color-grey-light-2;
+    }
+
+    &__cost {
+        font-size: 2.2rem;
+        font-weight: 700;
+    }
+
+    &__per-month {
+        font-size: 1.6rem;
+    }
+}
+
+.contact-info {
+    font-size: 1.6rem;
+    margin: 1.5rem 0;
+    padding: 1.2rem 2.4rem 0 2.4rem;
+    width: 35rem;
+    border: 1px solid $color-grey-light-2;
+
+    &__item {
+        border-top: 1px solid $color-grey-light-2;
+        padding: 1.2rem 0;
+
+        &-top {
+            padding-bottom: 1.2rem;
+        }
+    }
+
+    &__website-link {
+        text-decoration: none;
+        color: $color-secondary-light;
+    }
+
+}
+
+.reserve-tour-btn {
+    margin-top: 20px;
+    width: 100%;
+    color: $color-primary-light;
+    background-color: $color-secondary-light;
+    font-family: inherit;
+    border-radius: 4px;
+    font-weight: 500;
+    padding: 10px 22px;
+}

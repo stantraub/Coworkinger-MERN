@@ -4,14 +4,14 @@ import { Switch, Route } from 'react-router-dom';
 import NavBarContainer from "./nav/navbar_container";
 import "../sass/main.scss"
 
-import MainPage from '../pages/Main';
-import SpaceIndexContainer from '../pages/Spaces';
+import MainPage from '../pages/main';
+import SpaceIndexContainer from '../pages/spaces';
 import SignupFormContainer from './session/signup_form_container'
 import LoginFormContainer from "./session/login_form_container";
-import SpaceShowContainer from './spaces/space_show_container'
+import SpaceShowContainer from '../pages/space-show/space-show-container'
 import ListSpaceContainer from './spaces/list_space_container'
 import ReviewFormContainer from './reviews/review_form_container'
-import ProfilePageContainer from '../pages/Profile_container'
+import ProfilePageContainer from '../pages/profile-container'
 import EditPhotoContainer from './user/edit-photo_container'
 import UserReviewsContainer from './user/user_reviews_container'
 
