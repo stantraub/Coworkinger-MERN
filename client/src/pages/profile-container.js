@@ -1,5 +1,5 @@
 import { connect } from "react-redux";
-import ProfilePage from "./profile";
+import ProfilePage from "./Profile";
 
 const msp = (state) => ({
   currentUser: state.session.user
