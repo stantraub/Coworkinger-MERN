@@ -4,7 +4,7 @@ import { Switch, Route } from 'react-router-dom';
 import NavBarContainer from "./nav/navbar_container";
 import "../sass/main.scss"
 
-import MainPage from '../pages/main';
+import MainPage from '../pages/main.jsx';
 import SpaceIndexContainer from '../pages/spaces';
 import SignupFormContainer from './session/signup_form_container'
 import LoginFormContainer from "./session/login_form_container";
