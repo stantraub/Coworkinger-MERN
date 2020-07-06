@@ -27,11 +27,10 @@
     }
 
     &__main-pic-img {
-        height: 60rem;
-        max-height: 75vh;
+        height: 57rem;
         object-fit: cover;
         cursor: pointer;
-        border-radius: 16px;
+        border-radius: 1.6rem;
         width: 100%;
     }
 
@@ -62,11 +61,11 @@
     }
 
     &__x-button {
-    margin-right: 3rem;
-    cursor: pointer;
-    top: 0;
-    right: 3.5rem;
-    position: absolute;
+        margin-right: 3rem;
+        cursor: pointer;
+        top: 0;
+        right: 3.5rem;
+        position: absolute;
     }
 
     &__x-img {

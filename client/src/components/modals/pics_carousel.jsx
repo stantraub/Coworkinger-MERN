@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 
-const PicsCarousel = ({photos, toggleCarouselHidden}) =>{
+const PicsCarousel = ({photos, toggleCarouselHidden}) => {
     const [currentIdx, setCurrentIdx] = useState(0)
 
     function changePic(length, change) {
@@ -35,9 +35,7 @@ const PicsCarousel = ({photos, toggleCarouselHidden}) =>{
                 </div>
             </div>
         </div>
-
     )
-    
 }
 
 export default PicsCarousel

@@ -1,7 +1,7 @@
 import React from 'react'
 import ReviewsContainer from '../../components/reviews/reviews_container'
 
-const SpaceInfo = ({name, city, description, amenityCategories}) => {
+const SpaceInfo = ({name, city, description, amenityCategories, toggleAmenitiesHidden}) => {
     function includedAmenities(spaceAmenities) {
         let { seatingAndSpace, transportation, facilities, accessibility, lifeEnhancements } = spaceAmenities
         let combinedArr = { ...seatingAndSpace, ...transportation, ...facilities, ...accessibility, ...lifeEnhancements }
@@ -52,7 +52,7 @@ const SpaceInfo = ({name, city, description, amenityCategories}) => {
                 <div className="num-amenities-wrapper">
                     <div
                         className="num-amenities-text"
-                        
+                        onClick={() => toggleAmenitiesHidden()}
                     >
                         Show all {combinedArr['deskDay'] ? numAmenities += 1 : numAmenities} amenities
           </div>
