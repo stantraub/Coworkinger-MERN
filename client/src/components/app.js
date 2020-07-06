@@ -19,8 +19,8 @@ const App = () => (
   <div>
     <NavBarContainer/>
     <Switch>
-      <Route exact path="/" component={MainPage} />
-      <Route exact path="/spaces" component={SpaceIndexContainer} />
+      {/*<Route exact path="/" component={MainPage} /> */}
+      <Route exact path="/" component={SpaceIndexContainer} />
       <Route exact path="/spaces/:id" component={SpaceShowContainer}/>
       <Route exact path="/users/signup" component={SignupFormContainer} />
       <Route exact path="/users/login" component={LoginFormContainer} />
