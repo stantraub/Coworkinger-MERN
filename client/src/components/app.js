@@ -4,7 +4,7 @@ import { Switch, Route } from 'react-router-dom';
 import NavBarContainer from "./nav/navbar_container";
 import "../sass/main.scss"
 
-// import MainPage from '../pages/main.jsx';
+import MainPage from '../pages/main';
 import SpaceIndexContainer from '../pages/spaces';
 import SignupFormContainer from './session/signup_form_container'
 import LoginFormContainer from "./session/login_form_container";
@@ -19,8 +19,8 @@ const App = () => (
   <div>
     <NavBarContainer/>
     <Switch>
-      {/*<Route exact path="/" component={MainPage} /> */}
-      <Route exact path="/" component={SpaceIndexContainer} />
+      <Route exact path="/" component={MainPage} />
+      <Route exact path="/spaces" component={SpaceIndexContainer} />
       <Route exact path="/spaces/:id" component={SpaceShowContainer}/>
       <Route exact path="/users/signup" component={SignupFormContainer} />
       <Route exact path="/users/login" component={LoginFormContainer} />
