@@ -4,6 +4,13 @@
     &__info-wrapper {
         margin: auto;
         width: 108rem;
+
+        @media only screen and (max-width: 68.75em) {
+            flex-direction: column;
+            width: 100%;
+            align-items: center;
+            padding: 0 3rem;
+        }
     }
     
 }
