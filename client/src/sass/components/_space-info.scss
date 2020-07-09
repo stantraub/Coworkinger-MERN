@@ -1,5 +1,9 @@
 .space-info {
     width: 50%;
+    
+    @media only screen and (max-width: 68.75em) {
+        width: 100%;
+    }
 
     &__summary {
         margin-top: 2.4rem;
@@ -30,6 +34,7 @@
 .amenities-container {
     padding: 2rem 0;
     font-size: 1.6rem;
+    border-bottom: 1px solid #e6e6e6;
 
     &__header {
         font-weight: 800;

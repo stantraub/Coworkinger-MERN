@@ -1,12 +1,15 @@
 import React from 'react'
 
-const PicturesGrid = ({photos, toggleCarouselHidden}) => (
+const PicturesGrid = ({ photos, toggleCarouselHidden }) => (
   <section className="pictures flex-row">
     <div className="pictures__main-container">
       <img className="pictures__main-pic" src={photos[0]} alt="main" />
-      <button className="pictures__view-photo-btn pictures__btn-mobile">
+      <button
+        className="pictures__view-photo-btn pictures__btn-mobile"
+        onClick={() => toggleCarouselHidden()}
+      >
         View Photos
-        </button>
+      </button>
     </div>
     <div className="pictures__secondary-container flex-row">
       <div className="pictures__secondary-col-1 flex-col">
@@ -20,7 +23,10 @@ const PicturesGrid = ({photos, toggleCarouselHidden}) => (
           src={photos[2]}
           alt="second"
         />
-        <button className="pictures__view-photo-btn pictures__btn-tablet">
+        <button
+          className="pictures__view-photo-btn pictures__btn-tablet"
+          onClick={() => toggleCarouselHidden()}
+        >
           View Photos
         </button>
       </div>
@@ -32,14 +38,14 @@ const PicturesGrid = ({photos, toggleCarouselHidden}) => (
         />
         <img
           className="pictures__secondary-photo-img"
-          src={photos[4]} 
+          src={photos[4]}
           alt="fourth"
         />
-        <button 
-        className="pictures__view-photo-btn"
-        onClick={() => toggleCarouselHidden()}
+        <button
+          className="pictures__view-photo-btn"
+          onClick={() => toggleCarouselHidden()}
         >
-        View Photos
+          View Photos
         </button>
       </div>
     </div>
