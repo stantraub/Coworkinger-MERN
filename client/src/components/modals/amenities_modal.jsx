@@ -1,211 +1,160 @@
 import React, { Fragment } from 'react';
 
-const Amenities = props => {
+const Amenities = ({toggleAmenitiesHidden, amenityCategories}) => {
+    // https://ourcodeworld.com/articles/read/608/how-to-camelize-and-decamelize-strings-in-javascript
+    function decamelize(str, separator) {
+        separator = typeof separator === "undefined" ? "_" : separator;
+
+        let newString = str
+        .replace(/([a-z\d])([A-Z])/g, "$1" + separator + "$2")
+        .replace(/([A-Z]+)([A-Z][a-z\d]+)/g, "$1" + separator + "$2")
+        .split(" ")
+        
+        return newString.map(word => word === "And" ? word.toLowerCase() : word[0].toUpperCase() + word.slice(1)).join(" ")
+    }
+
     function amenitiesList(categoryAmenities) {
-        if (categoryAmenities) {
-            let amenities = Object.entries(categoryAmenities)
-            return amenities.map((amenity, i) => {
-                if (amenity[0] === "deskDay") {
+        let amenities = Object.entries(categoryAmenities)
+        return amenities.map((amenity, i) => {
+            switch (amenity[0]) {
+                case "deskDay":
                     return (
-                    <Fragment key={i}>
-                        <div className="amenity-modal-item">
-                        Day pass available
-                        </div>
-                        <div className="amenity-modal-item">
-                        Individual desk option
-                        </div>
-                    </Fragment>
+                        <Fragment key={i}>
+                            <div className="amenity-modal-item">Day pass available</div>
+                            <div className="amenity-modal-item">
+                            Individual desk option
+                            </div>
+                        </Fragment>
                     );
-                } else if (amenity[0] === 'officeCapacity') {
+                case "peopleCapacity":
                     return (
-                        <div
-                        className="amenity-modal-item"
-                        key={i}
-                        >
-                        {" "}
-                        {amenity[1]} offices{" "}
+                        <div className="amenity-modal-item" key={i}>
+                            {" "}
+                            {amenity[1]} total capacity{" "}
                         </div>
                     );
-                } else if (amenity[0] === 'transitStationMiles') {
-                    if (amenity[1] < 1) {
-                        return <div className="amenity-modal-item" key={i}>&lt;1 mile to nearest transit station </div>
-                    } else {
-                        return <div className="amenity-modal-item" key={i}>{amenity[1]} miles to nearest transit station </div>
-                    }
-                } else if (amenity[0] === "hours24Access") {
-                        return (
-                            <div className="amenity-modal-item" key={i}>
+                case "officeCapacity":
+                    return (
+                        <div className="amenity-modal-item" key={i}>
+                            {" "}
+                            {amenity[1]} offices{" "}
+                        </div>
+                    );
+                case "transitStationMiles":
+                    return amenity[1] < 1 ? (
+                        <div className="amenity-modal-item" key={i}>
+                            &lt;1 mile to nearest transit station{" "}
+                        </div>
+                        ) : (
+                        <div className="amenity-modal-item" key={i}>
+                            {amenity[1]} miles to nearest transit station{" "}
+                        </div>
+                    );
+                case "hours24Access":
+                    return (
+                        <div className="amenity-modal-item" key={i}>
                             24/7 Access
-                            </div>
-                        );
-                } else if (amenity[0] === "sharedDeskOption") {
-                        return (
-                            <div className="amenity-modal-item" key={i}>
+                        </div>
+                    );
+                case "sharedDeskOption":
+                    return (
+                        <div className="amenity-modal-item" key={i}>
                             Shared Desk Option
-                            </div>
-                        );
-                    } else if (amenity[0] === "phoneBooths") {
-                        return (
-                            <div className="amenity-modal-item" key={i}>
+                        </div>
+                    );
+                case "phoneBooths":
+                    return (
+                        <div className="amenity-modal-item" key={i}>
                             {amenity[1]} phone booths
-                            </div>
-                        );
-                    }  else if (amenity[0] === "bikeParking") {
-                        return (
-                            <div className="amenity-modal-item" key={i}>
-                                Bike parking available
-                            </div>
-                        );
-                    }   else if (amenity[0] === "printersIncluded") {
-                        return (
-                            <div className="amenity-modal-item" key={i}>
-                                Printers and scanners included
-                            </div>
-                        );
-                    } else if (amenity[0] === "wellnessRoom") {
-                        return (
+                        </div>
+                    );
+                case "bikeParking":
+                    return (
+                        <div className="amenity-modal-item" key={i}>
+                            Bike parking available
+                        </div>
+                    );
+                case "printersIncluded":
+                    return (
+                        <div className="amenity-modal-item" key={i}>
+                            Printers and scanners included
+                        </div>
+                    );
+                case "wellnessRoom":
+                    return (
                         <div className="amenity-modal-item" key={i}>
                             Wellness room
                         </div>
-                        );
-                    } else if (amenity[0] === "eventSpace") {
-                        return (
+                    );
+                case "eventSpace":
+                    return (
                         <div className="amenity-modal-item" key={i}>
                             Event space available
                         </div>
-                        );
-                    } 
-                    else if (amenity[0] === "meetingRooms") {
+                    );
+                case "meetingRooms":
                     return (
                         <div className="amenity-modal-item" key={i}>
-                        {amenity[1]} meeting rooms{" "}
+                            {amenity[1]} meeting rooms{" "}
                         </div>
                     );
-                    } else if (amenity[0] === "availability") {
+                case "availability":
                     return (
                         <div className="amenity-modal-item" key={i}>
-                        Space available
+                            Space available
                         </div>
                     );
-                    } else if (amenity[0] === "napRoom") {
+                case "napRoom":
                     return (
                         <div className="amenity-modal-item" key={i}>
-                        Nap room
+                            Nap room
                         </div>
                     );
-                    } else if (amenity[0] === "petFriendly") {
-                        return (
-                            <div className="amenity-modal-item" key={i}>
+                case "petFriendly":
+                    return (
+                        <div className="amenity-modal-item" key={i}>
                             Pet friendly
-                            </div>
-                        );
-                    } else if (amenity[0] === "teaCoffeeIncluded") {
-                        return (
-                            <div className="amenity-modal-item" key={i}>
-                            Tea and coffee included
-                            </div>
-                        );
-                    } else if (amenity[0] === "bocceBall") {
-                        return (
-                            <div className="amenity-modal-item" key={i}>
-                            Bocce ball
-                            </div>
-                        );
-                    }   else if (amenity[0] === "peopleCapacity") {
-                        return (
-                            <div className="amenity-modal-item" key={i}>
-                            {" "}
-                            {amenity[1]} total capacity{" "}
-                            </div>
-                        );
-                    } else {
-                    return (
-                        <div className="amenity-modal-item" key={i}>
-                        {(
-                            amenity[0][0].toUpperCase() +
-                            amenity[0].slice(1)
-                        )
-                            .split("_")
-                            .join(" ")}
                         </div>
                     );
-                    }
-                })
+                case "teaCoffeeIncluded":
+                    return (
+                        <div className="amenity-modal-item" key={i}>
+                            Tea and coffee included
+                        </div>
+                    );
+                case "bocceBall":
+                    return (
+                        <div className="amenity-modal-item" key={i}>
+                            Bocce ball
+                        </div>
+                    );
+                default:
+                    return (
+                        <div className="amenity-modal-item" key={i}>
+                            {(
+                                amenity[0][0].toUpperCase() +
+                                amenity[0].slice(1)
+                            )
+                                .split("_")
+                                .join(" ")}
+                        </div>
+                    );
             }
-        }
-   
-
-    const { amenityCategories = {} } = props
+        })
+    }
 
     return (
         <div className="amenities-modal__backdrop">
             <div className="amenities-modal">
-                <div className="x-button" onClick={() => props.toggleAmenitiesHidden()}>
+                <div className="x-button" onClick={() => toggleAmenitiesHidden()}>
                     <img className="x-img" src="https://coworking-dev.s3-us-west-1.amazonaws.com/img_170267-min.png" alt="X button"></img>
                 </div>
                 <h2 className="amenities-modal__header">Amenities</h2>
                 <div className="amenities-modal__content flex-col">
                     {Object.keys(amenityCategories).map((category, i) => {
-                        if (category === "seatingAndSpace") {
-                            return (
-                                <div className="amenity-category-wrapper" key={i}>
-                                <div className="amenity-category-item">
-                                    Seating and space
-                                </div>
-                                <div>
-                                    {amenitiesList(amenityCategories[category])}
-                                </div>
-                                </div>
-                            );
-                        }
-
-                        if (category === "lifeEnhancements") {
-                            return (
-                            <div className="amenity-category-wrapper" key={i}>
-                                <div className="amenity-category-item">
-                                Life enhancements
-                                </div>
-                                <div>
-                                {amenitiesList(amenityCategories[category])}
-                                </div>
-                            </div>
-                            );
-                        }
-
-                        if (category === "recreationalGames") {
-                            return (
-                                <div className="amenity-category-wrapper" key={i}>
-                                <div className="amenity-category-item">
-                                    Recreational Games
-                                </div>
-                                <div>
-                                    {amenitiesList(amenityCategories[category])}
-                                </div>
-                                </div>
-                            );
-                        }
-
-                        if (category === "foodAndDrinks") {
-                            return (
-                                <div
-                                    className="amenity-category-wrapper"
-                                    key={i}
-                                >
-                                    <div className="amenity-category-item">
-                                        Food and Drinks
-                                    </div>
-                                    <div>
-                                        {amenitiesList(
-                                        amenityCategories[category]
-                                        )}
-                                    </div>
-                                </div>
-                            );
-                        }
-
                         return (
                             <div className="amenity-category-wrapper" key={i}>
-                                <div className="amenity-category-item">{category[0].toUpperCase() + category.slice(1)}</div>
+                                <div className="amenity-category-item">{decamelize(category, " ")}</div>
                                 <div>{amenitiesList(amenityCategories[category])}</div>
                             </div>
                         )
@@ -215,6 +164,5 @@ const Amenities = props => {
         </div>
     )
 }
-
 
 export default Amenities
