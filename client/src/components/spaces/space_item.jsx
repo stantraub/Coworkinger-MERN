@@ -52,14 +52,6 @@ const SpaceItem = props => {
     return included;
   }
 
-  function phone() {
-    if (props.phone !== "N/A") return props.phone;
-  }
-
-  function email() {
-    if (props.email !== "N/A") return props.email;
-  }
-
   return (
     <div className="space-item flex-row">
       <Link to={`/spaces/${props.spaceId}`} className="space-item__link-pic">
@@ -80,7 +72,9 @@ const SpaceItem = props => {
             <div className="space-rating__average">
               {rating > 0 ? formatRating(rating) : null}
             </div>
-            <span className="space-rating__num-reviews">({props.reviews.length})</span>
+            <span className="space-rating__num-reviews">
+              ({props.reviews.length})
+            </span>
           </div>
         ) : null}
         <div className="space-item__name">{props.name}</div>
@@ -92,8 +86,8 @@ const SpaceItem = props => {
           <div className="space-item__amenities-list">
             {includedAmenities()}
           </div>
-          <div>{phone()}</div>
-          <div>{email()}</div>
+          <div>{props.phone !== "N/A" ? props.phone : null}</div>
+          <div>{props.email !== "N/A" ? props.email : null}</div>
         </div>
         <div className="space-item__cost">
           <strong>${props.cost}</strong> per desk / month

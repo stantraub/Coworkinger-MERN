@@ -4,7 +4,7 @@ import SpaceInfoContainer from "../../components/spaces/space-info-container"
 import Spinner from '../../components/spinner/spinner'
 import PicsCarouselContainer from '../../components/modals/pics_carousel_container'
 import AmenitiesModalContainer from '../../components/modals/amenities_modal_container'
-import ReserveWidget from '../../components/spaces/reserve-widget'
+import ReserveWidgetContainer from '../../components/spaces/reserve-widget-container'
 
 const SpaceShow = ({space, match, fetchSpace, carouselHidden, amenitiesHidden, amenityCategories}) => {
     useEffect(() => {
@@ -14,23 +14,13 @@ const SpaceShow = ({space, match, fetchSpace, carouselHidden, amenitiesHidden, a
 
     return space ?  (
         <Fragment>
-            {carouselHidden ?  null : <PicsCarouselContainer photos={space.spacePhotos} />}
-            {amenitiesHidden ? null : <AmenitiesModalContainer amenityCategories={space.amenityCategories}/>}
+            {carouselHidden ?  null : <PicsCarouselContainer />}
+            {amenitiesHidden ? null : <AmenitiesModalContainer />}
             <div className="space-show">
-                <PicturesGridContainer photos={space.spacePhotos}/>
+                <PicturesGridContainer />
                 <div className="space-show__info-wrapper flex-row">
-                    <SpaceInfoContainer 
-                        name={space.name} 
-                        city={space.city}
-                        description={space.description}
-                        amenityCategories={space.amenityCategories}
-                    />
-                    <ReserveWidget 
-                        cost={space.cost}
-                        website={space.website}
-                        email={space.email}
-                        phone={space.phone}
-                    />
+                    <SpaceInfoContainer />
+                    <ReserveWidgetContainer />
                 </div>
             </div>
         </Fragment>

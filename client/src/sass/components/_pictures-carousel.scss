@@ -20,6 +20,7 @@
         padding: 4.5rem;
         justify-content: center;
         width: 75%;
+
     }
 
     &__main-pic-container {
@@ -32,6 +33,10 @@
         cursor: pointer;
         border-radius: 1.6rem;
         width: 100%;
+
+        @media only screen and (max-width: 75em) {
+            height: 40rem;
+        }
     }
 
     &__arrow-left {
@@ -51,6 +56,7 @@
     &__sidebar {
         width: 25%;
         position: relative;
+
     }
 
     &__pic-count {   

@@ -1,7 +1,6 @@
 import React from "react";
-import SpaceWrapperContainer from "../components/spaces/space_wrapper_container"
+import SpaceWrapperContainer from "../components/spaces/spaces_wrapper_container"
 import SpaceMapContainer from '../components/spaces/space_map_container'
-
 
 const Spaces = () => {
   return (
@@ -10,7 +9,6 @@ const Spaces = () => {
       <SpaceMapContainer />
     </div>
   );
-
 };
 
 export default Spaces;
