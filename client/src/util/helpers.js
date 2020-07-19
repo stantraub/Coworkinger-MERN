@@ -1,126 +1,47 @@
 import React from 'react'
 
-export const formatAmenities = (amenity, i, className) => {
+export const formatAmenities = (amenity) => {
     switch (amenity[0]) {
         case "deskDay":
-            return (
-                <div className={className} key={i}>
-                    Individual desk option
-                </div>
-            );
+            return "Individual desk option"
         case "peopleCapacity":
-            return (
-                <div className={className} key={i}>
-                    {" "}
-                    {amenity[1]} total capacity{" "}
-                </div>
-            );
+            return `${amenity[1]} total capacity`
         case "officeCapacity":
-            return (
-                <div className={className} key={i}>
-                    {" "}
-                    {amenity[1]} offices{" "}
-                </div>
-            );
+            return `${amenity[1]} offices`
         case "transitStationMiles":
-            return amenity[1] < 1 ? (
-                <div className={className} key={i}>
-                    &lt;1 mile to nearest transit station{" "}
-                </div>
-            ) : (
-                    <div className={className} key={i}>
-                        {amenity[1]} miles to nearest transit station{" "}
-                    </div>
-                );
+            return amenity[1] < 1 ? 
+                "<1 mile to nearest transit station" : 
+                `${amenity[1]} miles to nearest transit station`
         case "hours24Access":
-            return (
-                <div className={className} key={i}>
-                    24/7 Access
-                </div>
-            );
+            return "24/7 Access"
         case "sharedDeskOption":
-            return (
-                <div className={className} key={i}>
-                    Shared Desk Option
-                </div>
-            );
+            return "Shared Desk Option"
         case "phoneBooths":
-            return (
-                <div className={className} key={i}>
-                    {amenity[1]} phone booths
-                </div>
-            );
+            return `${amenity[1]} phone booths`
         case "bikeParking":
-            return (
-                <div className={className} key={i}>
-                    Bike parking available
-                </div>
-            );
+            return "Bike parking available"
         case "printersIncluded":
-            return (
-                <div className={className} key={i}>
-                    Printers and scanners included
-                </div>
-            );
+            return "Printers and scanners included"
         case "wellnessRoom":
-            return (
-                <div className={className} key={i}>
-                    Wellness room
-                </div>
-            );
+            return "Wellness room"
         case "eventSpace":
-            return (
-                <div className={className} key={i}>
-                    Event space available
-                </div>
-            );
+            return "Event space available"
         case "meetingRooms":
-            return (
-                <div className={className} key={i}>
-                    {amenity[1]} meeting rooms{" "}
-                </div>
-            );
+            return `${amenity[1]} meetings rooms available`
         case "availability":
-            return (
-                <div className={className} key={i}>
-                    Space available
-                </div>
-            );
+            return "Space available"
         case "napRoom":
-            return (
-                <div className={className} key={i}>
-                    Nap room
-                </div>
-            );
+            return "Nap room"
         case "petFriendly":
-            return (
-                <div className={className} key={i}>
-                    Pet friendly
-                </div>
-            );
+            return "Pet friendly"
         case "teaCoffeeIncluded":
-            return (
-                <div className={className} key={i}>
-                    Tea and coffee included
-                </div>
-            );
+            return "Tea and coffee included"
         case "bocceBall":
-            return (
-                <div className={className} key={i}>
-                    Bocce ball
-                </div>
-            );
+            return "Bocce ball"
         default:
-            return (
-                <div className={className} key={i}>
-                    {(
-                        amenity[0][0].toUpperCase() +
-                        amenity[0].slice(1)
-                    )
-                        .split("_")
-                        .join(" ")}
-                </div>
-            );
+            return amenity[0][0].toUpperCase() + amenity[0].slice(1)
+                .split("_")
+                .join(" ")
     }
 }
 

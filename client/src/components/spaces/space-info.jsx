@@ -3,16 +3,20 @@ import { formatAmenities } from '../../util/helpers'
 import ReviewsContainer from '../../components/reviews/reviews_container'
 
 const SpaceInfo = ({name, city, description, amenityCategories, toggleAmenitiesHidden}) => {
-    function includedAmenities(spaceAmenities) {
-        let amenities = Object.entries(spaceAmenities).slice(0, 6)
+    function includedAmenities() {
+        let amenities = Object.entries(amenityCategories).slice(0, 6)
 
         return amenities.map((amenity, i) => {
-            return formatAmenities(amenity, i, "amenities-container__item")
+            return (
+                <div className="amenities-container__item" key={i}>
+                    {formatAmenities(amenity)}
+                </div>
+            ) 
         })
     }
 
-    function numAmenities(spaceAmenities) {
-        let total = Object.keys(spaceAmenities).length
+    function numAmenities() {
+        let total = Object.keys(amenityCategories).length
 
         if (total > 6) {
             return (
@@ -39,9 +43,9 @@ const SpaceInfo = ({name, city, description, amenityCategories, toggleAmenitiesH
             <div className="amenities-container">
                 <div className="amenities-container__header">Amenities</div>
                 <div className="amenities-container__grid">
-                    {amenityCategories ? includedAmenities(amenityCategories) : `${name} has not listed any amenities yet`}
+                    {amenityCategories ? includedAmenities() : `${name} has not listed any amenities yet`}
                 </div>
-                {amenityCategories ? numAmenities(amenityCategories) : null}
+                {amenityCategories ? numAmenities() : null}
             </div>
             <ReviewsContainer />
         </section>
