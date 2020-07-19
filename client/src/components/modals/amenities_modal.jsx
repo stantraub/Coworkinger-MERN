@@ -6,7 +6,11 @@ const Amenities = ({toggleAmenitiesHidden, amenityCategories}) => {
     function amenitiesList(categoryAmenities) {
         let amenities = Object.entries(categoryAmenities)
         return amenities.map((amenity, i) => {
-            return formatAmenities(amenity, i, "amenity-modal-item")
+            return (
+                <div className="amenity-modal-item" key={i}>
+                    {formatAmenities(amenity)}
+                </div>
+            )
         })
     }
 
