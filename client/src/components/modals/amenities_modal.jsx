@@ -138,80 +138,78 @@ const Amenities = props => {
     const { amenityCategories = {} } = props
 
     return (
-        <div className="amenities-background">
-            <div className="amenities-modal-child">
-                <div className="amenities-modal-wrapper">
-                    <div className="x-button" onClick={() => props.toggleAmenitiesHidden()}>
-                        <img className="x-img" src="https://coworking-dev.s3-us-west-1.amazonaws.com/img_170267-min.png" alt="X button"></img>
-                    </div>
-                    <div className="amenities-modal-header">Amenities</div>
-                    <div className="amenities-content flex-col">
-                        {Object.keys(amenityCategories).map((category, i) => {
-                            if (category === "seatingAndSpace") {
-                                return (
-                                    <div className="amenity-category-wrapper" key={i}>
-                                    <div className="amenity-category-item">
-                                        Seating and space
-                                    </div>
-                                    <div>
-                                        {amenitiesList(amenityCategories[category])}
-                                    </div>
-                                    </div>
-                                );
-                            }
-
-                            if (category === "lifeEnhancements") {
-                                return (
-                                <div className="amenity-category-wrapper" key={i}>
-                                    <div className="amenity-category-item">
-                                    Life enhancements
-                                    </div>
-                                    <div>
-                                    {amenitiesList(amenityCategories[category])}
-                                    </div>
-                                </div>
-                                );
-                            }
-
-                            if (category === "recreationalGames") {
-                                return (
-                                    <div className="amenity-category-wrapper" key={i}>
-                                    <div className="amenity-category-item">
-                                        Recreational Games
-                                    </div>
-                                    <div>
-                                        {amenitiesList(amenityCategories[category])}
-                                    </div>
-                                    </div>
-                                );
-                            }
-
-                            if (category === "foodAndDrinks") {
-                                return (
-                                    <div
-                                        className="amenity-category-wrapper"
-                                        key={i}
-                                    >
-                                        <div className="amenity-category-item">
-                                            Food and Drinks
-                                        </div>
-                                        <div>
-                                            {amenitiesList(
-                                            amenityCategories[category]
-                                            )}
-                                        </div>
-                                    </div>
-                                );
-                            }
-
+        <div className="amenities-modal__backdrop">
+            <div className="amenities-modal">
+                <div className="x-button" onClick={() => props.toggleAmenitiesHidden()}>
+                    <img className="x-img" src="https://coworking-dev.s3-us-west-1.amazonaws.com/img_170267-min.png" alt="X button"></img>
+                </div>
+                <h2 className="amenities-modal__header">Amenities</h2>
+                <div className="amenities-modal__content flex-col">
+                    {Object.keys(amenityCategories).map((category, i) => {
+                        if (category === "seatingAndSpace") {
                             return (
                                 <div className="amenity-category-wrapper" key={i}>
-                                    <div className="amenity-category-item">{category[0].toUpperCase() + category.slice(1)}</div>
-                                    <div>{amenitiesList(amenityCategories[category])}</div>
+                                <div className="amenity-category-item">
+                                    Seating and space
                                 </div>
-                            )
-                        })}
-                    </div>
+                                <div>
+                                    {amenitiesList(amenityCategories[category])}
+                                </div>
+                                </div>
+                            );
+                        }
+
+                        if (category === "lifeEnhancements") {
+                            return (
+                            <div className="amenity-category-wrapper" key={i}>
+                                <div className="amenity-category-item">
+                                Life enhancements
+                                </div>
+                                <div>
+                                {amenitiesList(amenityCategories[category])}
+                                </div>
+                            </div>
+                            );
+                        }
+
+                        if (category === "recreationalGames") {
+                            return (
+                                <div className="amenity-category-wrapper" key={i}>
+                                <div className="amenity-category-item">
+                                    Recreational Games
+                                </div>
+                                <div>
+                                    {amenitiesList(amenityCategories[category])}
+                                </div>
+                                </div>
+                            );
+                        }
+
+                        if (category === "foodAndDrinks") {
+                            return (
+                                <div
+                                    className="amenity-category-wrapper"
+                                    key={i}
+                                >
+                                    <div className="amenity-category-item">
+                                        Food and Drinks
+                                    </div>
+                                    <div>
+                                        {amenitiesList(
+                                        amenityCategories[category]
+                                        )}
+                                    </div>
+                                </div>
+                            );
+                        }
+
+                        return (
+                            <div className="amenity-category-wrapper" key={i}>
+                                <div className="amenity-category-item">{category[0].toUpperCase() + category.slice(1)}</div>
+                                <div>{amenitiesList(amenityCategories[category])}</div>
+                            </div>
+                        )
+                    })}
                 </div>
             </div>
         </div>

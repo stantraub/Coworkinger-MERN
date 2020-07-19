@@ -1,27 +1,39 @@
-.amenities-background {
-  position: fixed;
-  top: 0;
-  bottom: 0;
-  right: 0;
-  left: 0;
-  background: rgba(255, 255, 255, 0.8) !important;
-  z-index: 10;
-}
-
-.amenities-modal-child {
+.amenities-modal {
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-}
-
-.amenities-modal-wrapper {
-  padding: 3.2rem;
+  background-color: white;  
   width: 40rem;
   height: 60rem;
-  background-color: white;  
+  padding: 3.2rem;
   box-shadow: rgba(0, 0, 0, 0.2) 0px 1px 10px 0px;
-  z-index: 3;
+
+  &__backdrop {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    background: rgba(255, 255, 255, 0.8) !important;
+    z-index: 10;
+  }
+
+  &__header {
+    padding: 2.4rem 0;
+    color: rgb(72, 72, 72);
+    font-size: 2.4rem;
+    font-weight: 800;
+  }
+
+  &__content {
+    overflow-y: scroll;
+    height: 42.5rem;
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
+  }
 }
 
 .x-button {
@@ -30,13 +42,6 @@
 
 .x-img {
   width: 1.5rem;
-}
-
-.amenities-modal-header {
-  padding: 2.4rem 0;
-  color: rgb(72, 72, 72);
-  font-size: 2.4rem;
-  font-weight: 800;
 }
 
 .amenity-category-wrapper {
@@ -50,8 +55,7 @@
 }
 
 .amenities-content {
-    overflow-y: scroll;
-    height: 42.5rem;
+
 }
 
 .amenities-content::-webkit-scrollbar {
