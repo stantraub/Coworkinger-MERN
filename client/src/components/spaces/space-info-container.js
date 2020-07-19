@@ -1,5 +1,6 @@
 import { connect } from 'react-redux'
 import { toggleAmenitiesHidden } from '../../actions/amenities_actions'
+import { amenitiesArr } from '../../util/helpers'
 import { withRouter } from 'react-router-dom'
 import SpaceInfo from './space-info'
 
@@ -11,7 +12,7 @@ const msp = (state, ownProps) => {
         name: space.name,
         city: space.city,
         description: space.description,
-        amenityCategories: space.amenityCategories
+        amenityCategories: amenitiesArr(space.amenityCategories)
     }
 }
 
