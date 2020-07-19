@@ -14,10 +14,10 @@ const SpaceShow = ({space, match, fetchSpace, carouselHidden, amenitiesHidden, a
 
     return space ?  (
         <Fragment>
-            {carouselHidden ?  null : <PicsCarouselContainer photos={space.spacePhotos} />}
-            {amenitiesHidden ? null : <AmenitiesModalContainer amenityCategories={space.amenityCategories}/>}
+            {carouselHidden ?  null : <PicsCarouselContainer />}
+            {amenitiesHidden ? null : <AmenitiesModalContainer />}
             <div className="space-show">
-                <PicturesGridContainer photos={space.spacePhotos}/>
+                <PicturesGridContainer />
                 <div className="space-show__info-wrapper flex-row">
                     <SpaceInfoContainer />
                     <ReserveWidgetContainer />
