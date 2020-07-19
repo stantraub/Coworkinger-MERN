@@ -43,4 +43,16 @@
     &__grid {
         columns: 2 auto;
     }
+
+    &__total {
+        color: #4abde9;
+        padding-top: 2rem;
+        cursor: pointer;
+    }
+
+    &__item {
+        padding-top: 2rem;
+    }
 }
+
+
