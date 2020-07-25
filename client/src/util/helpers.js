@@ -1,5 +1,3 @@
-import React from 'react'
-
 export const formatAmenities = (amenity) => {
     switch (amenity[0]) {
         case "deskDay":
@@ -44,7 +42,6 @@ export const formatAmenities = (amenity) => {
                 .join(" ")
     }
 }
-
 
 // https://ourcodeworld.com/articles/read/608/how-to-camelize-and-decamelize-strings-in-javascript
 export const decamelize = (str, separator) => {
