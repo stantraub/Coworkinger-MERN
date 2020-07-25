@@ -1,5 +1,9 @@
 .pictures {
-    height: 47.5rem;
+    height: 67.5rem;
+
+    @media only screen and (max-width: 106.25em) {
+        height: 47.5rem;
+    }
 
     @media only screen and (max-width: 46.88em) {
             height: 40rem;

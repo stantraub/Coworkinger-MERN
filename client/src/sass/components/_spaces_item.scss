@@ -1,7 +1,6 @@
 .space-item {
     border-top: .1rem solid #e6e6e6;
     padding: 2rem 0;
-    // height: 22.1rem;
     position: relative;
 
     @media only screen and (max-width: 39em) {
@@ -11,11 +10,11 @@
     }
 
     &__link-pic {
-        width: 30rem;
+        max-width: 30rem;
         height: 18rem;
 
         @media only screen and (max-width: 39em) {
-            width: 100%;
+            max-width: 100%;
             height: 100%;
         }
     }
@@ -24,7 +23,7 @@
         text-decoration: none;
         color: $link-color-dark;
         position: relative;
-        width: 62.5%;
+        width: 100%;
         height: 18rem;
         margin-left: 1.5rem;
 
