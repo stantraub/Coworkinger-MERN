@@ -1,4 +1,8 @@
 .space-page {
     margin-top: 10rem;
     height: 90vh;
+
+    @media only screen and (max-width: 37.5em) {
+        margin-top: 7.5rem;
+    }
 }

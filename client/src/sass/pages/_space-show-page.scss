@@ -1,6 +1,10 @@
 .space-show {
     margin-top: 10rem;
 
+    @media only screen and (max-width: 37.5em) {
+        margin-top: 7.5rem;
+    }
+
     &__info-wrapper {
         margin: auto;
         width: 108rem;
