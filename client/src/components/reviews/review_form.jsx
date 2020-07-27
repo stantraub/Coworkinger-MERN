@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react'
-import './review_form.css'
 import Spinner from '../spinner/spinner';
 
 
