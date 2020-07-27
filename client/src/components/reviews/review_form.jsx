@@ -41,30 +41,26 @@ const ReviewForm = (props) => {
     }
 
     return space ? (
-        <div className="review-form-container">
-            <h1>{space.name}</h1>
-            <form onSubmit={handleSubmit}>
-                <div className="review-input-container">
-                    <input 
-                        type="textarea"
-                        placeholder="rating"
-                        onChange={update('rating')}
-                    />
-                    <br />
-                    <textarea 
-                        onChange={update('text')}
-                        placeholder="Write your review..."
-                        className="review-form-text"
-                    />
-               
-                    
-                </div>
-                <button className="review-submit">Submit Review</button>
-            </form>
+      <form onSubmit={handleSubmit} className="review-form">
+        <div className="review-form__container">
+          <h1>{space.name}</h1>
+          <input
+            type="textarea"
+            placeholder="rating"
+            onChange={update("rating")}
+          />
+          <br />
+          <textarea
+            onChange={update("text")}
+            placeholder="Write your review..."
+            className="review-form__text"
+          />
         </div>
+        <button className="review-form__submit-button">Submit Review</button>
+      </form>
     ) : (
-        <Spinner />
-    )
+      <Spinner />
+    );
 }
 
 export default ReviewForm;
